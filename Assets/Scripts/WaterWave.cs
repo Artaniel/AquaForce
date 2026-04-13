@@ -1,16 +1,14 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class WaterWave : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    private Game _game;
+
+    public void Init(Game game) {
+        _game = game;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        Vector3 cursorPosition = _game.mainCamera.ScreenToWorldPoint( Input.mousePosition);
     }
 }

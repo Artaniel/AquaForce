@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    private Game _boot;
+    private Game _game;
 
     public void Init(Game boot) {
-        _boot = boot;        
+        _game = boot;        
     }
 
 }

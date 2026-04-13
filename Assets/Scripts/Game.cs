@@ -9,7 +9,6 @@ public class Game : MonoBehaviour
     public Session session;
     public Camera mainCamera;
     public Sound sound;
-    public Monetization monetization;
 
     public Library library;
 
@@ -18,9 +17,8 @@ public class Game : MonoBehaviour
         bootChannel.BootCreatedSignal(this);
         mainCamera = Camera.main;
         ui.Init(this);
-        sound.Init(this);
-        monetization.Init(this);
-        session.Init(this);
+        //sound.Init(this);
+        //session.Init(this);
     }
 
     public void Init(Boot root) {
