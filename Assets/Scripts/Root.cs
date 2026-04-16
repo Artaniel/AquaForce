@@ -12,6 +12,6 @@ public class Boot : MonoBehaviour
 
     public void OnBootCreated(Game game) {
         activeGame = game;
-        game.Init(this);
+        //game.Init(this);
     }
 } 

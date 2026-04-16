@@ -132,6 +132,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1345812596869810809}
     - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
+      propertyPath: wave
+      value: 
+      objectReference: {fileID: 3040722969541368720}
+    - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1530039104}
@@ -317,7 +321,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.7924528, b: 0.04982701, a: 0}
+  m_BackGroundColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -342,7 +346,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -453,10 +457,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterWave
       objectReference: {fileID: 0}
-    - target: {fileID: 5650125561440323583, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -502,6 +502,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
+--- !u!114 &3040722969541368720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6271849864065912861, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
+  m_PrefabInstance: {fileID: 3040722969541368719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f302eb340e153374897e362e50b96460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterWave
+--- !u!1001 &5502519116828039514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4591726707340006618, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -511,3 +579,4 @@ SceneRoots:
   - {fileID: 680628902}
   - {fileID: 3040722969541368719}
   - {fileID: 1345812596869810808}
+  - {fileID: 5502519116828039514}

@@ -9,22 +9,16 @@ public class Game : MonoBehaviour
     public Session session;
     public Camera mainCamera;
     public Sound sound;
+    public WaterWave wave;
+    public PlayerInput input;
 
     public Library library;
-
 
     private void Awake() {
         bootChannel.BootCreatedSignal(this);
         mainCamera = Camera.main;
         ui.Init(this);
-        //sound.Init(this);
-        //session.Init(this);
-    }
-
-    public void Init(Boot root) {
-        _boot = root;
-    }
-
-    private void Start() {
+        wave.Init(this);
+        input.Init(this);
     }
 }
