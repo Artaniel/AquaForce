@@ -521,6 +521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 818260241391486191, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4591726707340006618, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
       propertyPath: m_Name
       value: Map
@@ -564,6 +568,10 @@ PrefabInstance:
     - target: {fileID: 7684662909513626164, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805307233104688766, guid: 8b3d92f5b9f66d1459f9e89937568cd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
