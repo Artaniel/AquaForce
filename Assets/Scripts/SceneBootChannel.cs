@@ -7,6 +7,6 @@ public class SceneBootChannel : ScriptableObject
     public Boot boot;
 
     public void BootCreatedSignal(Game game) {
-        boot.OnBootCreated(game);
+        //boot.OnBootCreated(game);
     }
 } 

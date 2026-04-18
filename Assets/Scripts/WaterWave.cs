@@ -9,7 +9,8 @@ public class WaterWave : MonoBehaviour
         _game = game;
     }
 
-    private void Update() {
-        //Vector3 cursorPosition = _game.mainCamera.ScreenToWorldPoint( Input.mousePosition);
+    public void ManualUpdate() {
+        if (!_game.input.cursorIsPressed) return;
+        transform.position = _game.input.cursorWorldPosition;
     }
 }

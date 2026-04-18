@@ -17,7 +17,7 @@ public class PlayerInput: MonoBehaviour
         _game = game;
     }
 
-    private void Update() {
+    public void ManualUpdate() {
         DesktopUpdate();
     }
 

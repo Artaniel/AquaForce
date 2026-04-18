@@ -15,10 +15,15 @@ public class Game : MonoBehaviour
     public Library library;
 
     private void Awake() {
-        bootChannel.BootCreatedSignal(this);
+        //bootChannel.BootCreatedSignal(this);
         mainCamera = Camera.main;
         ui.Init(this);
         wave.Init(this);
         input.Init(this);
+    }
+
+    private void Update() {
+        input.ManualUpdate();
+        wave.ManualUpdate();
     }
 }
