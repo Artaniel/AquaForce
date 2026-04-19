@@ -11,15 +11,16 @@ public class Game : MonoBehaviour
     public Sound sound;
     public WaterWave wave;
     public PlayerInput input;
+    public WaveFactory waveFactory; 
 
     public Library library;
 
     private void Awake() {
-        //bootChannel.BootCreatedSignal(this);
         mainCamera = Camera.main;
         ui.Init(this);
         wave.Init(this);
         input.Init(this);
+        waveFactory.Init(this);
     }
 
     private void Update() {
