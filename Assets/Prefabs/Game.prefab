@@ -44,6 +44,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d07dcee9078b740b422f82b5e43bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Session
+--- !u!1 &555538541134491961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392830291700980326}
+  - component: {fileID: 260130479497480185}
+  m_Layer: 0
+  m_Name: WAveStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &392830291700980326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555538541134491961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7544871967948703337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260130479497480185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555538541134491961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7a4e3075285e44fbed2224f1f03601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveStarter
 --- !u!1 &4807743870156635930
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +132,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0bd4ec018de6f4788b6f2c1fae6eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  cursorWorldPosition: {x: 0, y: 0}
+  cursorIsPressed: 0
+  cursorWasPressedThisFrame: 0
+  cursorWasReleasedThisFrame: 0
+--- !u!1 &7549212202194617286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110525567304110076}
+  - component: {fileID: 73172899502805320}
+  m_Layer: 0
+  m_Name: WaveFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2110525567304110076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549212202194617286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7544871967948703337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73172899502805320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549212202194617286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f3c7c8cc8339e4cb570df0d15f0913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveFactory
+  waves: []
+  controledWave: {fileID: 0}
+  wavePrfab: {fileID: 6271849864065912861, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
 --- !u!1 &8057973158245774366
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +215,8 @@ Transform:
   m_Children:
   - {fileID: 9020017262440699067}
   - {fileID: 488053086642512626}
+  - {fileID: 2110525567304110076}
+  - {fileID: 392830291700980326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7466004644467061891
@@ -139,6 +236,7 @@ MonoBehaviour:
   session: {fileID: 5092264595784618076}
   mainCamera: {fileID: 0}
   sound: {fileID: 0}
-  wave: {fileID: 0}
   input: {fileID: 5345437318568029979}
+  waveFactory: {fileID: 73172899502805320}
+  waveStarter: {fileID: 260130479497480185}
   library: {fileID: 0}

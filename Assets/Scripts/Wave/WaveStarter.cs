@@ -3,8 +3,32 @@ using UnityEngine;
 public class WaveStarter : MonoBehaviour
 {   
     private Game _game;
+    private WaterWave controledWave => _game.waveFactory.controledWave;
 
     public void Init(Game game) {
         _game = game;
+        _game.input.OnCursorPress += OnCursorPress;
+        _game.input.OnCursorRelease += OnCursorRelease;
+    }
+
+    public void ManualUpdate() {
+        if (!_game.input.cursorIsPressed) return;
+
+        controledWave.transform.position = Vector3.Lerp(controledWave.transform.position, _game.input.cursorWorldPosition, controledWave.positionLerpFactor);
+        //controledWave.waveRigidbidy.mass = 1f/controledWave.velocity.magnitude;
+        //controledWave.transform.localScale = Vector3.one * controledWave.waveRigidbidy.mass;
+    }
+
+    private void OnCursorPress(){
+        _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
+    }
+
+    private void OnCursorRelease(){
+        controledWave.Release();
+    }
+
+    void OnDestroy() {
+         _game.input.OnCursorPress -= OnCursorPress;
+         _game.input.OnCursorRelease -= OnCursorRelease;
     }
 }

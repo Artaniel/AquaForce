@@ -132,10 +132,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1345812596869810809}
     - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
-      propertyPath: wave
-      value: 
-      objectReference: {fileID: 3040722969541368720}
-    - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1530039104}
@@ -445,74 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121a7dc51c3d034f901adb9ad6b8ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI
---- !u!1001 &3040722969541368719
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2945526344982851881, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_Name
-      value: WaterWave
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197941442887545818, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
---- !u!114 &3040722969541368720 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6271849864065912861, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}
-  m_PrefabInstance: {fileID: 3040722969541368719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f302eb340e153374897e362e50b96460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaterWave
 --- !u!1001 &5502519116828039514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,6 +513,5 @@ SceneRoots:
   - {fileID: 1530039105}
   - {fileID: 1159192788}
   - {fileID: 680628902}
-  - {fileID: 3040722969541368719}
   - {fileID: 1345812596869810808}
   - {fileID: 5502519116828039514}
