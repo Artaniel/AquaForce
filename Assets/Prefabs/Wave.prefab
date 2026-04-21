@@ -80,7 +80,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -199,14 +199,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterWave
   sphere: {fileID: 8102271546182823420}
+  trail: {fileID: 7663657643898831190}
   positionLerpFactor: 0.1
   velocity: {x: 0, y: 0, z: 0}
   waveRigidbidy: {fileID: 7901943598914568141}
   maxMass: 100
-  optimalSpeed: 10
+  optimalSpeed: 20
   maxScale: 3
-  sigmaSharpness: 5
-  massLerpFactor: 0.9
+  massgainSpeed: 50
+  massDecayPerDistance: 5
 --- !u!54 &7901943598914568141
 Rigidbody:
   m_ObjectHideFlags: 0

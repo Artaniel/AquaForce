@@ -13,6 +13,7 @@ public class WaveStarter : MonoBehaviour
 
     public void ManualUpdate() {
         if (!_game.input.cursorIsPressed) return;
+        if (!controledWave) return;
 
         controledWave.transform.position = Vector3.Lerp(controledWave.transform.position, _game.input.cursorWorldPosition, controledWave.positionLerpFactor);
         //controledWave.waveRigidbidy.mass = 1f/controledWave.velocity.magnitude;

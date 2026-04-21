@@ -4,6 +4,7 @@ public class WaterWave : MonoBehaviour
 {
     private Game _game;
     public Transform sphere;
+    public TrailRenderer trail;
     public float positionLerpFactor = 0.1f;
     private Vector3 lastPosition;
     private bool isReleased;
@@ -12,11 +13,12 @@ public class WaterWave : MonoBehaviour
     public float maxMass = 100f;
     public float optimalSpeed = 10f;
     public float maxScale = 10f;
-    public float sigmaSharpness = 2f;
-    public float massLerpFactor = 0.1f;
+    public float massgainSpeed = 1f;
+    public float massDecayPerDistance = 1f;
 
     public void Init(Game game) {
         _game = game;
+        lastPosition = transform.position;
     }
 
     public void Release() {
@@ -27,15 +29,19 @@ public class WaterWave : MonoBehaviour
     }
 
     private void Update() {
-        if (isReleased) return;
-        velocity = (transform.position - lastPosition) / Time.deltaTime; 
-        SetMassByVelocity(velocity);
-        lastPosition = transform.position;
-    }
+        velocity = (transform.position - lastPosition) / Time.deltaTime;         
+        if (velocity.magnitude == 0) return;
 
-    public void SetMassByVelocity(Vector3 newVelocity) {
-        float targetMass = maxMass * (1f - 1f / (1f + Mathf.Exp(-sigmaSharpness * (newVelocity.magnitude - optimalSpeed))));
-        waveRigidbidy.mass = Mathf.Lerp(waveRigidbidy.mass, targetMass, massLerpFactor * Time.deltaTime);
+        waveRigidbidy.mass -= massDecayPerDistance * (transform.position - lastPosition).magnitude;
+        if (waveRigidbidy.mass < 0) waveRigidbidy.mass = 0;
+        lastPosition = transform.position;
+
+        if (!isReleased) {
+            waveRigidbidy.mass += massgainSpeed * Time.deltaTime;
+        }
+
         sphere.localScale = maxScale * waveRigidbidy.mass / maxMass * Vector3.one;
+        trail.widthMultiplier = maxScale * waveRigidbidy.mass / maxMass;        
     }
+    
 }
