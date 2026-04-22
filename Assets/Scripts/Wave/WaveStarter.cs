@@ -24,8 +24,8 @@ public class WaveStarter : MonoBehaviour
         _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
     }
 
-    private void OnCursorRelease(){
-        controledWave.Release();
+    private void OnCursorRelease(){        
+        controledWave?.Release();
     }
 
     void OnDestroy() {

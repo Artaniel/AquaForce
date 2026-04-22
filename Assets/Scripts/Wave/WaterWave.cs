@@ -9,9 +9,8 @@ public class WaterWave : MonoBehaviour
     private Vector3 lastPosition;
     private bool isReleased;
     public Vector3 velocity;
-    public Rigidbody waveRigidbidy;
+    public Rigidbody2D waveRigidbidy;
     public float maxMass = 100f;
-    public float optimalSpeed = 10f;
     public float maxScale = 10f;
     public float massgainSpeed = 1f;
     public float massDecayPerDistance = 1f;
@@ -24,7 +23,7 @@ public class WaterWave : MonoBehaviour
     public void Release() {
         isReleased = true;
         _game.waveFactory.ReleaseWave();
-        waveRigidbidy.isKinematic = false;
+        waveRigidbidy.simulated = true;
         waveRigidbidy.linearVelocity = velocity;
     }
 
