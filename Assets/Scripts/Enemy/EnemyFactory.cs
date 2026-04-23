@@ -1,0 +1,17 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyFactory : MonoBehaviour
+{
+    private Game _game;
+    public List<Enemy> enemies;    
+
+    public void Init(Game game) {
+        _game = game;
+    }
+
+    public void Register(Enemy enemy) {
+        enemies.Add(enemy);
+        enemy.Init(_game, this);
+    }
+}

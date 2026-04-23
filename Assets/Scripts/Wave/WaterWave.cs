@@ -28,6 +28,11 @@ public class WaterWave : MonoBehaviour
     }
 
     private void Update() {
+        MassUpdate();
+        ForceFieldUpdate();  
+    }
+
+    private void MassUpdate() {
         velocity = (transform.position - lastPosition) / Time.deltaTime;         
         if (velocity.magnitude == 0) return;
 
@@ -40,7 +45,10 @@ public class WaterWave : MonoBehaviour
         }
 
         sphere.localScale = maxScale * waveRigidbidy.mass / maxMass * Vector3.one;
-        trail.widthMultiplier = maxScale * waveRigidbidy.mass / maxMass;        
+        trail.widthMultiplier = maxScale * waveRigidbidy.mass / maxMass;      
     }
-    
+
+    private void ForceFieldUpdate() {
+        
+    }    
 }
