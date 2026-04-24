@@ -88,6 +88,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7a4e3075285e44fbed2224f1f03601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveStarter
+--- !u!1 &1850390617778618667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5254959605878921925}
+  - component: {fileID: 2299124743444110154}
+  m_Layer: 0
+  m_Name: EnemyFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5254959605878921925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850390617778618667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7544871967948703337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2299124743444110154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850390617778618667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fc909208823ef428b32795cd47eb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFactory
+  enemies: []
 --- !u!1 &4807743870156635930
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +262,7 @@ Transform:
   - {fileID: 488053086642512626}
   - {fileID: 2110525567304110076}
   - {fileID: 392830291700980326}
+  - {fileID: 5254959605878921925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7466004644467061891
@@ -231,7 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5e95f1cb832a4f8a4af214f5809cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game
-  bootChannel: {fileID: 11400000, guid: 9a711e11274f79d4cb045b5c6daba96b, type: 2}
   ui: {fileID: 0}
   session: {fileID: 5092264595784618076}
   mainCamera: {fileID: 0}
@@ -239,4 +284,5 @@ MonoBehaviour:
   input: {fileID: 5345437318568029979}
   waveFactory: {fileID: 73172899502805320}
   waveStarter: {fileID: 260130479497480185}
+  enemyFactory: {fileID: 2299124743444110154}
   library: {fileID: 0}

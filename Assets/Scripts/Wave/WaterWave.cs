@@ -49,6 +49,12 @@ public class WaterWave : MonoBehaviour
     }
 
     private void ForceFieldUpdate() {
-        
+        Vector3 waveImpuse = waveRigidbidy.mass * velocity;
+        float waveRadius = sphere.localScale.x; // TODO 
+        foreach (Enemy enemy in _game.enemyFactory.enemies) {
+            if (!enemy) continue;
+            if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;
+            enemy.enemyRigidbody.AddForce(waveImpuse * 0.01f);
+        }
     }    
 }

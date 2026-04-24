@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
 {
     private Game _game;
     private EnemyFactory _factory;
+    public Rigidbody2D enemyRigidbody;
 
     void Start() {
         if (_factory) return;
