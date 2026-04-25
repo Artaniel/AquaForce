@@ -204,10 +204,10 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   waveRigidbidy: {fileID: 4719491305139851746}
   maxMass: 100
-  optimalSpeed: 20
   maxScale: 3
   massgainSpeed: 50
   massDecayPerDistance: 5
+  forceModifier: 0.1
 --- !u!50 &4719491305139851746
 Rigidbody2D:
   serializedVersion: 5

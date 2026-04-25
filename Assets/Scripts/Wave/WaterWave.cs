@@ -14,6 +14,7 @@ public class WaterWave : MonoBehaviour
     public float maxScale = 10f;
     public float massgainSpeed = 1f;
     public float massDecayPerDistance = 1f;
+    public float forceModifier = 1f;
 
     public void Init(Game game) {
         _game = game;
@@ -49,12 +50,12 @@ public class WaterWave : MonoBehaviour
     }
 
     private void ForceFieldUpdate() {
-        Vector3 waveImpuse = waveRigidbidy.mass * velocity;
-        float waveRadius = sphere.localScale.x; // TODO 
+        float waveRadius = sphere.localScale.x; 
         foreach (Enemy enemy in _game.enemyFactory.enemies) {
             if (!enemy) continue;
             if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;
-            enemy.enemyRigidbody.AddForce(waveImpuse * 0.01f);
+            Vector3 deltaVelocity = velocity - (Vector3)enemy.enemyRigidbody.linearVelocity;
+            enemy.enemyRigidbody.AddForce(waveRigidbidy.mass * forceModifier * deltaVelocity);
         }
     }    
 }
