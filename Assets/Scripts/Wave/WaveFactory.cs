@@ -26,4 +26,9 @@ public class WaveFactory : MonoBehaviour
     public void ReleaseWave() {
         controledWave = null;
     }
+
+    public void DestroyWave(WaterWave wave) {
+        waves.Remove(wave);
+        Destroy(wave.gameObject);
+    }
 }

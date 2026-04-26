@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-	private Game _boot;
 	private IHealthy _owner;
 
 	public float maxHP = 100f;
@@ -11,8 +10,7 @@ public class Health : MonoBehaviour
 	public bool isImmune = false;
 	public bool isDead = false;
 
-	public void Init(Game boot, IHealthy owner) {
-		_boot = boot;
+	public void Init(IHealthy owner) {
 		_owner = owner;
 	}
 
@@ -26,21 +24,18 @@ public class Health : MonoBehaviour
 		RefreshHpCounter();
 	}
 
-	public void Death()
-	{
+	public void Death() {
 		isDead = true;
 		_owner.Death();
 	}
 
-	public void Resurrect()
-	{
+	public void Resurrect() {
 		isDead = false;
 		HP = maxHP;
 		RefreshHpCounter();
 	}
 
-	public void ChangeHP(float value)
-	{
+	public void ChangeHP(float value) {
 		if (isDead) return;
 		HP = Mathf.Clamp(HP + value, 0, maxHP);
 		if (HP <= 0)
