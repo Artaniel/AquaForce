@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour , IHealthy
 {
     private Game _game;
     private EnemyFactory _factory;
+    public EnemyDamageAcceptor damageAcceptor;
     public Health health;
     public Rigidbody2D enemyRigidbody;
     public CircleCollider2D enemyCollider;
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour , IHealthy
         _game = game;
         _factory = factory;
         health.Init(this);
+        damageAcceptor.Init(_game, this);
     }
 
     public void NonLetalDamage() {

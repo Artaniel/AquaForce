@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 23846673868630106}
   - component: {fileID: 7736316372681594940}
   - component: {fileID: 3065762221641103884}
+  - component: {fileID: 2193400604964895706}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -156,8 +157,8 @@ Transform:
   m_GameObject: {fileID: 5037406116002543337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.5, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -13.5923, z: 0}
+  m_LocalScale: {x: 100, y: 11.1845, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7684662909513626164}
@@ -266,6 +267,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2193400604964895706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037406116002543337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  minVelocity: 10
 --- !u!1 &6115134100217457934
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +291,7 @@ GameObject:
   - component: {fileID: 6612317705484138330}
   - component: {fileID: 6276863073186172101}
   - component: {fileID: 3701164486240325355}
+  - component: {fileID: 8422470417833607226}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
@@ -293,8 +308,8 @@ Transform:
   m_GameObject: {fileID: 6115134100217457934}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 100, z: 1}
+  m_LocalPosition: {x: 26.8693, y: 0, z: 0}
+  m_LocalScale: {x: 20.1387, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7684662909513626164}
@@ -403,6 +418,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8422470417833607226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6115134100217457934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  minVelocity: 10
 --- !u!1 &6213860765393685490
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +442,7 @@ GameObject:
   - component: {fileID: 7046900947719320508}
   - component: {fileID: 6533967497112623341}
   - component: {fileID: 5392693395366386023}
+  - component: {fileID: 5792911571295870921}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -430,8 +459,8 @@ Transform:
   m_GameObject: {fileID: 6213860765393685490}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.5, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 17.6428, z: 0}
+  m_LocalScale: {x: 100, y: 15.2857, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7684662909513626164}
@@ -540,6 +569,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5792911571295870921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213860765393685490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  minVelocity: 10
 --- !u!1 &8463216715606459248
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +593,7 @@ GameObject:
   - component: {fileID: 4136116022396877425}
   - component: {fileID: 6219315851996512234}
   - component: {fileID: 7108245645850928663}
+  - component: {fileID: 6668723219312222671}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -567,8 +610,8 @@ Transform:
   m_GameObject: {fileID: 8463216715606459248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 100, z: 1}
+  m_LocalPosition: {x: -29.9794, y: 0, z: 0}
+  m_LocalScale: {x: 26.3587, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7684662909513626164}
@@ -677,6 +720,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6668723219312222671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463216715606459248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  minVelocity: 10
 --- !u!1001 &6541293356647937962
 PrefabInstance:
   m_ObjectHideFlags: 0

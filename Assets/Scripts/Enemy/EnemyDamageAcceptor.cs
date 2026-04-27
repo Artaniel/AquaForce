@@ -10,8 +10,10 @@ public class EnemyDamageAcceptor : MonoBehaviour
         _enemy = enemy;
     }
 
-    void OnCollisionEnter(Collision collision) {
-        
+    void OnCollisionEnter2D(Collision2D collision) {
+        Damager damager = collision.collider.GetComponent<Damager>();
+        if (!damager) return;
+        if (collision.relativeVelocity.magnitude >= damager.minVelocity) 
+            _enemy.health.Damage(1);
     }
-
 }

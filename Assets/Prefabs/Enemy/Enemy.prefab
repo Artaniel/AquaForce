@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7934608476270989434}
   - component: {fileID: 4776215822620831341}
   - component: {fileID: 1974175347018137709}
+  - component: {fileID: 6168988443733733081}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -48,8 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5fd3593ca3b7e43be68808b8bae17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  damageAcceptor: {fileID: 6168988443733733081}
   health: {fileID: 2407078056011987820}
   enemyRigidbody: {fileID: 4776215822620831341}
+  enemyCollider: {fileID: 1974175347018137709}
 --- !u!50 &4776215822620831341
 Rigidbody2D:
   serializedVersion: 5
@@ -113,6 +116,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &6168988443733733081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313521186773933485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cdb92fd0893b3488632e027a4c0cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageAcceptor
 --- !u!1 &4404677239889544723
 GameObject:
   m_ObjectHideFlags: 0
