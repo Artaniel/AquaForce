@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
 	public bool isImmune = false;
 	public bool isDead = false;
 
+	public SpriteRenderer[] healthIndecators;
+
 	public void Init(IHealthy owner) {
 		_owner = owner;
 	}
