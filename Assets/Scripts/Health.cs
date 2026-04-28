@@ -6,25 +6,41 @@ public class Health : MonoBehaviour
 
 	public float maxHP = 100f;
 	public float HP = 100f;
+	public float cooldown = 0.3f;
+	private float lastDamageTime = - Mathf.Infinity;
 
 	public bool isImmune = false;
 	public bool isDead = false;
 
 	public SpriteRenderer[] healthIndecators;
 
+	public Color healthyIndicatorColor = Color.green;
+	public Color damagedIndicatorColor = Color.red;
+
 	public void Init(IHealthy owner) {
 		_owner = owner;
+		RefreshHpCounter();
 	}
 
 	public virtual void Damage(float value) {
 		if (isImmune || isDead) return;
+		if (Time.time < lastDamageTime + cooldown) return;
 		HP = Mathf.Clamp(HP - value, 0, maxHP);
+		lastDamageTime = Time.time;
 		if (HP <= 0)
 			Death();
 		else
 			_owner.NonLetalDamage();
 		RefreshHpCounter();
 	}
+
+	public void Kill() {
+		if (isImmune || isDead) return;
+		HP = 0;
+		lastDamageTime = Time.time;
+		Death();
+		RefreshHpCounter();        
+    }
 
 	public void Death() {
 		isDead = true;
@@ -48,6 +64,9 @@ public class Health : MonoBehaviour
 	}
 
 	public void RefreshHpCounter() {
+		for (int i = 0; i < maxHP; i++) {
+            healthIndecators[i].color = HP > i? healthyIndicatorColor : damagedIndicatorColor;
+        }
 	}
 }
 

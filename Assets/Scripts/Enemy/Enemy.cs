@@ -26,7 +26,8 @@ public class Enemy : MonoBehaviour , IHealthy
     }
 
     public void Death() {
-        
+        Debug.Log("Death");
+        _factory.Destroy(this);
     }
 
     public void Heal() {

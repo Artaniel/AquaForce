@@ -14,4 +14,9 @@ public class EnemyFactory : MonoBehaviour
         enemies.Add(enemy);
         enemy.Init(_game, this);
     }
+
+    public void Destroy(Enemy enemy) {
+        enemies.Remove(enemy);
+        Destroy(enemy.gameObject);
+    }
 }
