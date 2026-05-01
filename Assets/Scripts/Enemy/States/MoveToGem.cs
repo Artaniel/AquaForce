@@ -11,6 +11,7 @@ public class MoveToGem : AiState
     }
 
     public override void UpdateState() {
+        _owner.ai.agent.nextPosition = _owner.transform.position;
         if (!_owner.ai.agent.hasPath) {
             _owner.ai.SetState<Idle>();
             return;
@@ -21,13 +22,7 @@ public class MoveToGem : AiState
             _owner.ai.SetState<MoveToSpawn>();
             return;
         }
-        _owner.ai.MoveInDirrection(_owner.ai.agent.desiredVelocity.normalized);        
-
-        //TODO debug draw the agent patch, every fragment of patch array
-        foreach (var point in _owner.ai.agent.path.corners)
-        {
-            Debug.DrawLine(_owner.transform.position, point, Color.red);
-        }
+        _owner.ai.MoveInDirrection(_owner.ai.agent.desiredVelocity.normalized);
         
     }
 }

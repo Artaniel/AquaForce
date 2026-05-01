@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void SetState<T>() where T : AiState {
+        Debug.Log($"SetState {typeof(T)}");
         AiState state = states[typeof(T)];
         currentState?.StopState();
         state.StartState();
