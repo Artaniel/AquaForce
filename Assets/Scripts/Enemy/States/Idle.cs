@@ -16,10 +16,12 @@ public class Idle : AiState
         if (Time.time - lastScanTime < scanInterval) return;
         lastScanTime = Time.time;
         
-        foreach (Gem gem in _game.map.gems)
-        {
+        foreach (Gem gem in _game.map.gems) {
             if (gem.isCarried) continue;
-            // TODO: Set state to MoveToGem
+            if (gem.IsDelivered) continue;
+            _owner.ai.targetGem = gem;
+            _owner.ai.SetState<MoveToGem>();
+            return;
         } 
     }
 }
