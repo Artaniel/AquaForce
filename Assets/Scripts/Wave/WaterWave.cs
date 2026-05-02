@@ -69,6 +69,7 @@ public class WaterWave : MonoBehaviour
             if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;
             Vector3 deltaVelocity = velocity - (Vector3)enemy.enemyRigidbody.linearVelocity;
             enemy.enemyRigidbody.AddForce(waveRigidbidy.mass * forceModifier * deltaVelocity);
+            enemy.poise.TakeDamage(deltaVelocity.magnitude);
         }
     }    
 }

@@ -36,6 +36,7 @@ Transform:
   - {fileID: 8034077184770669000}
   - {fileID: 4249367411598172274}
   - {fileID: 6463473349714085842}
+  - {fileID: 15177197544048665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7934608476270989434
@@ -53,6 +54,7 @@ MonoBehaviour:
   damageAcceptor: {fileID: 6168988443733733081}
   health: {fileID: 2407078056011987820}
   ai: {fileID: 2719187551255402731}
+  poise: {fileID: 4347511602766587445}
   enemyRigidbody: {fileID: 4776215822620831341}
   enemyCollider: {fileID: 1974175347018137709}
 --- !u!50 &4776215822620831341
@@ -187,7 +189,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 756017207724385268}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
+  m_Radius: 1.1
   m_Speed: 1
   m_Acceleration: 0
   avoidancePriority: 50
@@ -348,6 +350,54 @@ MonoBehaviour:
   - {fileID: 5289561814892816223}
   healthyIndicatorColor: {r: 0, g: 1, b: 0, a: 1}
   damagedIndicatorColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!1 &8258566761177859932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15177197544048665}
+  - component: {fileID: 4347511602766587445}
+  m_Layer: 0
+  m_Name: Poise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15177197544048665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258566761177859932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9212745753176637732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4347511602766587445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258566761177859932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429139677a300d4788b62e1280bfb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPoise
+  poise: 0
+  dragMultiplier: 1
+  recoveryRate: 0.1
+  damagePerSpeed: 1
 --- !u!1001 &5805136503925464010
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,8 +7,9 @@ public class Enemy : MonoBehaviour , IHealthy
     public EnemyDamageAcceptor damageAcceptor;
     public Health health;
     public EnemyAI ai;
+    public EnemyPoise poise;
     public Rigidbody2D enemyRigidbody;
-    public CircleCollider2D enemyCollider;
+    public CircleCollider2D enemyCollider;    
 
     void Start() {
         if (_factory) return;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour , IHealthy
         health.Init(this);
         damageAcceptor.Init(_game, this);
         ai.Init(_game, this);
+        poise.Init(_game, this);
     }
 
     public void NonLetalDamage() {

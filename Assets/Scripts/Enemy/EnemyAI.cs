@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void MoveInDirrection(Vector3 dirrection) {
-        _enemy.enemyRigidbody.AddForce(dirrection * moveForce , ForceMode2D.Force);
+        _enemy.enemyRigidbody.AddForce(dirrection * moveForce * _enemy.poise.GetForceMultiplier() , ForceMode2D.Force);
     }
 
 }
