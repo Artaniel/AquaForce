@@ -5,7 +5,7 @@ public class EnemyPoise : MonoBehaviour
 
     private Game _game;
     private Enemy _enemy;
-    public float poise;
+    public float poise = 1;
     public float dragMultiplier = 1f;
     public float recoveryRate = 0.1f;
     public float damagePerSpeed = 1f;
@@ -16,8 +16,9 @@ public class EnemyPoise : MonoBehaviour
     }
     
     public void Update() {
-        poise += recoveryRate * Time.deltaTime;       
-        _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier * GetSpeedMultiplier();
+        poise += recoveryRate * Time.deltaTime; 
+        poise = Mathf.Clamp01(poise);
+        _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;// * GetSpeedMultiplier();
     }
 
     public float GetForceMultiplier() {
