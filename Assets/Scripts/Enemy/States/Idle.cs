@@ -19,7 +19,9 @@ public class Idle : AiState
         foreach (Gem gem in _game.map.gems) {
             if (gem.isCarried) continue;
             if (gem.IsDelivered) continue;
+            if (gem.isReserved) continue;
             _owner.ai.targetGem = gem;
+            gem.isReserved = true;
             _owner.ai.SetState<MoveToGem>();
             return;
         } 

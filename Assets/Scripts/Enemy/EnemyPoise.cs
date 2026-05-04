@@ -18,7 +18,8 @@ public class EnemyPoise : MonoBehaviour
     public void Update() {
         poise += recoveryRate * Time.deltaTime; 
         poise = Mathf.Clamp01(poise);
-        _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;// * GetSpeedMultiplier();
+        _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;
+        RefreshView();
     }
 
     public float GetForceMultiplier() {
@@ -26,15 +27,14 @@ public class EnemyPoise : MonoBehaviour
         forceMultiplier = Mathf.Max(0f, forceMultiplier);
         return forceMultiplier;
     }
-    
-    private float GetSpeedMultiplier() {
-        float speed = _enemy.enemyRigidbody.linearVelocity.magnitude;
-        //TODO Формула и пороги подбираются в тесте
-        return Mathf.Clamp01(1f - speed / 10f);
-    }
 
     public void TakeDamage(float speed) {
         poise -= speed * damagePerSpeed;
         poise = Mathf.Max(0f, poise);
+        RefreshView();
+    }
+
+    private void RefreshView() {
+        _enemy.mainSprite.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
     }
 }

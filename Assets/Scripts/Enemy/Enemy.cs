@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour , IHealthy
     public EnemyPoise poise;
     public Rigidbody2D enemyRigidbody;
     public CircleCollider2D enemyCollider;    
+    public Transform mainSprite;
 
     void Start() {
         if (_factory) return;

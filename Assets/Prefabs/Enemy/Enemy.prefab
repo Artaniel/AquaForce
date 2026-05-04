@@ -57,6 +57,7 @@ MonoBehaviour:
   poise: {fileID: 4347511602766587445}
   enemyRigidbody: {fileID: 4776215822620831341}
   enemyCollider: {fileID: 1974175347018137709}
+  mainSprite: {fileID: 8034077184770669000}
 --- !u!50 &4776215822620831341
 Rigidbody2D:
   serializedVersion: 5
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   agent: {fileID: 8243836182171425709}
   targetGem: {fileID: 0}
-  moveForce: 1
+  moveForce: 5
 --- !u!195 &8243836182171425709
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -394,10 +395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4429139677a300d4788b62e1280bfb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPoise
-  poise: 0
-  dragMultiplier: 1
+  poise: 1
+  dragMultiplier: 5
   recoveryRate: 0.1
-  damagePerSpeed: 1
+  damagePerSpeed: 0.001
 --- !u!1001 &5805136503925464010
 PrefabInstance:
   m_ObjectHideFlags: 0

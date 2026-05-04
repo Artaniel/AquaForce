@@ -16,7 +16,7 @@ public class MoveToGem : AiState
             _owner.ai.SetState<Idle>();
             return;
         }
-        if ( Vector3.Distance(_owner.transform.position, _owner.ai.targetGem.transform.position) < 0.1f) {
+        if ( Vector3.Distance(_owner.transform.position, _owner.ai.targetGem.transform.position) < 0.5f) {
             _owner.ai.targetGem.isCarried = true;
             _owner.ai.targetGem.transform.parent = _owner.transform;
             _owner.ai.SetState<MoveToSpawn>();

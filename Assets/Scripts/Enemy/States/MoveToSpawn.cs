@@ -14,7 +14,7 @@ public class MoveToSpawn : AiState
             _owner.ai.SetState<Idle>();
             return;
         }
-        if (_owner.ai.agent.remainingDistance < 0.1f) {
+        if (_owner.ai.agent.remainingDistance < 0.5f) {
             _owner.ai.targetGem.isCarried = false;
             _owner.ai.targetGem.transform.parent = null;
             _owner.ai.targetGem.IsDelivered = true;
