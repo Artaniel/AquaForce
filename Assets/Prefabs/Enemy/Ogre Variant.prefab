@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4469473035587529096
+--- !u!1001 &842974295931001315
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,31 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313521186773933485, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Name
-      value: Goblin Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 4347511602766587445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
-      propertyPath: damagePerSpeed
-      value: 0.002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404677239889544723, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6053079820331113032, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 626506747, guid: 0cbf4b89ab73bad41bb4dbc03dfcec72, type: 3}
-    - target: {fileID: 7934608476270989434, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
-      propertyPath: mainSprite
-      value: 
-      objectReference: {fileID: 9200224597958938401}
+      objectReference: {fileID: 393830534, guid: 0cbf4b89ab73bad41bb4dbc03dfcec72, type: 3}
     - target: {fileID: 9212745753176637732, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.28965
       objectReference: {fileID: 0}
     - target: {fileID: 9212745753176637732, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.39606
       objectReference: {fileID: 0}
     - target: {fileID: 9212745753176637732, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73,8 +61,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
---- !u!4 &9200224597958938401 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4731877539864569513, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
-  m_PrefabInstance: {fileID: 4469473035587529096}
-  m_PrefabAsset: {fileID: 0}

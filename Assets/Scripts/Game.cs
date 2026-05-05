@@ -27,6 +27,7 @@ public class Game : MonoBehaviour
         waveFactory.Init(this);
         enemyFactory.Init(this);
         waveStarter.Init(this);
+        session.Init(this);
     }
 
     private void Update() {

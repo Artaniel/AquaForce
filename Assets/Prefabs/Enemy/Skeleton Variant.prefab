@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: 'healthIndecators.Array.data[0]'
       value: 
       objectReference: {fileID: 2360020957952573063}
+    - target: {fileID: 4347511602766587445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: damagePerSpeed
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 4404677239889544723, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_IsActive
       value: 0
