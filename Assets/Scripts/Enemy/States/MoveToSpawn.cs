@@ -5,12 +5,15 @@ public class MoveToSpawn : AiState
     }
 
     public override void StopState() {
+        _owner.ai.targetGem = null;
         _owner.ai.agent.destination = _owner.transform.position;
     }
 
     public override void UpdateState() {
         _owner.ai.agent.nextPosition = _owner.transform.position;
         if (!_owner.ai.agent.hasPath) {
+            _owner.ai.targetGem.isCarried = false;
+            _owner.ai.targetGem.transform.parent = null;
             _owner.ai.SetState<Idle>();
             return;
         }
@@ -18,6 +21,7 @@ public class MoveToSpawn : AiState
             _owner.ai.targetGem.isCarried = false;
             _owner.ai.targetGem.transform.parent = null;
             _owner.ai.targetGem.IsDelivered = true;
+            _owner.ai.StealGem(_owner.ai.targetGem);
             _owner.ai.SetState<Idle>();
             return;
         }

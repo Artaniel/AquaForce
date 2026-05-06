@@ -50,4 +50,7 @@ public class EnemyAI : MonoBehaviour
         _enemy.enemyRigidbody.AddForce(dirrection * moveForce * _enemy.poise.GetForceMultiplier() , ForceMode2D.Force);
     }
 
+    public void StealGem(Gem gem) {
+        _game.session.StealGem(gem);
+    }
 }
