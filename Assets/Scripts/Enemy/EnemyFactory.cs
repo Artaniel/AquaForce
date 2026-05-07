@@ -23,4 +23,8 @@ public class EnemyFactory : MonoBehaviour
     public int GetAliveEnemyCount() {
         return enemies.FindAll(enemy => enemy.health.isDead == false).Count;
     }
+
+    public void Spawn(Enemy prefab) {
+        
+    }
 }

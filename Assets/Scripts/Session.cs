@@ -6,6 +6,8 @@ public class Session : MonoBehaviour
     private Game _game;
     private List<Gem> savedGems;
     private List<Gem> stolenGems;
+    private List<SpawnWave> completedWaves;
+    private float sessionStartTime;
 
     public void Init(Game game) {
         _game = game;
@@ -14,6 +16,24 @@ public class Session : MonoBehaviour
     public void SessionStart() {
         savedGems = _game.map.gems;
         stolenGems = new List<Gem>();
+        completedWaves = new();
+        sessionStartTime = Time.time;
+    }
+
+    private void Update() {
+        foreach (SpawnWave spawWave in _game.map.spawnWaves) {
+            if (completedWaves.Contains(spawWave)) continue;
+            if (spawWave.launchTime >= Time.time - sessionStartTime) {
+                LaunchWave(spawWave);
+            }
+        }
+    }
+
+    private void LaunchWave(SpawnWave spawWave) {
+        foreach(Enemy prefab in spawWave.prefabs) {
+            _game.enemyFactory.Spawn(prefab);
+        }
+        completedWaves.Add(spawWave);
     }
 
     public void SessionEnd() { 
@@ -34,6 +54,8 @@ public class Session : MonoBehaviour
 
     public void Lose() {
         // Handle game over logic
+
+        SessionEnd();
     }
 
     public void EnemyKilled() {
@@ -47,6 +69,8 @@ public class Session : MonoBehaviour
     }
     
     public void Win() {
-        // Handle win logic
+        int score = savedGems.Count * 100;
+        _game.ui.ShowWinScreen(score);
+        SessionEnd();
     }
 }

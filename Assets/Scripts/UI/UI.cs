@@ -8,4 +8,7 @@ public class UI : MonoBehaviour
         _game = boot;        
     }
 
+    public void ShowWinScreen(int score) {
+        
+    }
 }
