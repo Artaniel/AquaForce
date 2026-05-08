@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
         enemyFactory.Init(this);
         waveStarter.Init(this);
         session.Init(this);
+
+        session.SessionStart();
     }
 
     private void Update() {
