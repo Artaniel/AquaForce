@@ -14,10 +14,12 @@ public class Session : MonoBehaviour
     }
 
     public void SessionStart() {
+        _game.map.Init(_game);
         savedGems = _game.map.gems;
         stolenGems = new List<Gem>();
         completedWaves = new();
         sessionStartTime = Time.time;
+        _game.ui.RefreshCounts();
     }
 
     private void Update() {
@@ -43,6 +45,7 @@ public class Session : MonoBehaviour
     public void StealGem(Gem gem) {
         savedGems.Remove(gem);
         stolenGems.Add(gem);
+        _game.ui.RefreshCounts();
         LoseCheck();
     }
     
@@ -73,4 +76,7 @@ public class Session : MonoBehaviour
         _game.ui.ShowWinScreen(score);
         SessionEnd();
     }
+
+    public int GetSavelGemsCount() => savedGems.Count;
+    public int GetStolenGemsCount() => stolenGems.Count;
 }
