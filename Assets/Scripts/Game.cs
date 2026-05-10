@@ -18,7 +18,6 @@ public class Game : MonoBehaviour
 
     public Library library;
 
-
     private void Awake() {
         instance = this;
         mainCamera = Camera.main;

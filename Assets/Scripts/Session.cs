@@ -8,12 +8,14 @@ public class Session : MonoBehaviour
     private List<Gem> stolenGems;
     private List<SpawnWave> completedWaves;
     private float sessionStartTime;
-
+    private int currentMapIndex = 0;
+    
     public void Init(Game game) {
         _game = game;
     }
 
     public void SessionStart() {
+        _game.map = Instantiate(_game.library.maps[currentMapIndex]);
         _game.map.Init(_game);
         savedGems = _game.map.gems;
         stolenGems = new List<Gem>();
@@ -39,7 +41,8 @@ public class Session : MonoBehaviour
     }
 
     public void SessionEnd() { 
-        
+        Destroy(_game.map.gameObject);
+        currentMapIndex++;
     }
 
     public void StealGem(Gem gem) {
@@ -79,4 +82,8 @@ public class Session : MonoBehaviour
 
     public int GetSavelGemsCount() => savedGems.Count;
     public int GetStolenGemsCount() => stolenGems.Count;
+
+    public void WinConfirm(){
+        _game.ui.HideWinScreen();
+    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI stolenGemsText;
 
     public Transform winScreen;    
+    public Button winConfirmButton;
 
     public void Init(Game boot) {
-        _game = boot;        
+        _game = boot;      
+        winConfirmButton.onClick.AddListener(OnWinConfirm);  
     }
 
     public void ShowWinScreen(int score) {
@@ -26,5 +29,9 @@ public class UI : MonoBehaviour
     public void RefreshCounts() {
         savedGemsText.text = _game.session.GetSavelGemsCount().ToString();
         stolenGemsText.text = _game.session.GetStolenGemsCount().ToString();
+    }
+
+    private void OnWinConfirm(){
+        _game.session.WinConfirm();
     }
 }

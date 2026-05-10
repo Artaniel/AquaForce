@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour , IHealthy
 
     void Start() {
         if (_factory) return;
+        Debug.LogWarning("Enemy was not inited.");
         Game.instance.enemyFactory.Register(this);
     }
 
@@ -34,10 +35,6 @@ public class Enemy : MonoBehaviour , IHealthy
         Debug.Log("Death");
         _game.session.EnemyKilled();
         _factory.Destroy(this);
-    }
-
-    public void Heal() {
-        
     }
 
     private void OnValidate() {

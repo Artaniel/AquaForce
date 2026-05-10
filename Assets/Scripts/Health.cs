@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
 		RefreshHpCounter();        
     }
 
-	public void Death() {
+	private void Death() {
 		isDead = true;
 		_owner.Death();
 	}
@@ -58,8 +58,6 @@ public class Health : MonoBehaviour
 		HP = Mathf.Clamp(HP + value, 0, maxHP);
 		if (HP <= 0)
 			Death();
-		else
-			_owner.NonLetalDamage();
 		RefreshHpCounter();
 	}
 
@@ -74,5 +72,4 @@ public interface IHealthy
 {
 	public void NonLetalDamage();
 	public void Death();
-	public void Heal();
 }
