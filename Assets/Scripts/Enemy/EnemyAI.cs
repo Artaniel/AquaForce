@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {   
     private Game _game;
     private Enemy _enemy;
 
-    public UnityEngine.AI.NavMeshAgent agent;
+    public NavMeshAgent agent;
     public Gem targetGem;
     public Dictionary<Type, AiState> states;
     private AiState currentState;
@@ -36,10 +37,10 @@ public class EnemyAI : MonoBehaviour
 
     public void SetState<T>() where T : AiState {
         Debug.Log($"SetState {typeof(T)}");
-        AiState state = states[typeof(T)];
+        AiState newState = states[typeof(T)];
         currentState?.StopState();
-        state.StartState();
-        currentState = state;
+        newState.StartState();
+        currentState = newState;
     }
 
     private void Update() {

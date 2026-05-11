@@ -1,30 +1,30 @@
 public class MoveToSpawn : AiState
 {
     public override void StartState() {
-        _owner.ai.agent.destination = _game.map.spawner.transform.position;
+        _ai.agent.destination = _game.map.spawner.transform.position;
     }
 
     public override void StopState() {
-        _owner.ai.targetGem = null;
-        _owner.ai.agent.destination = _owner.transform.position;
+        _ai.targetGem = null;
+        _ai.agent.destination = _owner.transform.position;
     }
 
     public override void UpdateState() {
-        _owner.ai.agent.nextPosition = _owner.transform.position;
-        if (!_owner.ai.agent.hasPath) {
-            _owner.ai.targetGem.isCarried = false;
-            _owner.ai.targetGem.transform.parent = null;
-            _owner.ai.SetState<Idle>();
+        _ai.agent.nextPosition = _owner.transform.position;
+        if (!_ai.agent.hasPath) {
+            _ai.targetGem.isCarried = false;
+            _ai.targetGem.transform.parent = null;
+            _ai.SetState<Idle>();
             return;
         }
-        if (_owner.ai.agent.remainingDistance < 0.5f) {
-            _owner.ai.targetGem.isCarried = false;
-            _owner.ai.targetGem.transform.parent = null;
-            _owner.ai.targetGem.IsDelivered = true;
-            _owner.ai.StealGem(_owner.ai.targetGem);
-            _owner.ai.SetState<Idle>();
+        if (_ai.agent.remainingDistance < 0.5f) {
+            _ai.targetGem.isCarried = false;
+            _ai.targetGem.transform.parent = null;
+            _ai.targetGem.IsDelivered = true;
+            _ai.StealGem(_ai.targetGem);
+            _ai.SetState<Idle>();
             return;
         }
-        _owner.ai.MoveInDirrection(_owner.ai.agent.desiredVelocity.normalized);
+        _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);
     }
 }

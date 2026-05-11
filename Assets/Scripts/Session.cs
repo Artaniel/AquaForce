@@ -85,5 +85,6 @@ public class Session : MonoBehaviour
 
     public void WinConfirm(){
         _game.ui.HideWinScreen();
+        SessionStart();
     }
 }

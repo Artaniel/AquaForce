@@ -20,9 +20,9 @@ public class Idle : AiState
             if (gem.isCarried) continue;
             if (gem.IsDelivered) continue;
             if (gem.isReserved) continue;
-            _owner.ai.targetGem = gem;
+            _ai.targetGem = gem;
             gem.isReserved = true;
-            _owner.ai.SetState<MoveToGem>();
+            _ai.SetState<MoveToGem>();
             return;
         } 
     }

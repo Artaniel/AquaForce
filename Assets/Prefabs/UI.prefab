@@ -397,6 +397,7 @@ MonoBehaviour:
   savedGemsText: {fileID: 6289366453016451412}
   stolenGemsText: {fileID: 1053304799663654515}
   winScreen: {fileID: 4021065567299694806}
+  winConfirmButton: {fileID: 7297093810573060303}
 --- !u!1 &1872348353546964371
 GameObject:
   m_ObjectHideFlags: 0
