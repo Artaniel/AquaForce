@@ -42,7 +42,6 @@ public class Session : MonoBehaviour
 
     public void SessionEnd() { 
         Destroy(_game.map.gameObject);
-        currentMapIndex++;
     }
 
     public void StealGem(Gem gem) {
@@ -59,8 +58,7 @@ public class Session : MonoBehaviour
     }
 
     public void Lose() {
-        // Handle game over logic
-
+        _game.ui.ShowLoseScreen();
         SessionEnd();
     }
 
@@ -75,6 +73,7 @@ public class Session : MonoBehaviour
     }
     
     public void Win() {
+        currentMapIndex++;
         int score = savedGems.Count * 100;
         _game.ui.ShowWinScreen(score);
         SessionEnd();
@@ -85,6 +84,11 @@ public class Session : MonoBehaviour
 
     public void WinConfirm(){
         _game.ui.HideWinScreen();
+        SessionStart();
+    }
+
+    public void LoseConfirm(){
+        _game.ui.HideLoseScreen();
         SessionStart();
     }
 }

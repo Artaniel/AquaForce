@@ -11,10 +11,13 @@ public class UI : MonoBehaviour
 
     public Transform winScreen;    
     public Button winConfirmButton;
+    public Transform loseScreen;
+    public Button loseConfirmButton;
 
     public void Init(Game boot) {
         _game = boot;      
         winConfirmButton.onClick.AddListener(OnWinConfirm);  
+        loseConfirmButton.onClick.AddListener(OnLoseConfirm);
     }
 
     public void ShowWinScreen(int score) {
@@ -26,6 +29,14 @@ public class UI : MonoBehaviour
         winScreen.gameObject.SetActive(false);
     }
 
+    public void ShowLoseScreen() {
+        loseScreen.gameObject.SetActive(true);
+    }
+
+    public void HideLoseScreen() {
+        loseScreen.gameObject.SetActive(false);
+    }
+
     public void RefreshCounts() {
         savedGemsText.text = _game.session.GetSavelGemsCount().ToString();
         stolenGemsText.text = _game.session.GetStolenGemsCount().ToString();
@@ -33,5 +44,9 @@ public class UI : MonoBehaviour
 
     private void OnWinConfirm(){
         _game.session.WinConfirm();
+    }
+    
+    private void OnLoseConfirm(){
+        _game.session.LoseConfirm();
     }
 }
