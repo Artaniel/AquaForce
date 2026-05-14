@@ -17,7 +17,7 @@ public class UI : MonoBehaviour
     public void Init(Game boot) {
         _game = boot;      
         winConfirmButton.onClick.AddListener(OnWinConfirm);  
-        loseConfirmButton.onClick.AddListener(OnLoseConfirm);
+        loseConfirmButton.onClick.AddListener(OnLoseConfirm);        
     }
 
     public void ShowWinScreen(int score) {
