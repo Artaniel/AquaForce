@@ -74,10 +74,10 @@
 
 [+]3.1 Создать префаб Wall: белый прямоугольник, Box Collider 2D, Rigidbody2D Static. Physics Material с небольшим bounce чтобы враги отлетали а не прилипали.
 [+]3.2 Создать префаб Rock: серый многоугольник, Polygon Collider 2D, Rigidbody2D Static. Форма неровная — враги отлетают под непредсказуемыми углами.
-[]3.3 Создать префаб Fence: тонкий прямоугольник, Box Collider 2D Static. Обозначает границы деревни визуально.
+[+]3.3 Создать префаб Fence: тонкий прямоугольник, Box Collider 2D Static. Обозначает границы деревни визуально.
 
 Интерактивные объекты
-[]3.4 Создать компонент Prop. Поля: float speedThreshold (порог скорости для нанесения урона), bool affectedByWave (реагирует ли на волну игрока). Вешается на все интерактивные объекты.
+[]3.4 Создать компонент Prop. Для смещаемых водой объектов.
 []3.5 Создать префаб Barrel: тёмный круг, Rigidbody2D Dynamic (масса ~3), Circle Collider 2D, компонент Prop.
 []3.6 Создать префаб Cart: вытянутый прямоугольник, Rigidbody2D Dynamic (масса ~5), Box Collider 2D, компонент Prop.
 []3.7 Создать префаб Tree: круг, Rigidbody2D Static, компонент Prop (affectedByWave = false, speedThreshold высокий). При OnCollisionEnter2D с импульсом выше порога — переключается в Dynamic. После падения affectedByWave = true, speedThreshold снижается до обычного — работает как обычный Prop.
