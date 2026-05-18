@@ -78,9 +78,9 @@
 
 Интерактивные объекты
 [+]3.4 Создать компонент Prop. Для смещаемых водой объектов. 
-[]3.5 Создать префаб Barrel: тёмный круг, Rigidbody2D Dynamic (масса ~3), Circle Collider 2D, компонент Prop.
-[]3.6 Создать префаб Cart: вытянутый прямоугольник, Rigidbody2D Dynamic (масса ~5), Box Collider 2D, компонент Prop.
-[]3.7 Создать префаб Tree: круг, Rigidbody2D Static, компонент Prop (affectedByWave = false, speedThreshold высокий). При OnCollisionEnter2D с импульсом выше порога — переключается в Dynamic. После падения affectedByWave = true, speedThreshold снижается до обычного — работает как обычный Prop.
+[+]3.5 Создать префаб Barrel: тёмный круг, Rigidbody2D Dynamic (масса ~3), Circle Collider 2D, компонент Prop.
+[+]3.6 Создать префаб Cart: вытянутый прямоугольник, Rigidbody2D Dynamic (масса ~5), Box Collider 2D, компонент Prop.
+[+]3.7 Создать префаб Tree: круг, Rigidbody2D Static, компонент Prop (affectedByWave = false, speedThreshold высокий). При OnCollisionEnter2D с импульсом выше порога — переключается в Dynamic. После падения affectedByWave = true, speedThreshold снижается до обычного — работает как обычный Prop.
 []3.8 Пропы должны ускоряться волнами, но не синхронизировать скорость.
 
 Структура карты

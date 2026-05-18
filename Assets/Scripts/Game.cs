@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
     public WaveFactory waveFactory; 
     public WaveStarter waveStarter;
     public EnemyFactory enemyFactory;
+    public PropFactory propFactory;
     
     public Map map;
 
@@ -25,6 +26,7 @@ public class Game : MonoBehaviour
         input.Init(this);
         waveFactory.Init(this);
         enemyFactory.Init(this);
+        propFactory.Init(this);
         waveStarter.Init(this);
         session.Init(this);
 
