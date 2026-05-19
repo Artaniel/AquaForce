@@ -211,14 +211,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1345812596869810809}
     - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
-      propertyPath: map
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
-      propertyPath: library
-      value: 
-      objectReference: {fileID: 11400000, guid: b3858dd8375e43a49b16fa218c7be3fc, type: 2}
-    - target: {fileID: 7466004644467061891, guid: 74b235898fff4104f985b9b721bd9122, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1530039104}

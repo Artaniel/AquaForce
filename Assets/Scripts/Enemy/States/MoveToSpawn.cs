@@ -13,13 +13,13 @@ public class MoveToSpawn : AiState
         _ai.agent.nextPosition = _owner.transform.position;
         if (!_ai.agent.hasPath) {
             _ai.targetGem.isCarried = false;
-            _ai.targetGem.transform.parent = null;
+            _ai.targetGem.transform.parent = _game.map.transform;
             _ai.SetState<Idle>();
             return;
         }
         if (_ai.agent.remainingDistance < 0.5f) {
             _ai.targetGem.isCarried = false;
-            _ai.targetGem.transform.parent = null;
+            _ai.targetGem.transform.parent = _game.map.transform;
             _ai.targetGem.IsDelivered = true;
             _ai.StealGem(_ai.targetGem);
             _ai.SetState<Idle>();
