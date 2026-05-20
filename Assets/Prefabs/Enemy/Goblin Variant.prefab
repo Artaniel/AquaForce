@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2177975098610369695, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4347511602766587445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: damagePerSpeed
       value: 0.002
@@ -36,6 +40,10 @@ PrefabInstance:
       propertyPath: mainSprite
       value: 
       objectReference: {fileID: 9200224597958938401}
+    - target: {fileID: 8535161061466397346, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9212745753176637732, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour , IHealthy
     public Rigidbody2D enemyRigidbody;
     public CircleCollider2D enemyCollider;    
     public Transform mainSprite;
+    public Animator animator;
 
     void Start() {
         if (_factory) return;
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour , IHealthy
         damageAcceptor.Init(_game, this);
         ai.Init(_game, this);
         poise.Init(_game, this);
+        animator.SetFloat("Poise", 1f);
     }
 
     public void NonLetalDamage() {

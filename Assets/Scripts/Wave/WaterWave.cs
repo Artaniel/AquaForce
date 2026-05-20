@@ -20,6 +20,7 @@ public class WaterWave : MonoBehaviour
     public void Init(Game game) {
         _game = game;
         lastPosition = transform.position;
+        trail.Clear();
     }
 
     public void Release() {

@@ -8,6 +8,7 @@ public class MoveToGem : AiState
 
     public override void StopState() {
         _ai.agent.destination = _owner.transform.position;
+        _ai.targetGem.isReserved = false;
     }
 
     public override void UpdateState() {
