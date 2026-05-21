@@ -35,6 +35,9 @@ public class Game : MonoBehaviour
 
     private void Update() {
         input.ManualUpdate();
+    }
+    
+    private void FixedUpdate() {
         waveStarter.ManualUpdate();
         waveFactory.ManualUpdate();
     }

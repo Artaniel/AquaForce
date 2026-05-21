@@ -17,10 +17,14 @@ public class WaterWave : MonoBehaviour
     public float forceModifier = 1f;
     public float releasedDecaySpeed = 1f;
 
+    private Material material;
+    public MeshRenderer sphereMeshRenderer;
+
     public void Init(Game game) {
         _game = game;
         lastPosition = transform.position;
         trail.Clear();
+        material = sphereMeshRenderer.material;
     }
 
     public void Release() {
@@ -31,6 +35,12 @@ public class WaterWave : MonoBehaviour
     }
 
     private void Update() {
+     
+        material.SetFloat("StreachValue", velocity.magnitude * 1000f);
+        material.SetVector("Direction", velocity.normalized);   
+    }
+
+    private void FixedUpdate() {
         MassUpdate();
         ForceFieldUpdate();  
     }

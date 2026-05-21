@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   agent: {fileID: 8243836182171425709}
   targetGem: {fileID: 0}
-  moveForce: 5
+  moveForce: 20
 --- !u!195 &8243836182171425709
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   poise: 1
   dragMultiplier: 5
   recoveryRate: 0.1
-  damagePerSpeed: 0.001
+  damagePerSpeed: 0.01
 --- !u!1 &8535161061466397346
 GameObject:
   m_ObjectHideFlags: 0

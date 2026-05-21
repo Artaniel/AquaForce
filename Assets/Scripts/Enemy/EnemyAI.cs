@@ -36,14 +36,14 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void SetState<T>() where T : AiState {
-        Debug.Log($"SetState {typeof(T)}");
+        //Debug.Log($"SetState {typeof(T)}");
         AiState newState = states[typeof(T)];
         currentState?.StopState();
         newState.StartState();
         currentState = newState;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         currentState?.UpdateState();
     }
 
