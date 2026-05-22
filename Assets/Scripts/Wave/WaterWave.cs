@@ -3,7 +3,7 @@
 public class WaterWave : MonoBehaviour
 {
     private Game _game;
-    public Transform sphere;
+    public Transform view;
     public TrailRenderer trail;
     public float positionLerpFactor = 0.1f;
     private Vector3 lastPosition;
@@ -55,7 +55,7 @@ public class WaterWave : MonoBehaviour
             ControledMassUpdate();
 
         lastPosition = transform.position;
-        sphere.localScale = maxScale * waveRigidbidy.mass / maxMass * Vector3.one;
+        view.localScale = maxScale * waveRigidbidy.mass / maxMass * Vector3.one;
         trail.widthMultiplier = maxScale * waveRigidbidy.mass / maxMass;     
     }
 
@@ -74,7 +74,7 @@ public class WaterWave : MonoBehaviour
     }
 
     private void ForceFieldUpdate() {
-        float waveRadius = sphere.localScale.x / 2 + 0.5f; 
+        float waveRadius = view.localScale.x / 2 + 0.5f; 
         foreach (Enemy enemy in _game.enemyFactory.enemies) {
             if (!enemy) continue;
             if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;

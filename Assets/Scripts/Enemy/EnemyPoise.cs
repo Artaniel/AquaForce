@@ -60,4 +60,8 @@ public class EnemyPoise : MonoBehaviour
             _enemy.animator.transform.DORotate(new Vector3(0, 0, 360), 0.5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
         }
     }
+
+    private void OnDestroy() {
+        _enemy.animator.transform.DOKill();
+    }
 }
