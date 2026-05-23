@@ -71,6 +71,9 @@ public class WaterWave : MonoBehaviour
     private void ControledMassUpdate() {
         if (velocity.magnitude != 0) 
             waveRigidbidy.mass += massGainSpeed * Time.deltaTime;
+        
+        if (waveRigidbidy.mass > maxMass)
+            waveRigidbidy.mass = maxMass;
     }
 
     private void ForceFieldUpdate() {
