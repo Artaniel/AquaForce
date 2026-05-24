@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   maxMass: 1000
   maxScale: 100
-  massGainSpeed: 50
+  massGainSpeed: 30
   massDecayPerDistance: 5
   forceModifier: 0.1
   releasedDecaySpeed: 10

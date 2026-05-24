@@ -493,7 +493,7 @@ MonoBehaviour:
   poise: 1
   dragMultiplier: 5
   recoveryRate: 0.1
-  damagePerSpeed: 0.01
+  damagePerSpeed: 0.001
 --- !u!1 &8535161061466397346
 GameObject:
   m_ObjectHideFlags: 0

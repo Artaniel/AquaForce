@@ -32,8 +32,8 @@ public class EnemyPoise : MonoBehaviour
         return forceMultiplier;
     }
 
-    public void TakeDamage(float speed) {
-        poise -= speed * damagePerSpeed;
+    public void TakeDamage(float speed, float mass, float poiseDamageModifier = 1f) {
+        poise -= speed * damagePerSpeed * mass * poiseDamageModifier;
         poise = Mathf.Max(0f, poise);
         RefreshView();
     }

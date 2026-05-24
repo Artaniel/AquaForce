@@ -101,9 +101,10 @@ GameObject:
   m_Component:
   - component: {fileID: 680475979463329210}
   - component: {fileID: 4350911544464072012}
-  - component: {fileID: 7301324506636058161}
+  - component: {fileID: 2716209855312690779}
   - component: {fileID: 6296936356214871773}
   - component: {fileID: 2619796081537684715}
+  - component: {fileID: 4434098678176431469}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -190,7 +191,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &7301324506636058161
+--- !u!114 &2716209855312690779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,12 +200,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 382375021828761775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0452662c3c0d7f408fcddc56d990a75, type: 3}
+  m_Script: {fileID: 11500000, guid: b02accd8823182a44af309ed0e8d89fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prop
-  damager: {fileID: 6296936356214871773}
-  isAffectedByWave: 1
   propRigidbody: {fileID: 2619796081537684715}
+  propCollider: {fileID: 4434098678176431469}
+  mainSprite: {fileID: 680475979463329210}
+  damager: {fileID: 6296936356214871773}
+  velocityFraction: 0.5
 --- !u!114 &6296936356214871773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +234,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -245,6 +248,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &4434098678176431469
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382375021828761775}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &1704454498382765876
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Prop : MonoBehaviour
     public CircleCollider2D propCollider;    
     public Transform mainSprite;
     public Damager damager;
-    public bool isAffectedByWave = false;
+    public float velocityFraction = 0.5f;
 
     void Start() {
         if (_factory) return;

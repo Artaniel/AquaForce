@@ -84,7 +84,14 @@ public class WaterWave : MonoBehaviour
             if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;
             Vector3 deltaVelocity = velocity - (Vector3)enemy.enemyRigidbody.linearVelocity;
             enemy.enemyRigidbody.AddForce(waveRigidbidy.mass * config.forceModifier * deltaVelocity);
-            enemy.poise.TakeDamage(deltaVelocity.magnitude);
+            enemy.poise.TakeDamage(deltaVelocity.magnitude, waveRigidbidy.mass, config.poiseDamageModifier);
+        }
+        
+        foreach (Prop prop in _game.propFactory.props) {
+            if (!prop) continue;
+            if (Vector3.Distance(prop.transform.position, transform.position) > waveRadius) continue;
+            Vector3 deltaVelocity = velocity - (Vector3)prop.propRigidbody.linearVelocity;
+            prop.propRigidbody.AddForce(waveRigidbidy.mass * config.forceModifier * deltaVelocity * prop.velocityFraction);
         }
     }    
 }
