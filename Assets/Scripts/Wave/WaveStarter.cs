@@ -15,9 +15,8 @@ public class WaveStarter : MonoBehaviour
         if (!_game.input.cursorIsPressed) return;
         if (!controledWave) return;
 
-        controledWave.transform.position = Vector3.Lerp(controledWave.transform.position, _game.input.cursorWorldPosition, controledWave.positionLerpFactor);
-        //controledWave.waveRigidbidy.mass = 1f/controledWave.velocity.magnitude;
-        //controledWave.transform.localScale = Vector3.one * controledWave.waveRigidbidy.mass;
+        controledWave.transform.position = Vector3.Lerp(controledWave.transform.position, 
+            _game.input.cursorWorldPosition, _game.waveFactory.config.positionLerpFactor);
     }
 
     private void OnCursorPress(){

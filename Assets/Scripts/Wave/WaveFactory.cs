@@ -4,9 +4,10 @@ using UnityEngine;
 public class WaveFactory : MonoBehaviour
 {
     private Game _game;
+    public WaveConfig config;
     public List<WaterWave> waves;
     public WaterWave controledWave;
-    public WaterWave wavePrfab;
+    public WaterWave wavePrfab;    
 
     public void Init(Game game) {
         _game = game;

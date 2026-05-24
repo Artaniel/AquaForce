@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f3c7c8cc8339e4cb570df0d15f0913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveFactory
+  config: {fileID: 11400000, guid: 6b771031ed45a8f41af7079f825f70ab, type: 2}
   waves: []
   controledWave: {fileID: 0}
   wavePrfab: {fileID: 6271849864065912861, guid: 4e5e5080a27663e428879a98c5f16eea, type: 3}

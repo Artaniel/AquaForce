@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd3ba4654aa289419d0b5c6571c7e9b, type: 3}
   m_Name: WaveConfig
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
-  massGainSpeed: 1
+  maxMass: 1000
+  maxScale: 100
+  massGainSpeed: 50
+  massDecayPerDistance: 5
+  forceModifier: 0.1
+  releasedDecaySpeed: 10
+  positionLerpFactor: 0.1
