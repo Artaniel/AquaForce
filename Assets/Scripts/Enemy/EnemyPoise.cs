@@ -40,6 +40,9 @@ public class EnemyPoise : MonoBehaviour
 
     private void RefreshView() {
         _enemy.mainSprite.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
+        if (poise < 0.1f) {
+            _enemy.ai.DropGem();
+        }
 
         if (!_enemy.animator.gameObject.activeSelf) return;
         
@@ -58,6 +61,7 @@ public class EnemyPoise : MonoBehaviour
         }        
         if (newState == 2) {
             _enemy.animator.transform.DORotate(new Vector3(0, 0, 360), 0.5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+            
         }
     }
 

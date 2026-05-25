@@ -54,4 +54,22 @@ public class EnemyAI : MonoBehaviour
     public void StealGem(Gem gem) {
         _game.session.StealGem(gem);
     }
+
+    public void TakeGem() {
+        targetGem.isReserved = false;
+        targetGem.isCarried = true;
+        targetGem.transform.parent = _enemy.transform;
+        targetGem.gemRigidbody.simulated = false;
+    }
+
+    public void DropGem() {
+        if (currentState != states[typeof(MoveToSpawn)]) return;
+        if (!targetGem) return;
+        
+        targetGem.isReserved = false;
+        targetGem.isCarried = false;
+        targetGem.transform.parent = null;
+        targetGem.gemRigidbody.simulated = true;   
+        SetState<Idle>();
+    }
 }

@@ -17,13 +17,11 @@ public class MoveToGem : AiState
             _ai.SetState<Idle>();
             return;
         }
-        if ( Vector3.Distance(_owner.transform.position, _ai.targetGem.transform.position) < 0.5f) {
-            _ai.targetGem.isCarried = true;
-            _ai.targetGem.transform.parent = _owner.transform;
+        if ( Vector3.Distance(_owner.transform.position, _ai.targetGem.transform.position) < 1f) {
+            _ai.TakeGem();
             _ai.SetState<MoveToSpawn>();
             return;
         }
-        _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);
-        
+        _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);        
     }
 }

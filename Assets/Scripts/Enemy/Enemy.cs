@@ -33,8 +33,7 @@ public class Enemy : MonoBehaviour , IHealthy
         
     }
 
-    public void Death() {
-        Debug.Log("Death");
+    public void Death() {        
         _game.session.EnemyKilled();
         _factory.Destroy(this);
     }
