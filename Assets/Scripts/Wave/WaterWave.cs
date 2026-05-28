@@ -5,27 +5,22 @@ public class WaterWave : MonoBehaviour
     private Game _game;
     public Transform view;
     public TrailRenderer trail;
-    //public float positionLerpFactor = 0.1f;
     private Vector3 lastPosition;
     private bool isReleased;
     public Vector3 velocity;
     public Rigidbody2D waveRigidbidy;
-    //public float maxMass = 100f;
-    //public float maxScale = 10f;
-    //public float massGainSpeed = 1f;
-    //public float massDecayPerDistance = 1f;
-    //public float forceModifier = 1f;
-    //public float releasedDecaySpeed = 1f;
     private WaveConfig config => _game.waveFactory.config;
 
     private Material material;
     public MeshRenderer sphereMeshRenderer;
+    public WaveParticles waveParticles;
 
     public void Init(Game game) {
         _game = game;
         lastPosition = transform.position;
         trail.Clear();
         material = sphereMeshRenderer.material;
+        waveParticles.Init(this);
     }
 
     public void Release() {

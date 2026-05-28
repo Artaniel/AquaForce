@@ -19,12 +19,12 @@ public class WaveStarter : MonoBehaviour
             _game.input.cursorWorldPosition, _game.waveFactory.config.positionLerpFactor);
     }
 
-    private void OnCursorPress(){
+    private void OnCursorPress() {
         _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
     }
 
-    private void OnCursorRelease(){        
-        controledWave?.Release();
+    private void OnCursorRelease() {
+        controledWave?.Release(); 
     }
 
     void OnDestroy() {
