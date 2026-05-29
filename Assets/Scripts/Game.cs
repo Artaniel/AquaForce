@@ -31,6 +31,7 @@ public class Game : MonoBehaviour
         session.Init(this);
 
         session.SessionStart();
+        
     }
 
     private void Update() {

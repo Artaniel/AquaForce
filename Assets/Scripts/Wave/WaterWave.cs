@@ -52,7 +52,8 @@ public class WaterWave : MonoBehaviour
 
         lastPosition = transform.position;
         view.localScale = config.maxScale * waveRigidbidy.mass / config.maxMass * Vector3.one;
-        trail.widthMultiplier = config.maxScale * waveRigidbidy.mass / config.maxMass;     
+        trail.widthMultiplier = config.maxScale * waveRigidbidy.mass / config.maxMass;   
+        waveParticles.RefreshParticleCloudRadius(view.localScale.x / 2f);
     }
 
     private void ReleasedMassUpdate() { 

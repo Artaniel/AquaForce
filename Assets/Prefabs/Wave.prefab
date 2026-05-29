@@ -200,11 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f302eb340e153374897e362e50b96460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterWave
-  view: {fileID: 8102271546182823420}
+  view: {fileID: 4357423391414163350}
   trail: {fileID: 7663657643898831190}
   velocity: {x: 0, y: 0, z: 0}
   waveRigidbidy: {fileID: 4719491305139851746}
   sphereMeshRenderer: {fileID: 5650125561440323583}
+  waveParticles: {fileID: 4443903162035917776}
 --- !u!50 &4719491305139851746
 Rigidbody2D:
   serializedVersion: 5
@@ -243,6 +244,7 @@ GameObject:
   - component: {fileID: 726179069993673391}
   - component: {fileID: 5350140900352275160}
   - component: {fileID: 7274109577417428239}
+  - component: {fileID: 4443903162035917776}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -900,7 +902,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.49
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -5035,7 +5037,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5068,6 +5070,19 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &4443903162035917776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462623972252465495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09c610e69b7ab4468e8fa9e490505f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveParticles
+  particles: {fileID: 5350140900352275160}
 --- !u!1 &7272084230755176217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,7 +5274,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
