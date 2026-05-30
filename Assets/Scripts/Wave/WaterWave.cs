@@ -66,6 +66,7 @@ public class WaterWave : MonoBehaviour
     }
 
     private void ControledMassUpdate() {
+        waveRigidbidy.linearVelocity = velocity;
         if (velocity.magnitude != 0) 
             waveRigidbidy.mass += config.massGainSpeed * Time.deltaTime;
         
