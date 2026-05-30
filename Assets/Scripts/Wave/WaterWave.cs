@@ -67,6 +67,7 @@ public class WaterWave : MonoBehaviour
 
     private void ControledMassUpdate() {
         waveRigidbidy.linearVelocity = velocity;
+        waveParticles.transform.rotation = Quaternion.LookRotation(Vector3.forward, -velocity);
         if (velocity.magnitude != 0) 
             waveRigidbidy.mass += config.massGainSpeed * Time.deltaTime;
         
