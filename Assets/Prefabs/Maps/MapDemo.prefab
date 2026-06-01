@@ -222,7 +222,9 @@ MonoBehaviour:
   - {fileID: 4432969653837305711}
   - {fileID: 7110079826348558168}
   spawner: {fileID: 3627060374834948988}
-  spawnWaves: []
+  spawnWaves:
+  - {fileID: 11400000, guid: 8607d8e0735ca6e4093ef3866095143e, type: 2}
+  - {fileID: 11400000, guid: 8607d8e0735ca6e4093ef3866095143e, type: 2}
 --- !u!1001 &270532556758902221
 PrefabInstance:
   m_ObjectHideFlags: 0

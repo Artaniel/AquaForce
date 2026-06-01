@@ -6,7 +6,7 @@ public class Session : MonoBehaviour
     private Game _game;
     private List<Gem> savedGems;
     private List<Gem> stolenGems;
-    private List<SpawnWave> completedWaves;
+    private List<SpawnWave> wavesToSpawn;
     private float sessionStartTime;
     private int currentMapIndex = 0;
     
@@ -19,16 +19,17 @@ public class Session : MonoBehaviour
         _game.map.Init(_game);
         savedGems = _game.map.gems;
         stolenGems = new List<Gem>();
-        completedWaves = new();
+        wavesToSpawn = new List<SpawnWave>(_game.map.spawnWaves);
         sessionStartTime = Time.time;
         _game.ui.RefreshCounts();
     }
 
     private void Update() {
-        foreach (SpawnWave spawWave in _game.map.spawnWaves) {
-            if (completedWaves.Contains(spawWave)) continue;
-            if (spawWave.launchTime >= Time.time - sessionStartTime) {
+        foreach (SpawnWave spawWave in wavesToSpawn) {
+            if (Time.time - sessionStartTime >= spawWave.launchTime) {
                 LaunchWave(spawWave);
+                wavesToSpawn.Remove(spawWave);
+                break;
             }
         }
     }
@@ -37,7 +38,6 @@ public class Session : MonoBehaviour
         foreach(Enemy prefab in spawWave.prefabs) {
             _game.enemyFactory.Spawn(prefab);
         }
-        completedWaves.Add(spawWave);
     }
 
     public void SessionEnd() { 

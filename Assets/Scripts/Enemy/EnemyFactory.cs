@@ -28,5 +28,6 @@ public class EnemyFactory : MonoBehaviour
         Enemy enemy = Instantiate(prefab, _game.map.spawner.transform.position, Quaternion.identity);
         enemies.Add(enemy);
         enemy.Init(_game, this);
+        enemy.transform.SetParent(_game.map.transform);
     }
 }
