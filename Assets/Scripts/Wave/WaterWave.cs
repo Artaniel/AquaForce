@@ -10,17 +10,16 @@ public class WaterWave : MonoBehaviour
     public Vector3 velocity;
     public Rigidbody2D waveRigidbidy;
     private WaveConfig config => _game.waveFactory.config;
-
-    private Material material;
     public MeshRenderer sphereMeshRenderer;
     public WaveParticles waveParticles;
+    public WaveShader waveShader;
 
     public void Init(Game game) {
         _game = game;
         lastPosition = transform.position;
         trail.Clear();
-        material = sphereMeshRenderer.material;
         waveParticles.Init(this);
+        waveShader.Init(this);
     }
 
     public void Release() {
@@ -31,9 +30,7 @@ public class WaterWave : MonoBehaviour
     }
 
     private void Update() {
-     
-        material.SetFloat("StreachValue", velocity.magnitude * 1000f);
-        material.SetVector("Direction", velocity.normalized);   
+      
     }
 
     private void FixedUpdate() {
