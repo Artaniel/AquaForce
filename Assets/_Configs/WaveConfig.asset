@@ -19,4 +19,4 @@ MonoBehaviour:
   forceModifier: 1
   releasedDecaySpeed: 10
   positionLerpFactor: 0.1
-  poiseDamageModifier: 0.001
+  poiseDamageModifier: 0.1
