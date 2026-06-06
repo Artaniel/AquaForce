@@ -12,6 +12,7 @@ public class MoveToGem : AiState
     }
 
     public override void UpdateState() {
+        _ai.agent.destination = _ai.targetGem.transform.position;
         _ai.agent.nextPosition = _owner.transform.position;
         if (!_ai.agent.hasPath) {
             _ai.SetState<Idle>();

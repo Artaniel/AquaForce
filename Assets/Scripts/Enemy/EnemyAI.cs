@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     public NavMeshAgent agent;
     public Gem targetGem;
     public Dictionary<Type, AiState> states;
-    private AiState currentState;
+    public AiState currentState;
     public float moveForce = 0.1f;
 
     public void Init(Game game, Enemy enemy) {

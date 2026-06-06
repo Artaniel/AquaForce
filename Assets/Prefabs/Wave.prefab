@@ -5097,7 +5097,7 @@ GameObject:
   - component: {fileID: 6143173653697363940}
   - component: {fileID: 1125195345831271383}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: SpriteShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5190,4 +5190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveShader
   mainSprite: {fileID: 6143173653697363940}
-  shiftMultiplier: -0.3
+  shiftMultiplier: -0.1

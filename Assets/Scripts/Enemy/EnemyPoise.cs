@@ -56,6 +56,7 @@ public class EnemyPoise : MonoBehaviour
         lastStateId = newState;
         _enemy.animator.transform.DOKill();    
         _enemy.animator.transform.rotation = Quaternion.identity;
+        //Debug.Log($"State: {newState}, Current state: {_enemy.ai.currentState?.GetType().Name}");
         if (newState == 0) {
             _enemy.animator.transform.DOLocalMoveY(0.15f, 0.3f).SetLoops(-1, LoopType.Yoyo);
         }        

@@ -14,7 +14,6 @@ public class WaveShader : MonoBehaviour
 
     private void Update() {        
         Vector2 shift = new Vector2(_wave.transform.position.x * shiftMultiplier, _wave.transform.position.y * shiftMultiplier);
-        Debug.Log(shift);
         material.SetVector("_shift", shift);
     }
 }
