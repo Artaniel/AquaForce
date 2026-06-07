@@ -1,5 +1,4 @@
 using UnityEngine;
-using DG.Tweening;
 
 public class EnemyPoise : MonoBehaviour
 {  
@@ -10,20 +9,17 @@ public class EnemyPoise : MonoBehaviour
     public float dragMultiplier = 1f;
     public float recoveryRate = 0.1f;
     public float damagePerSpeed = 1f;
-    private int lastStateId = -1;
 
     public void Init(Game game, Enemy enemy) {
         _game = game;
-        _enemy = enemy;
-        
-        _enemy.animator.SetFloat("Poise", 1f);
+        _enemy = enemy;        
     }
     
     public void Update() {
         poise += recoveryRate * Time.deltaTime; 
         poise = Mathf.Clamp01(poise);
         _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;
-        RefreshView();
+        _enemy.view.Refresh(poise);
     }
 
     public float GetForceMultiplier() {
@@ -33,40 +29,9 @@ public class EnemyPoise : MonoBehaviour
     }
 
     public void TakeDamage(float speed, float mass, float poiseDamageModifier = 1f) {
+        Debug.Log($"TakeDamage: {speed} {mass} {poiseDamageModifier}");
         poise -= speed * damagePerSpeed * mass * poiseDamageModifier;
         poise = Mathf.Max(0f, poise);
-        RefreshView();
-    }
-
-    private void RefreshView() {
-        _enemy.mainSprite.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
-        if (poise < 0.1f) {
-            _enemy.ai.DropGem();
-        }
-
-        if (!_enemy.animator.gameObject.activeSelf) return;
-        
-        _enemy.animator.SetFloat("Poise", poise);
-
-        AnimatorStateInfo stateInfo = _enemy.animator.GetCurrentAnimatorStateInfo(0);
-        int newState = 0;
-        if (stateInfo.IsName("Goblin2")) newState = 1;
-        if (stateInfo.IsName("Goblin3")) newState = 2;
-        if (newState == lastStateId) return;
-        lastStateId = newState;
-        _enemy.animator.transform.DOKill();    
-        _enemy.animator.transform.rotation = Quaternion.identity;
-        //Debug.Log($"State: {newState}, Current state: {_enemy.ai.currentState?.GetType().Name}");
-        if (newState == 0) {
-            _enemy.animator.transform.DOLocalMoveY(0.15f, 0.3f).SetLoops(-1, LoopType.Yoyo);
-        }        
-        if (newState == 2) {
-            _enemy.animator.transform.DORotate(new Vector3(0, 0, 360), 0.5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
-            
-        }
-    }
-
-    private void OnDestroy() {
-        _enemy.animator.transform.DOKill();
+        _enemy.view.Refresh(poise);
     }
 }

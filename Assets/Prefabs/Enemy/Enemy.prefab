@@ -39,6 +39,7 @@ Transform:
   - {fileID: 4249367411598172274}
   - {fileID: 6463473349714085842}
   - {fileID: 15177197544048665}
+  - {fileID: 5458684731987909319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7934608476270989434
@@ -60,7 +61,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 4776215822620831341}
   enemyCollider: {fileID: 1974175347018137709}
   mainSprite: {fileID: 8034077184770669000}
-  animator: {fileID: 1697576332254523380}
+  view: {fileID: 2322468892975368339}
 --- !u!50 &4776215822620831341
 Rigidbody2D:
   serializedVersion: 5
@@ -297,6 +298,51 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &3535803674641853460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5458684731987909319}
+  - component: {fileID: 2322468892975368339}
+  m_Layer: 6
+  m_Name: View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5458684731987909319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3535803674641853460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9212745753176637732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2322468892975368339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3535803674641853460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ad8ebcb1da92947ba55a6f921692a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyView
+  animator: {fileID: 1697576332254523380}
 --- !u!1 &4404677239889544723
 GameObject:
   m_ObjectHideFlags: 0

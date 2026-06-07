@@ -1,16 +1,18 @@
 using UnityEngine;
-public abstract class AiState
+
+public abstract class ViewState
 {
     protected Enemy _owner;
     protected Game _game;
-    protected EnemyAI _ai;
+    protected EnemyView _view;
     public abstract void StartState();
     public abstract void StopState();
-    public abstract void UpdateState();
+    public abstract void RefreshState(float poise);
+    public abstract int GetStateId();
 
     public void Init(Game game, Enemy owner) {
         _game = game;
         _owner = owner;
-        _ai = _owner.ai;
+        _view = _owner.view;
     }
 }
