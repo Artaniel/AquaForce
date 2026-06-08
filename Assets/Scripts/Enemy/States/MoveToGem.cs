@@ -18,7 +18,9 @@ public class MoveToGem : AiState
             _ai.SetState<Idle>();
             return;
         }
-        if ( Vector3.Distance(_owner.transform.position, _ai.targetGem.transform.position) < 1f) {
+        if ( Vector3.Distance(_owner.transform.position, _ai.targetGem.transform.position) < 1f &&
+            _owner.poise.poise >= _owner.view.poiseStruggleThreshold 
+            ) {
             _ai.TakeGem();
             _ai.SetState<MoveToSpawn>();
             return;

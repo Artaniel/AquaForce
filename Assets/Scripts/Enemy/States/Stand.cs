@@ -18,4 +18,10 @@ public class Stand : ViewState
     }
 
     public override int GetStateId() => 0;
+
+    public override void FixedUpdateState() {
+        if (_view.IsWalkableAIState()) {
+            _view.SetState<Walk>();
+        }
+    }
 }

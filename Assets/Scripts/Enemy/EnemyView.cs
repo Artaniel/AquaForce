@@ -25,7 +25,7 @@ public class EnemyView : MonoBehaviour
         foreach (ViewState state in states.Values) {
             state.Init(game, enemy);
         }
-        SetState<Walk>();
+        SetState<Stand>();
     }
 
     public void SetState<T>() where T : ViewState {
@@ -35,14 +35,21 @@ public class EnemyView : MonoBehaviour
         currentState.StartState();
     }
 
+    public void FixedUpdate() {
+        currentState?.FixedUpdateState();
+    }
+
     public void Refresh(float poise) {
-        Debug.Log($"EnemyView.Refresh: {poise}");
-        if (!animator.gameObject.activeSelf) return;
-        animator.SetInteger("StateId", currentState.GetStateId());        
+        if (!animator.gameObject.activeSelf) return;    
         currentState.RefreshState(poise);
+        animator.SetInteger("StateId", currentState.GetStateId());    
     }
 
     private void OnDestroy() {
         animator.transform.DOKill();
+    }
+
+    public bool IsWalkableAIState(){
+        return _enemy.ai.currentState is MoveToGem or MoveToSpawn;
     }
 }

@@ -20,4 +20,6 @@ public class Struggle : ViewState
     }
 
     public override int GetStateId() => 2;
+
+    public override void FixedUpdateState() {}
 }

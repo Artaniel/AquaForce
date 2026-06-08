@@ -19,4 +19,6 @@ public class Fall : ViewState
     }
 
     public override int GetStateId() => 3;
+
+    public override void FixedUpdateState() {}
 }

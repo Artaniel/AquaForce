@@ -20,6 +20,7 @@ public class EnemyPoise : MonoBehaviour
         poise = Mathf.Clamp01(poise);
         _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;
         _enemy.view.Refresh(poise);
+        _enemy.mainSprite.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
     }
 
     public float GetForceMultiplier() {
@@ -29,9 +30,11 @@ public class EnemyPoise : MonoBehaviour
     }
 
     public void TakeDamage(float speed, float mass, float poiseDamageModifier = 1f) {
-        Debug.Log($"TakeDamage: {speed} {mass} {poiseDamageModifier}");
         poise -= speed * damagePerSpeed * mass * poiseDamageModifier;
         poise = Mathf.Max(0f, poise);
         _enemy.view.Refresh(poise);
+        if (poise <= _enemy.view.poiseFallThreshold) {
+            _enemy.ai.DropGem();
+        }
     }
 }

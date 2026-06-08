@@ -41,5 +41,6 @@ public class Enemy : MonoBehaviour , IHealthy
     private void OnValidate() {
         if (!enemyRigidbody) enemyRigidbody = GetComponent<Rigidbody2D>();
         if (!enemyCollider) enemyCollider = GetComponent<CircleCollider2D>();
+        if (!view) view = GetComponentInChildren<EnemyView>();
     }
 }

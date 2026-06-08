@@ -65,6 +65,7 @@ public class EnemyAI : MonoBehaviour
     public void DropGem() {
         if (currentState != states[typeof(MoveToSpawn)]) return;
         if (!targetGem) return;
+        if (!targetGem.isCarried) return;
         
         targetGem.isReserved = false;
         targetGem.isCarried = false;
