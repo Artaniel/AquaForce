@@ -9,17 +9,17 @@ public class WaterWave : MonoBehaviour
     private bool isReleased;
     public Vector3 velocity;
     public Rigidbody2D waveRigidbidy;
-    private WaveConfig config => _game.waveFactory.config;
-    public MeshRenderer sphereMeshRenderer;
+    [HideInInspector] public WaveConfig config => _game.waveFactory.config;
     public WaveParticles waveParticles;
-    public WaveShader waveShader;
+
+    public WaveView waveView;
 
     public void Init(Game game) {
         _game = game;
         lastPosition = transform.position;
         trail.Clear();
         waveParticles.Init(this);
-        waveShader.Init(this);
+        waveView.Init(this);
     }
 
     public void Release() {
