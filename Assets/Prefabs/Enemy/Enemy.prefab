@@ -124,7 +124,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &6168988443733733081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 756017207724385268}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.5
   m_Speed: 1
   m_Acceleration: 0
   avoidancePriority: 50
@@ -343,6 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyView
   animator: {fileID: 1697576332254523380}
+  poiseFallThreshold: 0.1
+  poiseStruggleThreshold: 0.5
 --- !u!1 &4404677239889544723
 GameObject:
   m_ObjectHideFlags: 0
