@@ -11,4 +11,6 @@ public class WaveConfig : ScriptableObject
     public float releasedDecaySpeed = 10f;
     public float positionLerpFactor = 0.1f;
     public float poiseDamageModifier = 0.1f;
+    public float rotationSpeedBase = 1f;
+    public float rotationSpeedPerMass = 1f;
 }

@@ -5036,13 +5036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f302eb340e153374897e362e50b96460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterWave
-  view: {fileID: 8613643735872980700}
+  view: {fileID: 5832474283926704324}
   trail: {fileID: 7663657643898831190}
   velocity: {x: 0, y: 0, z: 0}
   waveRigidbidy: {fileID: 4719491305139851746}
-  sphereMeshRenderer: {fileID: 0}
   waveParticles: {fileID: 4443903162035917776}
-  waveView: {fileID: 2510822940831284494}
+  waveView: {fileID: 992748474115511389}
 --- !u!50 &4719491305139851746
 Rigidbody2D:
   serializedVersion: 5
@@ -5080,7 +5079,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8613643735872980700}
   - component: {fileID: 7406572741940294564}
-  - component: {fileID: 2510822940831284494}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -5098,7 +5096,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5832474283926704324}
@@ -5162,21 +5160,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2510822940831284494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4047760221153569038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e02107caab3b524da62f4c15011b3ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaveView
-  spriteTransform: {fileID: 5832474283926704324}
-  rotationSpeedBase: 1
-  rotationSpeedPerMass: 1
 --- !u!1 &6462623972252465495
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,6 +10022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5832474283926704324}
+  - component: {fileID: 992748474115511389}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -10062,3 +10046,16 @@ Transform:
   - {fileID: 8613643735872980700}
   m_Father: {fileID: 8197941442887545818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992748474115511389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282862107213025498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e02107caab3b524da62f4c15011b3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveView
+  spriteTransform: {fileID: 8613643735872980700}
