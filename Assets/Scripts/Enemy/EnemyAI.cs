@@ -69,7 +69,7 @@ public class EnemyAI : MonoBehaviour
         
         targetGem.isReserved = false;
         targetGem.isCarried = false;
-        targetGem.transform.parent = null;
+        targetGem.transform.parent = _game.map.transform;
         targetGem.gemRigidbody.simulated = true;   
         SetState<Idle>();
     }
