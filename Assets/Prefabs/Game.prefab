@@ -133,6 +133,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFactory
   enemies: []
+--- !u!1 &3628193187004019582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4403516682308171366}
+  - component: {fileID: 480518761078943980}
+  m_Layer: 0
+  m_Name: SDK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4403516682308171366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628193187004019582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7544871967948703337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480518761078943980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628193187004019582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8335019145048004b9e7b301ea7b9d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SdkAdapter
 --- !u!1 &4807743870156635930
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +354,7 @@ Transform:
   - {fileID: 392830291700980326}
   - {fileID: 5254959605878921925}
   - {fileID: 7450559025147748954}
+  - {fileID: 4403516682308171366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7466004644467061891
@@ -333,5 +378,6 @@ MonoBehaviour:
   waveStarter: {fileID: 260130479497480185}
   enemyFactory: {fileID: 2299124743444110154}
   propFactory: {fileID: 3720026387923604367}
+  sdkAdapter: {fileID: 480518761078943980}
   map: {fileID: 0}
   library: {fileID: 11400000, guid: b3858dd8375e43a49b16fa218c7be3fc, type: 2}

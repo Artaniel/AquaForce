@@ -32,4 +32,9 @@ public class WaveFactory : MonoBehaviour
         waves.Remove(wave);
         Destroy(wave.gameObject);
     }
+
+    public void DestroyAll() {
+        while (waves.Count>0)
+            DestroyWave(waves[0]);
+    }
 }

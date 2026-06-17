@@ -22,6 +22,8 @@ public class Session : MonoBehaviour
         wavesToSpawn = new List<SpawnWave>(_game.map.spawnWaves);
         sessionStartTime = Time.time;
         _game.ui.RefreshCounts();
+        Time.timeScale = 1;
+        _game.sdkAdapter.GameplayStart();
     }
 
     private void Update() {
@@ -42,6 +44,9 @@ public class Session : MonoBehaviour
 
     public void SessionEnd() { 
         Destroy(_game.map.gameObject);
+        _game.waveFactory.DestroyAll();
+        Time.timeScale = 0;
+        _game.sdkAdapter.GameplayStop();
     }
 
     public void StealGem(Gem gem) {

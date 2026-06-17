@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     public WaveStarter waveStarter;
     public EnemyFactory enemyFactory;
     public PropFactory propFactory;
+    public SdkAdapter sdkAdapter;
     
     public Map map;
 
@@ -22,6 +23,7 @@ public class Game : MonoBehaviour
     private void Awake() {
         instance = this;
         mainCamera = Camera.main;
+        sdkAdapter.Init(this);
         ui.Init(this);
         input.Init(this);
         waveFactory.Init(this);
@@ -29,6 +31,7 @@ public class Game : MonoBehaviour
         propFactory.Init(this);
         waveStarter.Init(this);
         session.Init(this);
+        
 
         session.SessionStart();
         

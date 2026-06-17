@@ -23,8 +23,9 @@ public class WaterWave : MonoBehaviour
     }
 
     public void Release() {
+        if (!waveRigidbidy) return;
         isReleased = true;
-        _game.waveFactory.ReleaseWave();
+        _game.waveFactory.ReleaseWave();        
         waveRigidbidy.simulated = true;
         waveRigidbidy.linearVelocity = velocity;
     }
