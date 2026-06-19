@@ -20,5 +20,5 @@ MonoBehaviour:
   releasedDecaySpeed: 10
   positionLerpFactor: 0.1
   poiseDamageModifier: 0.1
-  rotationSpeedBase: 10
-  rotationSpeedPerMass: 1
+  rotationSpeedBase: 0
+  rotationSpeedPerMass: 0
