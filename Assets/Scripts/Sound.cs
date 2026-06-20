@@ -11,8 +11,6 @@ public class Sound : MonoBehaviour
     public AudioSource bgm;
     public AudioSource win;
     public AudioSource lose;
-    public AudioSource right;
-    public AudioSource wrong;
 
     public void Init(Game game) {
         _game = game;
