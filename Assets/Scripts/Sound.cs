@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -8,9 +6,21 @@ public class Sound : MonoBehaviour
     private Game _game;
     [HideInInspector] public bool isMuted = false;
     public AudioMixer mixer;
-    public AudioSource bgm;
+    
+    public AudioSource onPress;
+    public AudioSource onHold;
+    public AudioSource onRelease;
+
+    public AudioSource onNonDamageHit;
+    public AudioSource barrelHit;
+    public AudioSource cartHit;
+    public AudioSource voidZoneDeath;
+    
+    public AudioSource uiClick;
+    public AudioSource spawn;
     public AudioSource win;
     public AudioSource lose;
+    public AudioSource bgm;
 
     public void Init(Game game) {
         _game = game;
