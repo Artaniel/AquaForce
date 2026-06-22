@@ -31,10 +31,9 @@ public class Game : MonoBehaviour
         propFactory.Init(this);
         waveStarter.Init(this);
         session.Init(this);
-        
+        sound.Init(this);        
 
-        session.SessionStart();
-        
+        session.SessionStart();        
     }
 
     private void Update() {

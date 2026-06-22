@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour , IHealthy
     public CircleCollider2D enemyCollider;    
     public Transform mainSprite;
     public EnemyView view;
+    public EnemySound sound;
 
     void Start() {
         if (_factory) return;
@@ -27,15 +28,17 @@ public class Enemy : MonoBehaviour , IHealthy
         ai.Init(_game, this);
         poise.Init(_game, this);
         view.Init(_game, this);
+        sound.Init(_game, this);
     }
 
     public void NonLetalDamage() {
-        
+        sound.Hit();
     }
 
     public void Death() {        
+        sound.Death();
         _game.session.EnemyKilled();
-        _factory.Destroy(this);
+        _factory.Destroy(this); 
     }
 
     private void OnValidate() {
