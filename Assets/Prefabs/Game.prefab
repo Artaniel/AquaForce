@@ -355,6 +355,7 @@ Transform:
   - {fileID: 5254959605878921925}
   - {fileID: 7450559025147748954}
   - {fileID: 4403516682308171366}
+  - {fileID: 5186658227830958020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7466004644467061891
@@ -372,7 +373,7 @@ MonoBehaviour:
   ui: {fileID: 0}
   session: {fileID: 5092264595784618076}
   mainCamera: {fileID: 0}
-  sound: {fileID: 0}
+  sound: {fileID: 3204417003551623897}
   input: {fileID: 5345437318568029979}
   waveFactory: {fileID: 73172899502805320}
   waveStarter: {fileID: 260130479497480185}
@@ -381,3 +382,61 @@ MonoBehaviour:
   sdkAdapter: {fileID: 480518761078943980}
   map: {fileID: 0}
   library: {fileID: 11400000, guid: b3858dd8375e43a49b16fa218c7be3fc, type: 2}
+--- !u!1 &9095434561030953270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5186658227830958020}
+  - component: {fileID: 3204417003551623897}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5186658227830958020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095434561030953270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7544871967948703337}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3204417003551623897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095434561030953270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6635cfea72da47747af326772c25bfb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sound
+  isMuted: 0
+  mixer: {fileID: 0}
+  onPress: {fileID: 0}
+  onHold: {fileID: 0}
+  onRelease: {fileID: 0}
+  onNonDamageHit: {fileID: 0}
+  barrelHit: {fileID: 0}
+  cartHit: {fileID: 0}
+  voidZoneDeath: {fileID: 0}
+  uiClick: {fileID: 0}
+  spawn: {fileID: 0}
+  win: {fileID: 0}
+  lose: {fileID: 0}
+  bgm: {fileID: 0}
