@@ -10,10 +10,7 @@ public class Sound : MonoBehaviour
     public AudioSource onPress;
     public AudioSource onHold;
     public AudioSource onRelease;
-
-    public AudioSource onNonDamageHit;
-    public AudioSource barrelHit;
-    public AudioSource cartHit;
+    
     public AudioSource voidZoneDeath;
     
     public AudioSource uiClick;
