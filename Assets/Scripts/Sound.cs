@@ -10,6 +10,7 @@ public class Sound : MonoBehaviour
     public AudioSource onPress;
     public AudioSource onHold;
     public AudioSource onRelease;
+    public AudioSource onWaterEnd;
     
     public AudioSource voidZoneDeath;
     
@@ -28,5 +29,50 @@ public class Sound : MonoBehaviour
         float value = isMuted ? 0 : 1;
         float dBValue = Mathf.Log10(value + 0.0001f) * 20;
         mixer.SetFloat("MasterVolume", dBValue);
+        if (isMuted) {
+            onHold.Stop();
+        }
+    }    
+
+    public void OnPress(){
+        if (isMuted) return;
+        onPress.Play();
+        onHold.Play();
     }
+    
+    public void OnRelease(){
+        if (isMuted) return;
+        onRelease.Play();
+        onHold.Stop();
+    }
+
+    public void OnWaterEnd(){
+        if (isMuted) return;
+        onWaterEnd.Play();
+    }
+    
+    public void OnVoidZoneDeath(){
+        if (isMuted) return;
+        voidZoneDeath.Play();
+    }
+    
+    public void OnUIClick(){
+        if (isMuted) return;
+        uiClick.Play();
+    }
+    
+    public void OnSpawn(){
+        if (isMuted) return;
+        spawn.Play();
+    }
+    
+    public void OnWin(){
+        if (isMuted) return;
+        win.Play();
+    }
+    
+    public void OnLose(){
+        if (isMuted) return;
+        lose.Play();
+    }    
 }

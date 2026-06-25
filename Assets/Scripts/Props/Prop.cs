@@ -4,6 +4,8 @@ public class Prop : MonoBehaviour
 {
     private Game _game;
     private PropFactory _factory;
+    public PropSound sound;
+    
     public Rigidbody2D propRigidbody;
     public CircleCollider2D propCollider;    
     public Transform mainSprite;
@@ -12,13 +14,14 @@ public class Prop : MonoBehaviour
 
     void Start() {
         if (_factory) return;
-        Debug.LogWarning("Prop was not inited.");
-        Game.instance.propFactory.Register(this);
+        //Debug.LogWarning("Prop was not inited.");
+        Game.instance.propFactory.Register(this);        
     }
 
     public void Init(Game game, PropFactory factory) {
         _game = game;
         _factory = factory;
+        sound?.Init(game, this);
     }
 
     private void OnValidate() {

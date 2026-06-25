@@ -56,9 +56,8 @@ public class WaterWave : MonoBehaviour
 
     private void ReleasedMassUpdate() { 
         waveRigidbidy.mass -= Time.deltaTime * config.releasedDecaySpeed;     
-        if (waveRigidbidy.mass < 0) 
-            waveRigidbidy.mass = 0;
-        if (waveRigidbidy.mass == 0) {
+        if (waveRigidbidy.mass <= 0.01f) {
+            _game.sound.OnWaterEnd();
             _game.waveFactory.DestroyWave(this);
         }
     }

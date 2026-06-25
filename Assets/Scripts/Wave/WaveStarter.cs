@@ -21,10 +21,12 @@ public class WaveStarter : MonoBehaviour
 
     private void OnCursorPress() {
         _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
+        _game.sound.OnPress();
     }
 
     private void OnCursorRelease() {
         controledWave?.Release(); 
+        _game.sound.OnRelease();
     }
 
     void OnDestroy() {

@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour , IHealthy
 
     void Start() {
         if (_factory) return;
-        Debug.LogWarning("Enemy was not inited.");
+        //Debug.LogWarning("Enemy was not inited.");
         Game.instance.enemyFactory.Register(this);
     }
 
