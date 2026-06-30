@@ -15,6 +15,7 @@ public class Game : MonoBehaviour
     public EnemyFactory enemyFactory;
     public PropFactory propFactory;
     public SdkAdapter sdkAdapter;
+    public AbilityFactory abilityFactory;
     
     public Map map;
 
@@ -32,6 +33,7 @@ public class Game : MonoBehaviour
         waveStarter.Init(this);
         session.Init(this);
         sound.Init(this);        
+        abilityFactory.Init(this);
 
         session.SessionStart();        
     }
@@ -43,5 +45,6 @@ public class Game : MonoBehaviour
     private void FixedUpdate() {
         waveStarter.ManualUpdate();
         waveFactory.ManualUpdate();
+        abilityFactory.ManualFixedUpdate();
     }
 }
