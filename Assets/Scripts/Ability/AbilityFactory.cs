@@ -6,21 +6,31 @@ public class AbilityFactory : MonoBehaviour
     private Game _game;
 
     public List<Ability> abilities;
+    public FreezeAbility freezeAbility;
+    public FreezeAbility waterBoostAbility;
 
     public void Init(Game game) {
         _game = game; 
-        abilities = new List<Ability>();
-    }
-
-    public void ResetAllAbilities() {
-        foreach (Ability ability in abilities) {
-            ability.Reset();
-        }
+        abilities = new List<Ability>();    
+        abilities.Add(freezeAbility);
+        freezeAbility.Init(_game);
     }
 
     public void ManualFixedUpdate() {
         foreach (Ability ability in abilities) {
             ability.ManualFixedUpdate();
+        }
+    }
+
+    public void TryUseFreeze() {
+        //if (freezeAbility.charges > 0) {
+        freezeAbility.Activate();
+        //}
+    }
+    
+    public void TryUseWaterBoost() {
+        if (waterBoostAbility.charges > 0) {
+            waterBoostAbility.Activate();
         }
     }
 }

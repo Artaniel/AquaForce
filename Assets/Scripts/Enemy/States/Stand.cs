@@ -19,7 +19,7 @@ public class Stand : ViewState
 
     public override int GetStateId() => 0;
 
-    public override void FixedUpdateState() {
+    public override void FixedUpdateState(float deltaTime) {
         if (_view.IsWalkableAIState()) {
             _view.SetState<Walk>();
         }

@@ -35,8 +35,8 @@ public class EnemyView : MonoBehaviour
         currentState.StartState();
     }
 
-    public void FixedUpdate() {
-        currentState?.FixedUpdateState();
+    public void ManualFixedUpdate(float deltaTime) {
+        currentState?.FixedUpdateState(deltaTime);
     }
 
     public void Refresh(float poise) {

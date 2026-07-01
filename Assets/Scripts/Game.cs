@@ -46,5 +46,6 @@ public class Game : MonoBehaviour
         waveStarter.ManualUpdate();
         waveFactory.ManualUpdate();
         abilityFactory.ManualFixedUpdate();
+        enemyFactory.ManualFixedUpdate(Time.fixedDeltaTime);
     }
 }

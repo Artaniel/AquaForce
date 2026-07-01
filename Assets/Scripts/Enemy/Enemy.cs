@@ -34,6 +34,11 @@ public class Enemy : MonoBehaviour , IHealthy
     public void NonLetalDamage() {
         sound.Hit();
     }
+    
+    public void ManualFixedUpdate(float deltaTime) {
+        ai.ManualFixedUpdate(deltaTime);
+        view.ManualFixedUpdate(deltaTime);
+    }
 
     public void Death() {        
         sound.Death();

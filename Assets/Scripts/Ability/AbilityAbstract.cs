@@ -25,9 +25,12 @@ public abstract class Ability : MonoBehaviour
         Activate();
     }
 
-    protected abstract void Activate();
+    public abstract void Activate();
 
     public abstract void ManualFixedUpdate();
+    public virtual float GetProgress() {
+        return (Time.time - lastActivation) / channelTime;
+    }
 
     public virtual void Reset() {
         charges = 0;

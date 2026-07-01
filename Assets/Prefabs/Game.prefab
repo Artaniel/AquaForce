@@ -962,6 +962,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityFactory
   abilities:
   - {fileID: 1973320424357169404}
+  freezeAbility: {fileID: 1973320424357169404}
+  waterBoostAbility: {fileID: 1973320424357169404}
 --- !u!1 &5396793177362831970
 GameObject:
   m_ObjectHideFlags: 0

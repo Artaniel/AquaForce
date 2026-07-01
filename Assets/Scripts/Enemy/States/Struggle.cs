@@ -21,5 +21,5 @@ public class Struggle : ViewState
 
     public override int GetStateId() => 2;
 
-    public override void FixedUpdateState() {}
+    public override void FixedUpdateState(float deltaTime) {}
 }

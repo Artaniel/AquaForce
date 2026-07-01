@@ -8,7 +8,7 @@ public abstract class ViewState
     public abstract void StartState();
     public abstract void StopState();
     public abstract void RefreshState(float poise);
-    public abstract void FixedUpdateState();
+    public abstract void FixedUpdateState(float deltaTime);
     public abstract int GetStateId();
 
     public void Init(Game game, Enemy owner) {

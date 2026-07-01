@@ -9,7 +9,7 @@ public class MoveToSpawn : AiState
         _ai.agent.destination = _owner.transform.position;
     }
 
-    public override void UpdateState() {
+    public override void UpdateState(float deltaTime) {
         _ai.agent.nextPosition = _owner.transform.position;
         if (!_ai.agent.hasPath) {
             _ai.targetGem.isCarried = false;

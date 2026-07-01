@@ -14,10 +14,13 @@ public class UI : MonoBehaviour
     public Transform loseScreen;
     public Button loseConfirmButton;
 
+    public AbilityUI abilityUi;
+
     public void Init(Game boot) {
         _game = boot;      
         winConfirmButton.onClick.AddListener(OnWinConfirm);  
         loseConfirmButton.onClick.AddListener(OnLoseConfirm);        
+        abilityUi.Init(_game, this);
     }
 
     public void ShowWinScreen(int score) {

@@ -43,12 +43,12 @@ public class EnemyAI : MonoBehaviour
         currentState = newState;
     }
 
-    private void FixedUpdate() {
-        currentState?.UpdateState();
+    public void ManualFixedUpdate(float deltaTime) {
+        currentState?.UpdateState(deltaTime);
     }
 
     public void MoveInDirrection(Vector3 dirrection) {
-        _enemy.enemyRigidbody.AddForce(dirrection * moveForce * _enemy.poise.GetForceMultiplier() , ForceMode2D.Force);
+        _enemy.enemyRigidbody.AddForce(dirrection * moveForce * _enemy.poise.GetForceMultiplier() * _game.enemyFactory.enemyTimescale, ForceMode2D.Force);
     }
 
     public void StealGem(Gem gem) {

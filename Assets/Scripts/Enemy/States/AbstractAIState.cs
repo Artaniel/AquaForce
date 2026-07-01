@@ -7,7 +7,7 @@ public abstract class AiState
     protected EnemyAI _ai;
     public abstract void StartState();
     public abstract void StopState();
-    public abstract void UpdateState();
+    public abstract void UpdateState(float deltaTime);
 
     public void Init(Game game, Enemy owner) {
         _game = game;

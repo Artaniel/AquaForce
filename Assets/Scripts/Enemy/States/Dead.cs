@@ -8,7 +8,7 @@ public class Dead : AiState
         
     }
 
-    public override void UpdateState() {
+    public override void UpdateState(float deltaTime) {
         
     }
 }

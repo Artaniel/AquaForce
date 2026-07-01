@@ -11,7 +11,7 @@ public class MoveToGem : AiState
         _ai.targetGem.isReserved = false;
     }
 
-    public override void UpdateState() {
+    public override void UpdateState(float deltaTime) {
         _ai.agent.destination = _ai.targetGem.transform.position;
         _ai.agent.nextPosition = _owner.transform.position;
         if (!_ai.agent.hasPath) {

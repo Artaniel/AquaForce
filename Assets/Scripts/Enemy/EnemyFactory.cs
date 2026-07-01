@@ -5,6 +5,7 @@ public class EnemyFactory : MonoBehaviour
 {
     private Game _game;
     public List<Enemy> enemies;    
+    public float enemyTimescale = 1f;
 
     public void Init(Game game) {
         _game = game;
@@ -13,6 +14,12 @@ public class EnemyFactory : MonoBehaviour
     public void Register(Enemy enemy) {
         enemies.Add(enemy);
         enemy.Init(_game, this);
+    }
+
+    public void ManualFixedUpdate(float deltaTime) {
+        foreach (Enemy enemy in enemies) {
+            enemy.ManualFixedUpdate(deltaTime * enemyTimescale);
+        }
     }
 
     public void Destroy(Enemy enemy) {

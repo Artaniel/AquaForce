@@ -12,7 +12,7 @@ public class Idle : AiState
         
     }
 
-    public override void UpdateState() {
+    public override void UpdateState(float deltaTime) {
         if (Time.time - lastScanTime < scanInterval) return;
         lastScanTime = Time.time;
         
