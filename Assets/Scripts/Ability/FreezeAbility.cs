@@ -6,13 +6,16 @@ public class FreezeAbility : Ability
     public float timescale = 0.1f;
 
     public override void Activate() {
+        Debug.Log("FreezeAbility Activate");
         isActive = true;
-        _game.enemyFactory.enemyTimescale = timescale;        
+        _game.enemyFactory.enemyTimescale = timescale;    
+        lastActivation = Time.time;     
     }
 
     public override void ManualFixedUpdate() {
         if (!isActive) return;
         if (Time.time >= lastActivation + channelTime) {
+            Debug.Log("FreezeAbility Deactivate");    
             isActive = false;
             _game.enemyFactory.enemyTimescale = 1f;
         }

@@ -40,6 +40,7 @@ public class Game : MonoBehaviour
 
     private void Update() {
         input.ManualUpdate();
+        enemyFactory.ManualUpdate(Time.deltaTime);
     }
     
     private void FixedUpdate() {

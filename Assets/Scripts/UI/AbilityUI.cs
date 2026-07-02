@@ -28,10 +28,12 @@ public class AbilityUI : MonoBehaviour
     }
     
     private void TryUseFreeze() {
+        Debug.Log("TryUseFreeze");
         _game.abilityFactory.TryUseFreeze();
     }
     
     private void TryUseWaterBoost() {
+        Debug.Log("TryUseWaterBoost");
         _game.abilityFactory.TryUseWaterBoost();
     }
 }

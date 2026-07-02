@@ -39,6 +39,10 @@ public class EnemyView : MonoBehaviour
         currentState?.FixedUpdateState(deltaTime);
     }
 
+    public void ManualUpdate(float deltaTime) {
+        currentState?.UpdateState(deltaTime);
+    }
+
     public void Refresh(float poise) {
         if (!animator.gameObject.activeSelf) return;    
         currentState.RefreshState(poise);

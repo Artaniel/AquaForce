@@ -40,6 +40,10 @@ public class Enemy : MonoBehaviour , IHealthy
         view.ManualFixedUpdate(deltaTime);
     }
 
+    public void ManualUpdate(float deltaTime) {
+        view.ManualUpdate(deltaTime);
+    }
+
     public void Death() {        
         sound.Death();
         _game.session.EnemyKilled();

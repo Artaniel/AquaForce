@@ -22,6 +22,12 @@ public class EnemyFactory : MonoBehaviour
         }
     }
 
+    public void ManualUpdate(float deltaTime) {
+        foreach (Enemy enemy in enemies) {
+            enemy.ManualUpdate(deltaTime * enemyTimescale);
+        }        
+    }
+
     public void Destroy(Enemy enemy) {
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);

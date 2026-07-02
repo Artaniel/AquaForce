@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFactory
   enemies: []
+  enemyTimescale: 1
 --- !u!1 &2941227859614316555
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +832,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 468427ee955516a4091cf15b93c5aa40, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1009,9 +1010,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreezeAbility
   maxCharges: 1
-  channelTime: 1
-  cooldown: 0
-  charges: 0
+  channelTime: 5
+  cooldown: 3
+  charges: 1
+  isActive: 0
   timescale: 0.1
 --- !u!1 &5454156159887791379
 GameObject:

@@ -23,9 +23,8 @@ public class AbilityFactory : MonoBehaviour
     }
 
     public void TryUseFreeze() {
-        //if (freezeAbility.charges > 0) {
+        Debug.Log("TryUseFreeze");
         freezeAbility.Activate();
-        //}
     }
     
     public void TryUseWaterBoost() {

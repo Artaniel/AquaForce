@@ -46,7 +46,7 @@ public class EnemyAI : MonoBehaviour
     public void ManualFixedUpdate(float deltaTime) {
         currentState?.UpdateState(deltaTime);
     }
-
+    
     public void MoveInDirrection(Vector3 dirrection) {
         _enemy.enemyRigidbody.AddForce(dirrection * moveForce * _enemy.poise.GetForceMultiplier() * _game.enemyFactory.enemyTimescale, ForceMode2D.Force);
     }
