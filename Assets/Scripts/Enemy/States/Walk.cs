@@ -28,7 +28,6 @@ public class Walk : ViewState
     }
 
     public override void UpdateState(float deltaTime) {
-        Debug.Log($"UpdateState {deltaTime})");
         shakeTween.ManualUpdate(deltaTime, deltaTime);
     }
 }

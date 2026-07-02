@@ -23,7 +23,6 @@ public class AbilityFactory : MonoBehaviour
     }
 
     public void TryUseFreeze() {
-        Debug.Log("TryUseFreeze");
         freezeAbility.Activate();
     }
     
