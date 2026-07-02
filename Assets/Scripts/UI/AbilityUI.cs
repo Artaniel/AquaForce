@@ -10,7 +10,7 @@ public class AbilityUI : MonoBehaviour
     public Button waterBoostButton;
     public TextMeshProUGUI freezeButtonText;
     public TextMeshProUGUI waterBoostButtonText;
-    public Scrollbar freezeProgressBar;
+    public Image freezeProgressBar;
 
     public void Init(Game game, UI ui) {
         _game = game;
@@ -19,12 +19,8 @@ public class AbilityUI : MonoBehaviour
         waterBoostButton.onClick.AddListener(() => TryUseWaterBoost());
     }
     
-    public void Refresh() {
-        if (_game.abilityFactory.freezeAbility.isActive) {
-            freezeProgressBar.size = _game.abilityFactory.freezeAbility.GetProgress();
-            return;
-        }
-        freezeProgressBar.size = 0;
+    public void Update() {
+        freezeProgressBar.fillAmount = _game.abilityFactory.freezeAbility.GetProgress();
     }
     
     private void TryUseFreeze() {

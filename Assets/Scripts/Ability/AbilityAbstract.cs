@@ -10,7 +10,7 @@ public abstract class Ability : MonoBehaviour
 
     public int charges = 0;
 
-    protected float lastActivation;
+    protected float lastActivation = - Mathf.Infinity;
 
     public void Init(Game game) {
         _game = game;
@@ -30,10 +30,5 @@ public abstract class Ability : MonoBehaviour
     public abstract void ManualFixedUpdate();
     public virtual float GetProgress() {
         return (Time.time - lastActivation) / channelTime;
-    }
-
-    public virtual void Reset() {
-        charges = 0;
-        lastActivation = 0f;
     }
 }
