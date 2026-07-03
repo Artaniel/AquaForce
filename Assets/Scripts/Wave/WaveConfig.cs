@@ -13,4 +13,6 @@ public class WaveConfig : ScriptableObject
     public float poiseDamageModifier = 0.1f;
     public float rotationSpeedBase = 1f;
     public float rotationSpeedPerMass = 1f;
+
+    public float boostedGainSpeed = 100f;
 }

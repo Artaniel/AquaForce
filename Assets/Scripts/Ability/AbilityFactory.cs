@@ -7,13 +7,17 @@ public class AbilityFactory : MonoBehaviour
 
     public List<Ability> abilities;
     public FreezeAbility freezeAbility;
-    public FreezeAbility waterBoostAbility;
+    public waterBoostAbility waterBoostAbility;
+
+    public bool isBoostedMassGain = false;
 
     public void Init(Game game) {
         _game = game; 
         abilities = new List<Ability>();    
         abilities.Add(freezeAbility);
+        abilities.Add(waterBoostAbility);
         freezeAbility.Init(_game);
+        waterBoostAbility.Init(_game);
     }
 
     public void ManualFixedUpdate() {
@@ -27,9 +31,7 @@ public class AbilityFactory : MonoBehaviour
     }
     
     public void TryUseWaterBoost() {
-        if (waterBoostAbility.charges > 0) {
-            waterBoostAbility.Activate();
-        }
+        waterBoostAbility.Activate();
     }
 }
 

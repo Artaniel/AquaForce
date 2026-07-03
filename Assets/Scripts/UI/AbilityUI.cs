@@ -11,6 +11,7 @@ public class AbilityUI : MonoBehaviour
     public TextMeshProUGUI freezeButtonText;
     public TextMeshProUGUI waterBoostButtonText;
     public Image freezeProgressBar;
+    public Image waterBoostProgressBar;
 
     public void Init(Game game, UI ui) {
         _game = game;
@@ -21,6 +22,7 @@ public class AbilityUI : MonoBehaviour
     
     public void Update() {
         freezeProgressBar.fillAmount = _game.abilityFactory.freezeAbility.GetProgress();
+        waterBoostProgressBar.fillAmount = _game.abilityFactory.waterBoostAbility.GetProgress();
     }
     
     private void TryUseFreeze() {
