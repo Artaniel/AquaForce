@@ -40,7 +40,7 @@ public class WaterWave : MonoBehaviour
     }
 
     private void MassUpdate() {  
-        velocity = (transform.position - lastPosition) / Time.deltaTime;      
+        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;      
         waveRigidbidy.mass -= config.massDecayPerDistance * (transform.position - lastPosition).magnitude;
 
         if (isReleased) 
@@ -73,13 +73,23 @@ public class WaterWave : MonoBehaviour
     }
 
     private void ForceFieldUpdate() {
-        float waveRadius = view.localScale.x / 2 + 0.5f; 
+         float waveRadius = view.localScale.x / 2 + 0.5f;
+    
         foreach (Enemy enemy in _game.enemyFactory.enemies) {
             if (!enemy) continue;
             if (Vector3.Distance(enemy.transform.position, transform.position) > waveRadius) continue;
-            Vector3 deltaVelocity = velocity - (Vector3)enemy.enemyRigidbody.linearVelocity;
-            enemy.enemyRigidbody.AddForce(waveRigidbidy.mass * config.forceModifier * deltaVelocity);
-            enemy.poise.TakeDamage(deltaVelocity.magnitude, waveRigidbidy.mass, config.poiseDamageModifier);
+            
+            float lerpFactor = config.forceModifier * Time.fixedDeltaTime * waveRigidbidy.mass / enemy.enemyRigidbody.mass;
+            
+            lerpFactor = Mathf.Clamp01(lerpFactor);
+            
+            Vector3 targetVelocity = velocity;
+            Vector3 newVelocity = Vector3.Lerp(enemy.enemyRigidbody.linearVelocity, targetVelocity, lerpFactor);
+            
+            enemy.enemyRigidbody.linearVelocity = newVelocity;
+            
+            float deltaMagnitude = (velocity - (Vector3)enemy.enemyRigidbody.linearVelocity).magnitude;
+            enemy.poise.TakeDamage(deltaMagnitude, waveRigidbidy.mass, config.poiseDamageModifier);
         }
         
         foreach (Prop prop in _game.propFactory.props) {
