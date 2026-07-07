@@ -22,3 +22,4 @@ MonoBehaviour:
   poiseDamageModifier: 0.1
   rotationSpeedBase: 0
   rotationSpeedPerMass: 0
+  boostedGainSpeed: 100
