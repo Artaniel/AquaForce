@@ -30,7 +30,8 @@ public class EnemyFactory : MonoBehaviour
 
     public void Destroy(Enemy enemy) {
         enemies.Remove(enemy);
-        Destroy(enemy.gameObject);
+        enemy.view.animator.gameObject.SetActive(false);
+        //Destroy(enemy.gameObject);
     }
 
     public int GetAliveEnemyCount() {

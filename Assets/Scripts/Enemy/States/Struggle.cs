@@ -14,6 +14,7 @@ public class Struggle : ViewState
     public override void RefreshState(float poise) {
         if (poise < _view.poiseFallThreshold) {
             _view.SetState<Fall>();
+            _owner.sound.Struggle();           
         } else if (poise > _view.poiseStruggleThreshold) {
             _view.SetState<Walk>();
         }

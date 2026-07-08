@@ -33,9 +33,5 @@ public class EnemyPoise : MonoBehaviour
         poise -= speed * damagePerSpeed * mass * poiseDamageModifier;
         poise = Mathf.Max(0f, poise);
         _enemy.view.Refresh(poise);
-        if (poise <= _enemy.view.poiseFallThreshold) {
-            _enemy.sound.Struggle();
-            _enemy.ai.DropGem();
-        }
     }
 }

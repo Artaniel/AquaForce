@@ -15,7 +15,8 @@ public class Walk : ViewState
 
     public override void RefreshState(float poise) {
         if (poise < _view.poiseStruggleThreshold) {
-            _view.SetState<Struggle>();
+            _view.SetState<Struggle>();      
+            _owner.ai.DropGem();
         }
     }
 

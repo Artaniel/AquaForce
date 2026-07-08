@@ -14,6 +14,8 @@ public class Stand : ViewState
     public override void RefreshState(float poise) {
         if (poise < _view.poiseStruggleThreshold) {
             _view.SetState<Struggle>();
+            _owner.sound.Struggle();            
+            _owner.ai.DropGem();
         }
     }
 
