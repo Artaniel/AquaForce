@@ -34,9 +34,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8034077184770669000}
-  - {fileID: 4731877539864569513}
-  - {fileID: 776325287907360445}
-  - {fileID: 4249367411598172274}
   - {fileID: 6463473349714085842}
   - {fileID: 15177197544048665}
   - {fileID: 5458684731987909319}
@@ -363,12 +360,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2177975098610369695}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0016, y: 0.002, z: 0}
   m_LocalScale: {x: 0.35142776, y: 0.2920774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9212745753176637732}
+  m_Father: {fileID: 5458684731987909319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6053079820331113032
 SpriteRenderer:
@@ -458,7 +455,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4731877539864569513}
+  - {fileID: 4249367411598172274}
+  - {fileID: 776325287907360445}
   m_Father: {fileID: 9212745753176637732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2322468892975368339
@@ -617,6 +617,9 @@ MonoBehaviour:
   hitAudioSource: {fileID: 2345728397417807417}
   struggleAudioSource: {fileID: 4065702578582353464}
   deathAudioSource: {fileID: 8122397783480682372}
+  hitClips: []
+  struggleClips: []
+  deathClips: []
 --- !u!1 &5237443238682218828
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5237443238682218828}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -650,7 +653,7 @@ Transform:
   - {fileID: 496914271093315921}
   - {fileID: 287441014472784967}
   - {fileID: 2453485092386245349}
-  m_Father: {fileID: 9212745753176637732}
+  m_Father: {fileID: 5458684731987909319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2407078056011987820
 MonoBehaviour:
@@ -1012,7 +1015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9212745753176637732}
+  m_Father: {fileID: 5458684731987909319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1626854338121843036
 SpriteRenderer:

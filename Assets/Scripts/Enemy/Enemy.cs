@@ -48,8 +48,7 @@ public class Enemy : MonoBehaviour , IHealthy
         sound.Death();
         _game.session.EnemyKilled();
         _factory.Destroy(this); 
-        view.animator.gameObject.SetActive(false);
-        health.gameObject.SetActive(false);
+        view.gameObject.SetActive(false);        
     }
 
     private void OnValidate() {

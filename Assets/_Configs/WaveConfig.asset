@@ -19,7 +19,7 @@ MonoBehaviour:
   forceModifier: 1
   releasedDecaySpeed: 10
   positionLerpFactor: 0.1
-  poiseDamageModifier: 0.1
+  poiseDamageModifier: 1
   rotationSpeedBase: 0
   rotationSpeedPerMass: 0
   boostedGainSpeed: 100
