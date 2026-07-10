@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2322468892975368339, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: mainSprite
+      value: 
+      objectReference: {fileID: 2042768768154711346}
     - target: {fileID: 2407078056011987820, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: HP
       value: 1
@@ -106,6 +110,11 @@ PrefabInstance:
 --- !u!4 &716779141167483347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731877539864569513, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+  m_PrefabInstance: {fileID: 5213342464214331258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2042768768154711346 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6053079820331113032, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
   m_PrefabInstance: {fileID: 5213342464214331258}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &2360020957952573063 stripped

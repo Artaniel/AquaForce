@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2322468892975368339, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: mainSprite
+      value: 
+      objectReference: {fileID: 7913994312259695225}
     - target: {fileID: 4404677239889544723, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -69,6 +73,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+--- !u!212 &7913994312259695225 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6053079820331113032, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+  m_PrefabInstance: {fileID: 4167232508663474225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8682933958878318232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731877539864569513, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}

@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour , IHealthy
     public EnemyPoise poise;
     public Rigidbody2D enemyRigidbody;
     public CircleCollider2D enemyCollider;    
-    public Transform mainSprite;
     public EnemyView view;
     public EnemySound sound;
 
@@ -33,6 +32,7 @@ public class Enemy : MonoBehaviour , IHealthy
 
     public void NonLetalDamage() {
         sound.Hit();
+        view.HitVfx();
     }
     
     public void ManualFixedUpdate(float deltaTime) {

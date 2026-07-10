@@ -58,7 +58,6 @@ MonoBehaviour:
   poise: {fileID: 4347511602766587445}
   enemyRigidbody: {fileID: 4776215822620831341}
   enemyCollider: {fileID: 1974175347018137709}
-  mainSprite: {fileID: 8034077184770669000}
   view: {fileID: 2322468892975368339}
   sound: {fileID: 9102613137661340945}
 --- !u!50 &4776215822620831341
@@ -474,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyView
   animator: {fileID: 1697576332254523380}
+  mainSprite: {fileID: 1626854338121843036}
   poiseFallThreshold: 0.1
   poiseStruggleThreshold: 0.5
 --- !u!1 &4404677239889544723

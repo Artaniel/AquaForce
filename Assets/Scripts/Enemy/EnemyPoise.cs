@@ -20,7 +20,7 @@ public class EnemyPoise : MonoBehaviour
         poise = Mathf.Clamp01(poise);
         _enemy.enemyRigidbody.linearDamping = poise * dragMultiplier;
         _enemy.view.Refresh(poise);
-        _enemy.mainSprite.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
+        _enemy.view.mainSprite.transform.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);
     }
 
     public float GetForceMultiplier() {

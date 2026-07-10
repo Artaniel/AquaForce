@@ -10,6 +10,7 @@ public class EnemyView : MonoBehaviour
     public Dictionary<Type, ViewState> states;
     public ViewState currentState;
     public Animator animator;
+    public SpriteRenderer mainSprite;
     public float poiseFallThreshold = 0.1f;
     public float poiseStruggleThreshold = 0.5f;
 
@@ -55,5 +56,9 @@ public class EnemyView : MonoBehaviour
 
     public bool IsWalkableAIState(){
         return _enemy.ai.currentState is MoveToGem or MoveToSpawn;
+    }
+
+    public void HitVfx() {        
+        mainSprite.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
     }
 }
