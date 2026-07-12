@@ -45,9 +45,12 @@ public class EnemyView : MonoBehaviour
     }
 
     public void Refresh(float poise) {
-        if (!animator.gameObject.activeSelf) return;    
         currentState.RefreshState(poise);
-        animator.SetInteger("StateId", currentState.GetStateId());    
+        if (!animator.gameObject.activeSelf) {    
+            _enemy.view.mainSprite.transform.rotation = Quaternion.Euler(0, 0, (1 - poise) * 90f);  
+            return;
+        }
+        animator.SetInteger("StateId", currentState.GetStateId());  
     }
 
     private void OnDestroy() {
