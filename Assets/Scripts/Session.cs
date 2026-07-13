@@ -64,6 +64,7 @@ public class Session : MonoBehaviour
 
     public void Lose() {
         _game.ui.ShowLoseScreen();
+        _game.sound.OnLose();
         SessionEnd();
     }
 
@@ -81,6 +82,7 @@ public class Session : MonoBehaviour
         currentMapIndex++;
         int score = savedGems.Count * 100;
         _game.ui.ShowWinScreen(score);
+        _game.sound.OnWin();
         SessionEnd();
     }
 
