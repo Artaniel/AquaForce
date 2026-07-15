@@ -28,6 +28,42 @@ PrefabInstance:
       propertyPath: mainSprite
       value: 
       objectReference: {fileID: 8682933958878318232}
+    - target: {fileID: 8122397783480682372, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Volume
+      value: 0.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: hitClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: deathClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: 'hitClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: acaec95d530475946af944769e115813, type: 3}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: 'hitClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d18959880f8ae3d4c8fb14d3d92d7c16, type: 3}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: 'deathClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dcceec48da61d314e8477537b4f349eb, type: 3}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: struggleClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: 'struggleClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fc5006d0970d0c498aa870b7cc8d1b4, type: 3}
+    - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: 'struggleClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dc689cfb2c971244c903fe6ad1a43b06, type: 3}
     - target: {fileID: 9212745753176637732, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
