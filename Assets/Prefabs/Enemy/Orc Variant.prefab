@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1626854338121843036, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa3dd56f9f006414994cdb1908934110, type: 3}
+    - target: {fileID: 1697576332254523380, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fee0b4e3fccf54144adf1daa3df0b772, type: 2}
+    - target: {fileID: 2177975098610369695, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2322468892975368339, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: mainSprite
       value: 
@@ -31,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 8122397783480682372, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Volume
       value: 0.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535161061466397346, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: hitClips.Array.size
