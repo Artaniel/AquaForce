@@ -13,6 +13,7 @@ public class EnemyView : MonoBehaviour
     public SpriteRenderer mainSprite;
     public float poiseFallThreshold = 0.1f;
     public float poiseStruggleThreshold = 0.5f;
+    public bool isLookingLeft = false;
 
     public void Init(Game game, Enemy enemy) {
         _game = game;
@@ -41,7 +42,11 @@ public class EnemyView : MonoBehaviour
     }
 
     public void ManualUpdate(float deltaTime) {
-        currentState?.UpdateState(deltaTime);
+        currentState?.UpdateState(deltaTime);        
+        transform.localScale = new Vector3(
+            isLookingLeft ? -1 : 1, 
+            1,
+            1);
     }
 
     public void Refresh(float poise) {

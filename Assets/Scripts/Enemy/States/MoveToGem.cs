@@ -25,6 +25,7 @@ public class MoveToGem : AiState
             _ai.SetState<MoveToSpawn>();
             return;
         }
-        _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);        
+        _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);     
+        _owner.view.isLookingLeft = (_owner.transform.position - _ai.targetGem.transform.position).x > 0;   
     }
 }

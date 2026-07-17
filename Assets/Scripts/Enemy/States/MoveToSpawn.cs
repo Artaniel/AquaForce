@@ -26,5 +26,6 @@ public class MoveToSpawn : AiState
             return;
         }
         _ai.MoveInDirrection(_ai.agent.desiredVelocity.normalized);
+        _owner.view.isLookingLeft = (_owner.transform.position - _game.map.spawner.transform.position).x > 0;
     }
 }
