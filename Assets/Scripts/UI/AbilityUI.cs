@@ -11,7 +11,7 @@ public class AbilityUI : MonoBehaviour
     public TextMeshProUGUI freezeButtonText;
     public TextMeshProUGUI waterBoostButtonText;
     public Image freezeProgressBar;
-    public Image waterBoostProgressBar;
+    public Image waterBoostProgressBar;    
 
     public void Init(Game game, UI ui) {
         _game = game;
@@ -31,5 +31,10 @@ public class AbilityUI : MonoBehaviour
     
     private void TryUseWaterBoost() {
         _game.abilityFactory.TryUseWaterBoost();
+    }
+
+    public void RefreshNumbers() {
+        freezeButtonText.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
+        waterBoostButtonText.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();        
     }
 }

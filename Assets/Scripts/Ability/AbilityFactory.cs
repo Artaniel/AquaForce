@@ -10,6 +10,7 @@ public class AbilityFactory : MonoBehaviour
     public waterBoostAbility waterBoostAbility;
 
     public bool isBoostedMassGain = false;
+    public Dictionary<Ability, int> inventory;
 
     public void Init(Game game) {
         _game = game; 
@@ -18,6 +19,11 @@ public class AbilityFactory : MonoBehaviour
         abilities.Add(waterBoostAbility);
         freezeAbility.Init(_game);
         waterBoostAbility.Init(_game);
+        inventory = new Dictionary<Ability, int>();
+        inventory.Add(freezeAbility, 2);
+        inventory.Add(waterBoostAbility, 2);
+
+        _game.ui.abilityUi.RefreshNumbers();
     }
 
     public void ManualFixedUpdate() {
@@ -27,11 +33,23 @@ public class AbilityFactory : MonoBehaviour
     }
 
     public void TryUseFreeze() {
-        freezeAbility.Activate();
+        if (inventory[freezeAbility] > 0){
+            freezeAbility.Activate();
+            inventory[freezeAbility]--;
+            _game.ui.abilityUi.RefreshNumbers();
+        }
     }
     
     public void TryUseWaterBoost() {
-        waterBoostAbility.Activate();
+        if (inventory[waterBoostAbility] > 0){
+            waterBoostAbility.Activate();
+            inventory[waterBoostAbility]--;
+            _game.ui.abilityUi.RefreshNumbers();
+        }
+    }
+
+    public void Reset() {
+        
     }
 }
 

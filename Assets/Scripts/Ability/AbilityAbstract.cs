@@ -31,4 +31,8 @@ public abstract class Ability : MonoBehaviour
     public virtual float GetProgress() {
         return (Time.time - lastActivation) / channelTime;
     }
+
+    public void Reset() {
+        lastActivation = - Mathf.Infinity;
+    }
 }
