@@ -98,4 +98,7 @@ public class Session : MonoBehaviour
         _game.ui.HideLoseScreen();
         SessionStart();
     }
+
+    public void OnNextLevelPress(bool withAds) {
+    }
 }

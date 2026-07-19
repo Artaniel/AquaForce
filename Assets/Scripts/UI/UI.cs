@@ -9,23 +9,23 @@ public class UI : MonoBehaviour
     public TextMeshProUGUI savedGemsText;
     public TextMeshProUGUI stolenGemsText;
 
-    public Transform winScreen;    
-    public Button winConfirmButton;
-    public Transform loseScreen;
-    public Button loseConfirmButton;
+    public EndGameScreenUI winScreen;    
+    public EndGameScreenUI loseScreen;
 
     public AbilityUI abilityUi;
 
+
     public void Init(Game boot) {
-        _game = boot;      
-        winConfirmButton.onClick.AddListener(OnWinConfirm);  
-        loseConfirmButton.onClick.AddListener(OnLoseConfirm);        
+        _game = boot;       
         abilityUi.Init(_game, this);
+        winScreen.Init(_game);
+        loseScreen.Init(_game);
     }
 
     public void ShowWinScreen(int score) {
         scoreText.text = score.ToString();
         winScreen.gameObject.SetActive(true);
+        winScreen.Setup();
     }
 
     public void HideWinScreen() {
@@ -34,6 +34,7 @@ public class UI : MonoBehaviour
 
     public void ShowLoseScreen() {
         loseScreen.gameObject.SetActive(true);
+        loseScreen.Setup();
     }
 
     public void HideLoseScreen() {
@@ -43,13 +44,5 @@ public class UI : MonoBehaviour
     public void RefreshCounts() {
         savedGemsText.text = _game.session.GetSavelGemsCount().ToString();
         stolenGemsText.text = _game.session.GetStolenGemsCount().ToString();
-    }
-
-    private void OnWinConfirm(){
-        _game.session.WinConfirm();
-    }
-    
-    private void OnLoseConfirm(){
-        _game.session.LoseConfirm();
     }
 }
