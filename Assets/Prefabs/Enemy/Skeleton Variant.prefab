@@ -12,6 +12,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 776325287907360445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776325287907360445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776325287907360445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626854338121843036, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5dc87a124e904864ca31b69efe48dc19, type: 3}
+    - target: {fileID: 1697576332254523380, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ecdab47909579454f850424b1c88b663, type: 2}
+    - target: {fileID: 2177975098610369695, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2322468892975368339, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: mainSprite
       value: 
@@ -32,6 +56,10 @@ PrefabInstance:
       propertyPath: 'healthIndecators.Array.data[0]'
       value: 
       objectReference: {fileID: 2360020957952573063}
+    - target: {fileID: 4249367411598172274, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 4347511602766587445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: damagePerSpeed
       value: 0.005
@@ -63,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 8122397783480682372, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Volume
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535161061466397346, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9102613137661340945, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: hitClips.Array.size
