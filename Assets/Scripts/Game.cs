@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
     public PropFactory propFactory;
     public SdkAdapter sdkAdapter;
     public AbilityFactory abilityFactory;
+    public Saveloading saveloading;
     
     public Map map;
 
@@ -34,6 +35,7 @@ public class Game : MonoBehaviour
         session.Init(this);
         sound.Init(this);        
         abilityFactory.Init(this);
+        saveloading.Init(this);
 
         session.SessionStart();        
     }

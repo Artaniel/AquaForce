@@ -1,21 +1,23 @@
 using UnityEngine;
-//using YG;
 
 public class Saveloading : MonoBehaviour
 {
-    private Game _boot;
+    private Game _game;
 
-    public void Init(Game boot) {
-        _boot = boot;
+    public void Init(Game game) {
+        _game = game;
         Load();
     }
 
-    public void Save() {/*
-        YandexGame.savesData.level = _boot.session.levelNumber - 1;
-        YandexGame.SaveProgress();*/
+    public void Save() {
+
     }
 
     public void Load() {
-        //_boot.session.LoadLevelFromSave(YandexGame.savesData.level);
+        
+    }
+
+    private void MakeBlankSave() {
+        
     }
 }
