@@ -22,10 +22,10 @@ public class EndGameScreenUI : MonoBehaviour
     }
     
     private void NextWithAds() {
-        _game.session.OnNextLevelPress(true);
+        _game.session.EndGameConfirm(true);
     }
     
     private void NextWithoutAds() {
-        _game.session.OnNextLevelPress(false);
+        _game.session.EndGameConfirm(false);
     }
 }

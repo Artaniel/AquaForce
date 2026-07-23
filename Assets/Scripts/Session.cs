@@ -89,16 +89,20 @@ public class Session : MonoBehaviour
     public int GetSavelGemsCount() => savedGems.Count;
     public int GetStolenGemsCount() => stolenGems.Count;
 
-    public void WinConfirm(){
+    public void EndGameConfirm(bool withAds) {
+        if (!withAds) {
+            NextMap();
+            return;
+        }
+        _game.sdkAdapter.RewardedAdsStart();
+    }
+
+    public void AdsReturned(bool sussess) {
+        NextMap();
+    }
+
+    private void NextMap() {
         _game.ui.HideWinScreen();
-        SessionStart();
-    }
-
-    public void LoseConfirm(){
-        _game.ui.HideLoseScreen();
-        SessionStart();
-    }
-
-    public void OnNextLevelPress(bool withAds) {
+        SessionStart();                
     }
 }

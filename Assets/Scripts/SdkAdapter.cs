@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SdkAdapter : MonoBehaviour
@@ -24,5 +25,14 @@ public class SdkAdapter : MonoBehaviour
 
     private void CommercialBreakEnd() {
         
+    }
+    
+    public void RewardedAdsStart() {
+        PokiUnitySDK.Instance.rewardedBreakCallBack = RewardedAdsEnd;
+        PokiUnitySDK.Instance.commercialBreak();
+    }
+
+    private void RewardedAdsEnd(bool withReward) {
+        _game.session.AdsReturned(withReward);
     }
 }
