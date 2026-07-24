@@ -29,10 +29,11 @@ public class SdkAdapter : MonoBehaviour
     
     public void RewardedAdsStart() {
         PokiUnitySDK.Instance.rewardedBreakCallBack = RewardedAdsEnd;
-        PokiUnitySDK.Instance.commercialBreak();
+        PokiUnitySDK.Instance.rewardedBreak();
     }
 
     private void RewardedAdsEnd(bool withReward) {
+        Debug.Log($"RewardedAdsEnd {withReward}");
         _game.session.AdsReturned(withReward);
     }
 }
