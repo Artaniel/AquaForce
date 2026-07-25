@@ -42,7 +42,7 @@ public class EnemyView : MonoBehaviour
     }
 
     public void ManualUpdate(float deltaTime) {
-        currentState?.UpdateState(deltaTime);        
+        currentState?.UpdateState(deltaTime);                
         transform.localScale = new Vector3(
             isLookingLeft ? -1 : 1, 
             1,
@@ -60,6 +60,7 @@ public class EnemyView : MonoBehaviour
 
     private void OnDestroy() {
         animator.transform.DOKill();
+        currentState = null;
     }
 
     public bool IsWalkableAIState(){

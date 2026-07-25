@@ -33,7 +33,7 @@ public class SdkAdapter : MonoBehaviour
     }
 
     private void RewardedAdsEnd(bool withReward) {
-        Debug.Log($"RewardedAdsEnd {withReward}");
+        //Debug.Log($"RewardedAdsEnd {withReward}");
         _game.session.AdsReturned(withReward);
     }
 }

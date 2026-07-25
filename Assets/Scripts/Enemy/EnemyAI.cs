@@ -73,4 +73,8 @@ public class EnemyAI : MonoBehaviour
         targetGem.gemRigidbody.simulated = true;   
         SetState<Idle>();
     }
+
+    private void OnDestroy() {
+        currentState = null;
+    }
 }

@@ -43,6 +43,7 @@ public class Session : MonoBehaviour
     }
 
     public void SessionEnd() { 
+        _game.enemyFactory.DestroyAll();
         Destroy(_game.map.gameObject);
         _game.waveFactory.DestroyAll();
         Time.timeScale = 0;
@@ -53,13 +54,13 @@ public class Session : MonoBehaviour
         savedGems.Remove(gem);
         stolenGems.Add(gem);
         _game.ui.RefreshCounts();
-        LoseCheck();
     }
     
     public void LoseCheck() {
-       if (stolenGems.Count == 0) {
+        if (Time.timeScale == 0) return;
+        if (savedGems.Count == 0) {
            Lose();
-       }
+        }
     }
 
     public void Lose() {
@@ -102,7 +103,7 @@ public class Session : MonoBehaviour
     }
 
     private void NextMap() {
-        _game.ui.HideWinScreen();
+        _game.ui.HideEndGameScreen();
         SessionStart();                
     }
 }

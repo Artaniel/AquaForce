@@ -18,19 +18,19 @@ public class EnemyFactory : MonoBehaviour
 
     public void ManualFixedUpdate(float deltaTime) {
         foreach (Enemy enemy in enemies) {
-            enemy.ManualFixedUpdate(deltaTime * enemyTimescale);
+            enemy?.ManualFixedUpdate(deltaTime * enemyTimescale);
         }
     }
 
     public void ManualUpdate(float deltaTime) {
         foreach (Enemy enemy in enemies) {
-            enemy.ManualUpdate(deltaTime * enemyTimescale);
+            enemy?.ManualUpdate(deltaTime * enemyTimescale);
         }        
     }
 
     public void Destroy(Enemy enemy) {
         enemies.Remove(enemy);
-        enemy.view.animator.gameObject.SetActive(false);
+        enemy.view.gameObject.SetActive(false);
         //Destroy(enemy.gameObject);
     }
 
@@ -43,5 +43,13 @@ public class EnemyFactory : MonoBehaviour
         enemies.Add(enemy);
         enemy.Init(_game, this);
         enemy.transform.SetParent(_game.map.transform);
+    }
+
+    public void DestroyAll() {
+        while (enemies.Count > 0) {
+            Enemy enemy = enemies[0];
+            enemies.Remove(enemy);
+            Destroy(enemy.gameObject);
+        }
     }
 }

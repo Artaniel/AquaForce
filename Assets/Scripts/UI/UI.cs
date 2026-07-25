@@ -28,17 +28,14 @@ public class UI : MonoBehaviour
         winScreen.Setup();
     }
 
-    public void HideWinScreen() {
+    public void HideEndGameScreen() {
         winScreen.gameObject.SetActive(false);
+        loseScreen.gameObject.SetActive(false);
     }
 
     public void ShowLoseScreen() {
         loseScreen.gameObject.SetActive(true);
         loseScreen.Setup();
-    }
-
-    public void HideLoseScreen() {
-        loseScreen.gameObject.SetActive(false);
     }
 
     public void RefreshCounts() {
