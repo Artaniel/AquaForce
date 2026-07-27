@@ -13,6 +13,7 @@ public class UI : MonoBehaviour
     public EndGameScreenUI loseScreen;
 
     public AbilityUI abilityUi;
+    public LevelSelectionUI levelSelectionUI;
 
 
     public void Init(Game boot) {
@@ -20,6 +21,7 @@ public class UI : MonoBehaviour
         abilityUi.Init(_game, this);
         winScreen.Init(_game);
         loseScreen.Init(_game);
+        levelSelectionUI.Init(_game, this);
     }
 
     public void ShowWinScreen(int score) {

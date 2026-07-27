@@ -68,6 +68,6 @@ public class EnemyView : MonoBehaviour
     }
 
     public void HitVfx() {        
-        mainSprite.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
+        mainSprite.DOColor(Color.red, 0.3f).SetLoops(2, LoopType.Yoyo);
     }
 }
