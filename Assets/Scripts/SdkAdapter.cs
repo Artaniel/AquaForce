@@ -4,6 +4,7 @@ using UnityEngine;
 public class SdkAdapter : MonoBehaviour
 {
     private Game _game;    
+    public Action<bool> onRewardedAdsEnd;
 
     public void Init(Game game) {
         _game = game;
@@ -27,13 +28,14 @@ public class SdkAdapter : MonoBehaviour
         
     }
     
-    public void RewardedAdsStart() {
+    public void RewardedAdsStart(Action<bool> onEnd) {
+        onRewardedAdsEnd = onEnd;
         PokiUnitySDK.Instance.rewardedBreakCallBack = RewardedAdsEnd;
         PokiUnitySDK.Instance.rewardedBreak();
     }
 
     private void RewardedAdsEnd(bool withReward) {
         //Debug.Log($"RewardedAdsEnd {withReward}");
-        _game.session.AdsReturned(withReward);
+        onRewardedAdsEnd?.Invoke(withReward);
     }
 }

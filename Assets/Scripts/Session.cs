@@ -95,7 +95,7 @@ public class Session : MonoBehaviour
             NextMap();
             return;
         }
-        _game.sdkAdapter.RewardedAdsStart();
+        //_game.sdkAdapter.RewardedAdsStart();
     }
 
     public void AdsReturned(bool sussess) {
