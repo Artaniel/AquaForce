@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
 
     public AbilityUI abilityUi;
     public LevelSelectionUI levelSelectionUI;
+    public Button mapSelectButton;
 
 
     public void Init(Game boot) {
@@ -22,6 +23,7 @@ public class UI : MonoBehaviour
         winScreen.Init(_game);
         loseScreen.Init(_game);
         levelSelectionUI.Init(_game, this);
+        mapSelectButton.onClick.AddListener(() => levelSelectionUI.gameObject.SetActive(true));
     }
 
     public void ShowWinScreen(int score) {

@@ -106,4 +106,11 @@ public class Session : MonoBehaviour
         _game.ui.HideEndGameScreen();
         SessionStart();                
     }
+
+    public void SwitchToLevel(int levelIndex) {
+        SessionEnd();
+        currentMapIndex = levelIndex;
+        _game.ui.HideEndGameScreen();
+        SessionStart();
+    }
 }
