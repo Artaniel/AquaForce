@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WaveStarter : MonoBehaviour
 {   
@@ -20,6 +21,7 @@ public class WaveStarter : MonoBehaviour
     }
 
     private void OnCursorPress() {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
         _game.sound.OnPress();
     }

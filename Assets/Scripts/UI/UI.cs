@@ -23,7 +23,7 @@ public class UI : MonoBehaviour
         winScreen.Init(_game);
         loseScreen.Init(_game);
         levelSelectionUI.Init(_game, this);
-        mapSelectButton.onClick.AddListener(() => levelSelectionUI.gameObject.SetActive(true));
+        mapSelectButton.onClick.AddListener(LevelSelectionOpen);
     }
 
     public void ShowWinScreen(int score) {
@@ -45,5 +45,10 @@ public class UI : MonoBehaviour
     public void RefreshCounts() {
         savedGemsText.text = _game.session.GetSavelGemsCount().ToString();
         stolenGemsText.text = _game.session.GetStolenGemsCount().ToString();
+    }
+
+    private void LevelSelectionOpen() {
+        levelSelectionUI.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 }

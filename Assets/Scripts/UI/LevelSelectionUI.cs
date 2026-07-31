@@ -14,13 +14,13 @@ public class LevelSelectionUI : MonoBehaviour
     public void Init(Game game, UI ui) {
         _game = game;
         _ui = ui;
-        foreach(LevelButtonUI button in levelButtons) {
-            button.Init(_game, this);
+        for (int i = 0; i < levelButtons.Count; i++) {
+            levelButtons[i].Init(_game, this, i);
         }
 
         buyFreezeButton.onClick.AddListener(BuyFreeze);
         buyWaterButton.onClick.AddListener(BuyWater);
-        closeButton.onClick.AddListener(() => gameObject.SetActive(false));
+        closeButton.onClick.AddListener(Close);
     }
 
     private void BuyFreeze(){
@@ -39,5 +39,10 @@ public class LevelSelectionUI : MonoBehaviour
                 _game.ui.abilityUi.RefreshNumbers();
             }
         });
+    }
+
+    private void Close() {
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

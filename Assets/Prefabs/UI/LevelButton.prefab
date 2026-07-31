@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07e8551852b43b4497ed6111f9a74fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButtonUI
+  button: {fileID: 6026632764535240485}
 --- !u!114 &6026632764535240485
 MonoBehaviour:
   m_ObjectHideFlags: 0
