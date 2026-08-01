@@ -355,9 +355,7 @@ MonoBehaviour:
   - {fileID: 4365180408026205560}
   - {fileID: 7110079826348558168}
   spawner: {fileID: 3627060374834948988}
-  spawnWaves:
-  - {fileID: 11400000, guid: 8607d8e0735ca6e4093ef3866095143e, type: 2}
-  - {fileID: 11400000, guid: 8607d8e0735ca6e4093ef3866095143e, type: 2}
+  spawnWaves: []
 --- !u!1 &8107745066464273915
 GameObject:
   m_ObjectHideFlags: 0
