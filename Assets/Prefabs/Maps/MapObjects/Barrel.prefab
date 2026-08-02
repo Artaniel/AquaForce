@@ -114,7 +114,7 @@ MonoBehaviour:
   propCollider: {fileID: 4434098678176431469}
   mainSprite: {fileID: 680475979463329210}
   damager: {fileID: 6296936356214871773}
-  velocityFraction: 0.5
+  velocityFraction: 0.9
 --- !u!114 &6296936356214871773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damager
-  minVelocity: 1
+  minVelocity: 7
 --- !u!50 &2619796081537684715
 Rigidbody2D:
   serializedVersion: 5
