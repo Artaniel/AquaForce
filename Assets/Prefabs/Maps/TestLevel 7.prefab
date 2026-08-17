@@ -1100,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7533714996428373438, guid: a49df60b8e020ab4c8e2132bf3133610, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8489296403334596830, guid: a49df60b8e020ab4c8e2132bf3133610, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
