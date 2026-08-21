@@ -5,15 +5,17 @@ using TMPro;
 public class EndGameScreenUI : MonoBehaviour
 {
     private Game _game;
-    public Button nextWithAds;
-    public Button nextWithoutAds;
+    public Button buyFreeze;
+    public Button buyWave;
+    public Button nextButton;
     public TextMeshProUGUI freezeNumber;
     public TextMeshProUGUI waterBoostNumber;
     
     public void Init(Game game) {
         _game = game;
-        nextWithAds?.onClick.AddListener(NextWithAds);
-        nextWithoutAds?.onClick.AddListener(NextWithoutAds);
+        nextButton?.onClick.AddListener(NextWithoutAds);
+        buyFreeze?.onClick.AddListener(BuyFreeze);
+        buyWave?.onClick.AddListener(BuyWave);
     }
 
     public void Setup() {
@@ -21,8 +23,11 @@ public class EndGameScreenUI : MonoBehaviour
         waterBoostNumber.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
     }
     
-    private void NextWithAds() {
-        _game.session.EndGameConfirm(true);
+    private void BuyFreeze() {
+    }
+
+    private void BuyWave() {
+    
     }
     
     private void NextWithoutAds() {
