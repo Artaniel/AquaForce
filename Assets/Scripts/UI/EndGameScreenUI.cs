@@ -10,6 +10,7 @@ public class EndGameScreenUI : MonoBehaviour
     public Button nextButton;
     public TextMeshProUGUI freezeNumber;
     public TextMeshProUGUI waterBoostNumber;
+    public FlyImagesUI flyImages;
     
     public void Init(Game game) {
         _game = game;
@@ -21,6 +22,7 @@ public class EndGameScreenUI : MonoBehaviour
     public void Setup() {
         freezeNumber.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
         waterBoostNumber.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
+        flyImages?.Play(_game.session.GetSavelGemsCount());
     }
     
     private void BuyFreeze() {
