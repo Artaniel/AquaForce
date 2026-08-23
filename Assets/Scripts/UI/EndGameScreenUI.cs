@@ -35,4 +35,8 @@ public class EndGameScreenUI : MonoBehaviour
     private void NextWithoutAds() {
         _game.session.EndGameConfirm(false);
     }
+
+    public void OnGemCompletedPath() {
+        
+    }
 }

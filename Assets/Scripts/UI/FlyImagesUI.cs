@@ -1,26 +1,37 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
 public class FlyImagesUI : MonoBehaviour
 {
+    private EndGameScreenUI _endGameScreenUI;
+    [Header("UI")]
     public Canvas targetCanvas;
     public RectTransform spawnParent;
     public RectTransform imagePrefab;
-    public Transform startPoint;
-    public Transform endPoint;
 
+    [Header("Path: [0] start, [1..] waypoints, last = end")]
+    public Transform[] pathPoints;
+
+    [Header("Animation")]
     public int itemCount = 10;
     public float spawnInterval = 0.1f;
     public float flyDuration = 0.5f;
-    public Ease flyEase = Ease.InOutQuad;
+    public Ease flyEase = Ease.InOutSine;
+    public PathType pathType = PathType.CatmullRom;
     public bool ignoreTimeScale = true;
 
     private Coroutine playRoutine;
 
-    public void Play(int сount) {        
-        itemCount = сount;
-        Debug.Log(itemCount);
+    public void Init(EndGameScreenUI endGameScreenUI) {
+        _endGameScreenUI = endGameScreenUI;
+    }
+
+    public void Play(int count) {
+        itemCount = count;
+
         if (playRoutine != null)
             StopCoroutine(playRoutine);
 
@@ -28,9 +39,13 @@ public class FlyImagesUI : MonoBehaviour
     }
 
     private IEnumerator PlayRoutine() {
-        for (int i = 0; i < itemCount; i++) {
+        for (int i = 0; i < itemCount; i++)
+        {
             SpawnAndAnimateOne();
-            if (spawnInterval <=0) continue;
+
+            if (spawnInterval <= 0f)
+                continue;
+
             if (ignoreTimeScale)
                 yield return new WaitForSecondsRealtime(spawnInterval);
             else
@@ -44,13 +59,13 @@ public class FlyImagesUI : MonoBehaviour
         RectTransform instance = Instantiate(imagePrefab, spawnParent);
         instance.gameObject.SetActive(true);
 
-        Vector2 startAnchoredPos = WorldToCanvasPosition(startPoint.position);
-        Vector2 endAnchoredPos = WorldToCanvasPosition(endPoint.position);
+        Vector2 startLocal2D = WorldToSpawnParentPoint(pathPoints[0].position);
+        instance.anchoredPosition = startLocal2D;
 
-        instance.anchoredPosition = startAnchoredPos;
+        Vector3[] localPath = BuildLocalPathFromTransforms(pathPoints, 1);
 
         instance
-            .DOAnchorPos(endAnchoredPos, flyDuration)
+            .DOLocalPath(localPath, flyDuration, pathType)
             .SetEase(flyEase)
             .SetUpdate(ignoreTimeScale)
             .OnComplete(() =>
@@ -60,17 +75,26 @@ public class FlyImagesUI : MonoBehaviour
             });
     }
 
-    private Vector2 WorldToCanvasPosition(Vector3 worldPosition) {
+    private Vector3[] BuildLocalPathFromTransforms(Transform[] points, int startIndex) {
+        List<Vector3> result = new List<Vector3>(points.Length - startIndex);
+
+        for (int i = startIndex; i < points.Length; i++) {
+            Vector2 p2 = WorldToSpawnParentPoint(points[i].position);
+            result.Add(new Vector3(p2.x, p2.y, 0f));
+        }
+
+        return result.ToArray();
+    }
+
+    private Vector2 WorldToSpawnParentPoint(Vector3 worldPosition) {
         Camera cam = targetCanvas.renderMode == RenderMode.ScreenSpaceOverlay
             ? null
             : targetCanvas.worldCamera;
 
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(cam, worldPosition);
 
-        RectTransform canvasRect = targetCanvas.transform as RectTransform;
-
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvasRect,
+            spawnParent,
             screenPoint,
             cam,
             out Vector2 localPoint
@@ -80,7 +104,8 @@ public class FlyImagesUI : MonoBehaviour
     }
 
     private void OnDisable() {
-        if (playRoutine != null) {
+        if (playRoutine != null)
+        {
             StopCoroutine(playRoutine);
             playRoutine = null;
         }

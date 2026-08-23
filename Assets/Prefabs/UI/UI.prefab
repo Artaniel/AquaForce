@@ -2786,6 +2786,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2891562438160364315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2170276173737236607}
+  m_Layer: 0
+  m_Name: Control
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2170276173737236607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891562438160364315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4021065567299694806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.8, y: 128.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3059385057099992359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,6 +6803,7 @@ RectTransform:
   - {fileID: 3263282945959728115}
   - {fileID: 6012845288312162694}
   - {fileID: 6995701724381919604}
+  - {fileID: 2170276173737236607}
   - {fileID: 402253033451559519}
   m_Father: {fileID: 3221073782137317677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6847,12 +6883,15 @@ MonoBehaviour:
   targetCanvas: {fileID: 93311081804719175}
   spawnParent: {fileID: 4021065567299694806}
   imagePrefab: {fileID: 8273395347437322563, guid: e3a61c29c22e9f148ac8041f94920a3e, type: 3}
-  startPoint: {fileID: 6995701724381919604}
-  endPoint: {fileID: 402253033451559519}
+  pathPoints:
+  - {fileID: 6995701724381919604}
+  - {fileID: 2170276173737236607}
+  - {fileID: 402253033451559519}
   itemCount: 10
   spawnInterval: 0.1
   flyDuration: 0.5
   flyEase: 7
+  pathType: 1
   ignoreTimeScale: 1
 --- !u!1 &7945813209593547912
 GameObject:
