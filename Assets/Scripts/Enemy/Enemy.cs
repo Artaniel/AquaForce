@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour , IHealthy
     public CircleCollider2D enemyCollider;    
     public EnemyView view;
     public EnemySound sound;
+    public Transform gemHolder;
 
     void Start() {
         if (_factory) return;

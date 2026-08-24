@@ -58,7 +58,9 @@ public class EnemyAI : MonoBehaviour
     public void TakeGem() {
         targetGem.isReserved = false;
         targetGem.isCarried = true;
-        targetGem.transform.parent = _enemy.transform;
+        targetGem.transform.parent = _enemy.gemHolder;
+        targetGem.transform.position = _enemy.gemHolder.position;
+        targetGem.transform.rotation = Quaternion.identity;
         targetGem.gemRigidbody.simulated = false;
     }
 

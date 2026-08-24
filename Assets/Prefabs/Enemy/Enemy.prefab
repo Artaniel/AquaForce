@@ -38,6 +38,7 @@ Transform:
   - {fileID: 15177197544048665}
   - {fileID: 5458684731987909319}
   - {fileID: 2793986295468468416}
+  - {fileID: 35409290887181744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7934608476270989434
@@ -60,6 +61,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 1974175347018137709}
   view: {fileID: 2322468892975368339}
   sound: {fileID: 9102613137661340945}
+  gemHolder: {fileID: 35409290887181744}
 --- !u!50 &4776215822620831341
 Rigidbody2D:
   serializedVersion: 5
@@ -476,6 +478,7 @@ MonoBehaviour:
   mainSprite: {fileID: 1626854338121843036}
   poiseFallThreshold: 0.1
   poiseStruggleThreshold: 0.5
+  isLookingLeft: 0
 --- !u!1 &4404677239889544723
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +810,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6881449098597187278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35409290887181744}
+  m_Layer: 6
+  m_Name: GemHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &35409290887181744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881449098597187278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9212745753176637732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7284336351845350439
 GameObject:
   m_ObjectHideFlags: 0
