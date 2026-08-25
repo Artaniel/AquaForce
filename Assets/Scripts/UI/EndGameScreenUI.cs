@@ -17,6 +17,7 @@ public class EndGameScreenUI : MonoBehaviour
         nextButton?.onClick.AddListener(NextWithoutAds);
         buyFreeze?.onClick.AddListener(BuyFreeze);
         buyWave?.onClick.AddListener(BuyWave);
+        flyImages?.Init(this);
     }
 
     public void Setup() {
@@ -26,10 +27,21 @@ public class EndGameScreenUI : MonoBehaviour
     }
     
     private void BuyFreeze() {
+        _game.sdkAdapter.RewardedAdsStart((withReward) => {
+            if (withReward) {
+                _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility]++;
+                _game.ui.abilityUi.RefreshNumbers();
+            }
+        });
     }
 
     private void BuyWave() {
-    
+        _game.sdkAdapter.RewardedAdsStart((withReward) => {
+            if (withReward) {
+                _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility]++;
+                _game.ui.abilityUi.RefreshNumbers();
+            }
+        });
     }
     
     private void NextWithoutAds() {

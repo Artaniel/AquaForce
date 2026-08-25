@@ -72,6 +72,7 @@ public class FlyImagesUI : MonoBehaviour
             {
                 if (instance != null)
                     Destroy(instance.gameObject);
+                _endGameScreenUI.OnGemCompletedPath();
             });
     }
 
