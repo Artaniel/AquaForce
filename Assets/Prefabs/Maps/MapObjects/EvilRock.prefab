@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6253862208001264219}
   - component: {fileID: 1697472054872634855}
   m_Layer: 0
-  m_Name: Rock 2
+  m_Name: EvilRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.053, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 9aa49658efdcaef458093c1b1cc6e351, type: 3}
-  m_Color: {r: 0.509434, g: 0.46496385, b: 0.41571736, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 82e5d4e1e9a41614f8751fc461904144, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -140,12 +140,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.11798191, y: 0.16691759}
-      - {x: -0.33101702, y: 0.015842143}
-      - {x: -0.32921028, y: -0.1880405}
-      - {x: 0.33185148, y: -0.16691762}
-      - {x: 0.33365774, y: 0.007921073}
-      - {x: 0.24735975, y: 0.18011943}
+    - - {x: 0.03251791, y: 0.25404942}
+      - {x: -0.33365726, y: 0.07921073}
+      - {x: -0.32921124, y: -0.23556694}
+      - {x: 0.18399096, y: -0.24084766}
+      - {x: 0.3362975, y: -0.17690395}
+      - {x: 0.2816844, y: 0.15107547}
   m_UseDelaunayMesh: 1
 --- !u!114 &6253862208001264219
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damager
-  minVelocity: 20
+  minVelocity: 0.1
 --- !u!208 &1697472054872634855
 NavMeshObstacle:
   m_ObjectHideFlags: 0
