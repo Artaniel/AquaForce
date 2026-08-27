@@ -14,6 +14,7 @@ public class EnemyView : MonoBehaviour
     public float poiseFallThreshold = 0.1f;
     public float poiseStruggleThreshold = 0.5f;
     public bool isLookingLeft = false;
+    private Tween hitTween;
 
     public void Init(Game game, Enemy enemy) {
         _game = game;
@@ -67,7 +68,12 @@ public class EnemyView : MonoBehaviour
         return _enemy.ai.currentState is MoveToGem or MoveToSpawn;
     }
 
-    public void HitVfx() {        
-        mainSprite.DOColor(Color.red, 0.3f).SetLoops(2, LoopType.Yoyo);
+    public void HitVfx() {                
+        hitTween?.Kill();
+        mainSprite.color = Color.white;;
+
+        hitTween = mainSprite
+            .DOColor(Color.red, 0.3f)
+            .SetLoops(2, LoopType.Yoyo);
     }
 }
