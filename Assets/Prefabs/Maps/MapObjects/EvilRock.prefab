@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8489296403334596830}
   - component: {fileID: 7533714996428373438}
-  - component: {fileID: 2130140214178146068}
   - component: {fileID: 6253862208001264219}
   - component: {fileID: 1697472054872634855}
+  - component: {fileID: 999278170955728004}
   m_Layer: 0
   m_Name: EvilRock
   m_TagString: Untagged
@@ -94,8 +94,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!60 &2130140214178146068
-PolygonCollider2D:
+--- !u!114 &6253862208001264219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035248874150639200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damager
+  minVelocity: 0.1
+--- !u!208 &1697472054872634855
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035248874150639200}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.32000002, y: 0.32000002, z: 0.32000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!58 &999278170955728004
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,50 +158,4 @@ PolygonCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 1, y: 0.8828125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.03251791, y: 0.25404942}
-      - {x: -0.33365726, y: 0.07921073}
-      - {x: -0.32921124, y: -0.23556694}
-      - {x: 0.18399096, y: -0.24084766}
-      - {x: 0.3362975, y: -0.17690395}
-      - {x: 0.2816844, y: 0.15107547}
-  m_UseDelaunayMesh: 1
---- !u!114 &6253862208001264219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035248874150639200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b2f77cca3bfcd4b8659727ea292e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Damager
-  minVelocity: 0.1
---- !u!208 &1697472054872634855
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035248874150639200}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.05, y: 0.05, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_Radius: 0.32
