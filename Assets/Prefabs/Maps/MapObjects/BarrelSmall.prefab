@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 382375021828761775, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: m_Name
-      value: Barrel Variant
+      value: BarrelSmall
       objectReference: {fileID: 0}
     - target: {fileID: 680475979463329210, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716209855312690779, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: velocityFraction
-      value: 1.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4434098678176431469, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: m_Radius
@@ -80,7 +80,8 @@ PrefabInstance:
       propertyPath: minVelocity
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4350911544464072012, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

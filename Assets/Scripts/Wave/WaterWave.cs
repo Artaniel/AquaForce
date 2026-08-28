@@ -95,8 +95,8 @@ public class WaterWave : MonoBehaviour
         foreach (Prop prop in _game.propFactory.props) {
             if (!prop) continue;
             if (Vector3.Distance(prop.transform.position, transform.position) > waveRadius) continue;
-            Vector3 deltaVelocity = velocity - (Vector3)prop.propRigidbody.linearVelocity;
-            prop.propRigidbody.AddForce(waveRigidbidy.mass * config.forceModifier * deltaVelocity * prop.velocityFraction);
+            Vector3 deltaVelocity = (velocity* prop.velocityFraction) - (Vector3)prop.propRigidbody.linearVelocity;
+            prop.propRigidbody.AddForce(waveRigidbidy.mass * config.forceModifier * deltaVelocity );
         }
     }    
 }
