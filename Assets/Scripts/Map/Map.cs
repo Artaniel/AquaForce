@@ -6,8 +6,8 @@ public class Map : MonoBehaviour
 {
     private Game _game;
     public List<Gem> gems;
-    public Spawner spawner;
-    public SpawnWave[] spawnWaves;
+    public Spawner[] spawners;    
+    public Transform gemDropZone;
 
     public void Init(Game game) {
         _game = game;
@@ -15,6 +15,7 @@ public class Map : MonoBehaviour
 
     private void OnValidate() {
         gems = GetComponentsInChildren<Gem>().ToList();
-        spawner = GetComponentInChildren<Spawner>();
+        spawners = GetComponentsInChildren<Spawner>();
+        if (!gemDropZone && spawners.Length>0) gemDropZone = spawners[0].transform;
     }
 }

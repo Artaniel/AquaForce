@@ -6,7 +6,6 @@ public class Session : MonoBehaviour
     private Game _game;
     private List<Gem> savedGems;
     private List<Gem> stolenGems;
-    private List<SpawnWave> wavesToSpawn;
     private float sessionStartTime;
     private int currentMapIndex = 0;
     
@@ -19,7 +18,6 @@ public class Session : MonoBehaviour
         _game.map.Init(_game);
         savedGems = _game.map.gems;
         stolenGems = new List<Gem>();
-        wavesToSpawn = new List<SpawnWave>(_game.map.spawnWaves);
         sessionStartTime = Time.time;
         _game.ui.RefreshCounts();
         Time.timeScale = 1;
@@ -27,18 +25,26 @@ public class Session : MonoBehaviour
     }
 
     private void Update() {
-        foreach (SpawnWave spawWave in wavesToSpawn) {
-            if (Time.time - sessionStartTime >= spawWave.launchTime) {
-                LaunchWave(spawWave);
-                wavesToSpawn.Remove(spawWave);
-                break;
+        Spawner spawnerToRemove = null;
+        SpawnWave waveToRemove = null;
+        
+        foreach (Spawner spawner in _game.map.spawners)
+            foreach (SpawnWave spawWave in spawner.spawnWaves) {                
+                if (Time.time - sessionStartTime >= spawWave.launchTime) {
+                    LaunchWave(spawWave, spawner);
+                    spawnerToRemove = spawner;
+                    waveToRemove = spawWave;
+                    break;
             }
         }
+
+        if (spawnerToRemove ==  null) return;
+        spawnerToRemove.spawnWaves.Remove(waveToRemove);
     }
 
-    private void LaunchWave(SpawnWave spawWave) {
+    private void LaunchWave(SpawnWave spawWave, Spawner spawner) {
         foreach(Enemy prefab in spawWave.prefabs) {
-            _game.enemyFactory.Spawn(prefab);
+            _game.enemyFactory.Spawn(prefab, spawner);
         }
     }
 

@@ -38,8 +38,11 @@ public class EnemyFactory : MonoBehaviour
         return enemies.FindAll(enemy => enemy.health.isDead == false).Count;
     }
 
-    public void Spawn(Enemy prefab) {
-        Enemy enemy = Instantiate(prefab, _game.map.spawner.transform.position, Quaternion.identity);
+    public void Spawn(Enemy prefab, Spawner spawner) {
+        Vector2 offset = Random.insideUnitCircle * spawner.radius;
+        Vector3 spawnPosition = spawner.transform.position + new Vector3(offset.x, offset.y, 0f);
+
+        Enemy enemy = Instantiate(prefab, spawnPosition, Quaternion.identity);
         enemies.Add(enemy);
         enemy.Init(_game, this);
         enemy.transform.SetParent(_game.map.transform);
