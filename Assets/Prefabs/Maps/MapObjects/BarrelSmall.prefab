@@ -60,6 +60,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1512879436921756424, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512879436921756424, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512879436921756424, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512879436921756424, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512879436921756424, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 2716209855312690779, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: velocityFraction
       value: 2

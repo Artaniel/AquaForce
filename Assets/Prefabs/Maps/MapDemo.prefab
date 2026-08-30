@@ -352,7 +352,7 @@ Transform:
   m_GameObject: {fileID: 6496682313712799422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.17, y: 7.33, z: 0}
+  m_LocalPosition: {x: -9.99, y: 6.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnWaves:
   - {fileID: 11400000, guid: 9d6c88567d8dc3843ac904fa1673e942, type: 2}
-  radius: 10
+  radius: 3
 --- !u!1001 &270532556758902221
 PrefabInstance:
   m_ObjectHideFlags: 0

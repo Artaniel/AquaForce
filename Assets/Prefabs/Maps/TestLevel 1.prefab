@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f33db7c8dd0c4780e0e3a11a92a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  spawnWaves: []
+  radius: 1
 --- !u!1 &1635943897980541279
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +356,9 @@ MonoBehaviour:
   - {fileID: 8254793132519259896}
   - {fileID: 4365180408026205560}
   - {fileID: 7110079826348558168}
-  spawner: {fileID: 3627060374834948988}
-  spawnWaves: []
+  spawners:
+  - {fileID: 3627060374834948988}
+  gemDropZone: {fileID: 556203590773578038}
 --- !u!1 &8107745066464273915
 GameObject:
   m_ObjectHideFlags: 0
