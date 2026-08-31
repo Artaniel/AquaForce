@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class FlyImagesUI : MonoBehaviour
 {
+    private Game _game;
     private EndGameScreenUI _endGameScreenUI;
     [Header("UI")]
     public Canvas targetCanvas;
@@ -24,9 +25,12 @@ public class FlyImagesUI : MonoBehaviour
     public bool ignoreTimeScale = true;
 
     private Coroutine playRoutine;
+    private int notLaunchedCount;
+    private int completedFlyCount = 0;
 
-    public void Init(EndGameScreenUI endGameScreenUI) {
+    public void Init(EndGameScreenUI endGameScreenUI, Game game) {
         _endGameScreenUI = endGameScreenUI;
+        _game = game;
     }
 
     public void Play(int count) {
@@ -39,6 +43,8 @@ public class FlyImagesUI : MonoBehaviour
     }
 
     private IEnumerator PlayRoutine() {
+        notLaunchedCount = _game.session.GetSavelGemsCount();
+        completedFlyCount = 0;
         for (int i = 0; i < itemCount; i++)
         {
             SpawnAndAnimateOne();
@@ -64,15 +70,16 @@ public class FlyImagesUI : MonoBehaviour
 
         Vector3[] localPath = BuildLocalPathFromTransforms(pathPoints, 1);
 
+        OnFlyStart();
         instance
             .DOLocalPath(localPath, flyDuration, pathType)
             .SetEase(flyEase)
             .SetUpdate(ignoreTimeScale)
             .OnComplete(() =>
             {
+                OnFlyEnd();
                 if (instance != null)
                     Destroy(instance.gameObject);
-                _endGameScreenUI.OnGemCompletedPath();
             });
     }
 
@@ -102,6 +109,16 @@ public class FlyImagesUI : MonoBehaviour
         );
 
         return localPoint;
+    }
+
+    private void OnFlyStart() {
+        notLaunchedCount--;
+        _game.ui.savedGemsText.text = notLaunchedCount.ToString();
+    }
+
+    private void OnFlyEnd() {
+        completedFlyCount++;
+        _endGameScreenUI.scoreText.text = (completedFlyCount * 10).ToString();
     }
 
     private void OnDisable() {

@@ -572,6 +572,7 @@ MonoBehaviour:
   nextButton: {fileID: 1530655492582236234}
   freezeNumber: {fileID: 4042573035733067669}
   waterBoostNumber: {fileID: 5349589389396630573}
+  scoreText: {fileID: 3929349051615073038}
   flyImages: {fileID: 0}
 --- !u!1 &268722707238422451
 GameObject:
@@ -6867,6 +6868,7 @@ MonoBehaviour:
   nextButton: {fileID: 7297093810573060303}
   freezeNumber: {fileID: 4770276769100009974}
   waterBoostNumber: {fileID: 3716799988887207999}
+  scoreText: {fileID: 7342540701261497753}
   flyImages: {fileID: 9135749689452997514}
 --- !u!114 &9135749689452997514
 MonoBehaviour:

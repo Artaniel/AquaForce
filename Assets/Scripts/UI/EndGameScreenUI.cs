@@ -10,6 +10,7 @@ public class EndGameScreenUI : MonoBehaviour
     public Button nextButton;
     public TextMeshProUGUI freezeNumber;
     public TextMeshProUGUI waterBoostNumber;
+    public TextMeshProUGUI scoreText;
     public FlyImagesUI flyImages;
     
     public void Init(Game game) {
@@ -17,7 +18,7 @@ public class EndGameScreenUI : MonoBehaviour
         nextButton?.onClick.AddListener(NextWithoutAds);
         buyFreeze?.onClick.AddListener(BuyFreeze);
         buyWave?.onClick.AddListener(BuyWave);
-        flyImages?.Init(this);
+        flyImages?.Init(this, game);
     }
 
     public void Setup() {
@@ -46,9 +47,5 @@ public class EndGameScreenUI : MonoBehaviour
     
     private void NextWithoutAds() {
         _game.session.EndGameConfirm(false);
-    }
-
-    public void OnGemCompletedPath() {
-        
     }
 }
