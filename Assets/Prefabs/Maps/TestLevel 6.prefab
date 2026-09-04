@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f33db7c8dd0c4780e0e3a11a92a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  spawnWaves: []
+  radius: 1
 --- !u!1 &1635943897980541279
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.42, y: 3.15, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7684662909513626164}
@@ -339,10 +341,9 @@ MonoBehaviour:
   - {fileID: 8254793132519259896}
   - {fileID: 4365180408026205560}
   - {fileID: 7110079826348558168}
-  spawner: {fileID: 3627060374834948988}
-  spawnWaves:
-  - {fileID: 11400000, guid: 8439d758e6520db4991147e6c5a4145f, type: 2}
-  - {fileID: 11400000, guid: 9d6c88567d8dc3843ac904fa1673e942, type: 2}
+  spawners:
+  - {fileID: 3627060374834948988}
+  gemDropZone: {fileID: 556203590773578038}
 --- !u!1 &8107745066464273915
 GameObject:
   m_ObjectHideFlags: 0
