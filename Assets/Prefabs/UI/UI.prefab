@@ -2130,6 +2130,41 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1935317419860281851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92118282157632629}
+  m_Layer: 0
+  m_Name: End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &92118282157632629
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935317419860281851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4021065567299694806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -35.2, y: 74.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1935548067879188167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,7 +6381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402253033451559519}
   m_Layer: 0
-  m_Name: End
+  m_Name: Control2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6368,7 +6403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.2, y: 74.4}
+  m_AnchoredPosition: {x: -35.2, y: 88.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7120520454134459627
@@ -6806,6 +6841,7 @@ RectTransform:
   - {fileID: 6995701724381919604}
   - {fileID: 2170276173737236607}
   - {fileID: 402253033451559519}
+  - {fileID: 92118282157632629}
   m_Father: {fileID: 3221073782137317677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6884,11 +6920,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlyImagesUI
   targetCanvas: {fileID: 93311081804719175}
   spawnParent: {fileID: 4021065567299694806}
-  imagePrefab: {fileID: 8273395347437322563, guid: e3a61c29c22e9f148ac8041f94920a3e, type: 3}
+  imagePrefabs:
+  - {fileID: 8273395347437322563, guid: e3a61c29c22e9f148ac8041f94920a3e, type: 3}
+  - {fileID: 8273395347437322563, guid: 391c3bc38158c874d9714c9adc4a7af7, type: 3}
+  - {fileID: 8273395347437322563, guid: e543dffdbc1b4f64ea478ca362d77af0, type: 3}
+  - {fileID: 8273395347437322563, guid: a57cbfffebfcf3e4995c648fd1a0612d, type: 3}
   pathPoints:
   - {fileID: 6995701724381919604}
   - {fileID: 2170276173737236607}
   - {fileID: 402253033451559519}
+  - {fileID: 92118282157632629}
   itemCount: 10
   spawnInterval: 0.1
   flyDuration: 0.5

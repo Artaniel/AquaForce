@@ -8,15 +8,12 @@ public class FlyImagesUI : MonoBehaviour
 {
     private Game _game;
     private EndGameScreenUI _endGameScreenUI;
-    [Header("UI")]
     public Canvas targetCanvas;
     public RectTransform spawnParent;
-    public RectTransform imagePrefab;
+    public RectTransform[] imagePrefabs;
 
-    [Header("Path: [0] start, [1..] waypoints, last = end")]
     public Transform[] pathPoints;
 
-    [Header("Animation")]
     public int itemCount = 10;
     public float spawnInterval = 0.1f;
     public float flyDuration = 0.5f;
@@ -62,7 +59,7 @@ public class FlyImagesUI : MonoBehaviour
     }
 
     private void SpawnAndAnimateOne() {
-        RectTransform instance = Instantiate(imagePrefab, spawnParent);
+        RectTransform instance = Instantiate(imagePrefabs[UnityEngine.Random.Range(0, 4)], spawnParent);
         instance.gameObject.SetActive(true);
 
         Vector2 startLocal2D = WorldToSpawnParentPoint(pathPoints[0].position);
