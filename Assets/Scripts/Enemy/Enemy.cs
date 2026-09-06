@@ -9,14 +9,14 @@ public class Enemy : MonoBehaviour , IHealthy
     public EnemyAI ai;
     public EnemyPoise poise;
     public Rigidbody2D enemyRigidbody;
-    public CircleCollider2D enemyCollider;    
+    public CircleCollider2D enemyCollider;
     public EnemyView view;
     public EnemySound sound;
+    public EnemyEmotions emotions;
     public Transform gemHolder;
 
     void Start() {
         if (_factory) return;
-        //Debug.LogWarning("Enemy was not inited.");
         Game.instance.enemyFactory.Register(this);
     }
 
@@ -29,13 +29,14 @@ public class Enemy : MonoBehaviour , IHealthy
         poise.Init(_game, this);
         view.Init(_game, this);
         sound.Init(_game, this);
+        emotions.Init(_game, this);
     }
 
     public void NonLetalDamage() {
         sound.Hit();
         view.HitVfx();
     }
-    
+
     public void ManualFixedUpdate(float deltaTime) {
         ai.ManualFixedUpdate(deltaTime);
         view.ManualFixedUpdate(deltaTime);
@@ -43,18 +44,20 @@ public class Enemy : MonoBehaviour , IHealthy
 
     public void ManualUpdate(float deltaTime) {
         view.ManualUpdate(deltaTime);
+        emotions.ManualUpdate(deltaTime);
     }
 
-    public void Death() {        
+    public void Death() {
         sound.Death();
         _game.session.EnemyKilled();
-        _factory.Destroy(this); 
-        view.gameObject.SetActive(false);        
+        _factory.Destroy(this);
+        view.gameObject.SetActive(false);
     }
 
     private void OnValidate() {
         if (!enemyRigidbody) enemyRigidbody = GetComponent<Rigidbody2D>();
         if (!enemyCollider) enemyCollider = GetComponent<CircleCollider2D>();
         if (!view) view = GetComponentInChildren<EnemyView>();
+        if (!emotions) emotions = GetComponentInChildren<EnemyEmotions>();
     }
 }
