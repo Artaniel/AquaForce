@@ -40,9 +40,12 @@ public class EnemyEmotions : MonoBehaviour
         Show(spriteSkull);
     }
 
+    private Tween _tween;
+
     private void Show(SpriteRenderer sprite) {
+        sprite.color = Color.white;
         sprite.gameObject.SetActive(true);
-        sprite.DOColor(new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f), fadeDuration)
+        sprite.DOColor(Color.clear, fadeDuration)
               .SetDelay(popupLifetime - fadeDuration)
               .OnComplete(() => sprite.gameObject.SetActive(false));
     }

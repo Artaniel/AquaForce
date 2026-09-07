@@ -47,6 +47,7 @@ public class Idle : AiState
             if (gem.isReserved) continue;
             _ai.targetGem = gem;
             gem.isReserved = true;
+            _owner.emotions.ShowEye();
             _ai.SetState<MoveToGem>();
             return;
         } 

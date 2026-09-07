@@ -4,11 +4,9 @@ using DG.Tweening;
 public class Struggle : ViewState
 {
     public override void StartState() {
-        
     }
 
     public override void StopState() {
-        
     }
 
     public override void RefreshState(float poise) {

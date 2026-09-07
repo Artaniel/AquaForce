@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour , IHealthy
     public void NonLetalDamage() {
         sound.Hit();
         view.HitVfx();
+        emotions.ShowStar();
     }
 
     public void ManualFixedUpdate(float deltaTime) {
@@ -49,6 +50,7 @@ public class Enemy : MonoBehaviour , IHealthy
 
     public void Death() {
         sound.Death();
+        emotions.ShowSkull();
         _game.session.EnemyKilled();
         _factory.Destroy(this);
         view.gameObject.SetActive(false);

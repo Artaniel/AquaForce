@@ -22,6 +22,7 @@ public class MoveToGem : AiState
             _owner.poise.poise >= _owner.view.poiseStruggleThreshold 
             ) {
             _ai.TakeGem();
+            _owner.emotions.ShowSmile();
             _ai.SetState<MoveToSpawn>();
             return;
         }
