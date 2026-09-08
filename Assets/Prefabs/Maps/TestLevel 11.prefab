@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnWaves:
   - {fileID: 11400000, guid: b2c04b948c624184f84e5b982c9f7224, type: 2}
-  - {fileID: 11400000, guid: 7618d43c0a72a3244a3db281c2fed633, type: 2}
-  - {fileID: 11400000, guid: 574b5267dfa81d34dacbc681af090da9, type: 2}
+  - {fileID: 11400000, guid: 86ca0588b9acea842aa1a018c828a4a0, type: 2}
+  - {fileID: 11400000, guid: 1f7b2f69fca27474590bad965dcf4fe1, type: 2}
   radius: 1
 --- !u!1 &697299291856080090
 GameObject:
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnWaves:
-  - {fileID: 11400000, guid: 2ad6acd8e24882745bfa84ad5259fb0b, type: 2}
-  - {fileID: 11400000, guid: 8ad65e3bdfb6eb04eb3b6e4275bacf56, type: 2}
+  - {fileID: 11400000, guid: ff95be0b9b323024cb5019eed0bed9ed, type: 2}
+  - {fileID: 11400000, guid: 29c200028d7ea25498e6e9d97e1b1f78, type: 2}
   - {fileID: 11400000, guid: 1f7b2f69fca27474590bad965dcf4fe1, type: 2}
   radius: 1
 --- !u!1 &818260241391486191
@@ -1677,11 +1677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489296403334596830, guid: d18ca239ec667a8429159ff1730f2fdc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.95
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 8489296403334596830, guid: d18ca239ec667a8429159ff1730f2fdc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.33
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8489296403334596830, guid: d18ca239ec667a8429159ff1730f2fdc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3625,7 +3625,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879345870385394373, guid: 283f4f8932c6233478ffefdeff9e8fd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.15
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 1879345870385394373, guid: 283f4f8932c6233478ffefdeff9e8fd4, type: 3}
       propertyPath: m_LocalPosition.y
