@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 35409290887181744, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.274
+      objectReference: {fileID: 0}
     - target: {fileID: 313521186773933485, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Name
       value: Orc Variant
