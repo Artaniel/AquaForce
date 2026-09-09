@@ -135,7 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f33db7c8dd0c4780e0e3a11a92a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  spawnWaves: []
+  spawnWaves:
+  - {fileID: 11400000, guid: 8439d758e6520db4991147e6c5a4145f, type: 2}
+  - {fileID: 11400000, guid: 9d6c88567d8dc3843ac904fa1673e942, type: 2}
+  - {fileID: 11400000, guid: f4c6bbbbe29633a48afb5e4d6ea37f71, type: 2}
+  - {fileID: 11400000, guid: 08e47e1ff2cde5b4487f165e1cad9b80, type: 2}
   radius: 1
 --- !u!1 &1635943897980541279
 GameObject:
