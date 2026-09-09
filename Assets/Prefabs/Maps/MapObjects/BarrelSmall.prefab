@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716209855312690779, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: velocityFraction
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4434098678176431469, guid: 23d66d4f76dc3e44ca1979318c162a04, type: 3}
       propertyPath: m_Radius
