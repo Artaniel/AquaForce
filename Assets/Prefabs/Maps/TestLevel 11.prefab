@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnWaves:
   - {fileID: 11400000, guid: b2c04b948c624184f84e5b982c9f7224, type: 2}
-  - {fileID: 11400000, guid: 86ca0588b9acea842aa1a018c828a4a0, type: 2}
-  - {fileID: 11400000, guid: 1f7b2f69fca27474590bad965dcf4fe1, type: 2}
+  - {fileID: 11400000, guid: 574b5267dfa81d34dacbc681af090da9, type: 2}
   radius: 1
 --- !u!1 &697299291856080090
 GameObject:
@@ -95,7 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnWaves:
   - {fileID: 11400000, guid: ff95be0b9b323024cb5019eed0bed9ed, type: 2}
-  - {fileID: 11400000, guid: 29c200028d7ea25498e6e9d97e1b1f78, type: 2}
   - {fileID: 11400000, guid: 1f7b2f69fca27474590bad965dcf4fe1, type: 2}
   radius: 1
 --- !u!1 &818260241391486191
