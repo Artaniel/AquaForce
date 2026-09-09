@@ -115,7 +115,7 @@ public class Session : MonoBehaviour
 
     public void SwitchToLevel(int levelIndex) {
         SessionEnd();
-        currentMapIndex = levelIndex;
+        currentMapIndex = levelIndex-1;
         _game.ui.HideEndGameScreen();
         SessionStart();
     }
