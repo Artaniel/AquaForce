@@ -5176,7 +5176,13 @@ MonoBehaviour:
   foamParticles: {fileID: 5852130305227400545}
   emissionRateMultiplier: 30
   minimalRadius: 0.1
-  sparcleParticles: {fileID: 0}
+  intakeParticles: {fileID: 0}
+  intakeRingPadding: 0.5
+  intakeMinRadius: 0.3
+  intakeMaxRadius: 20
+  intakeRatePerIntakeSpeed: 40
+  intakeRateBase: 0
+  intakeMaxRate: 400
 --- !u!1 &6462623972252465495
 GameObject:
   m_ObjectHideFlags: 0
@@ -10029,7 +10035,13 @@ MonoBehaviour:
   foamParticles: {fileID: 5350140900352275160}
   emissionRateMultiplier: 30
   minimalRadius: 0.1
-  sparcleParticles: {fileID: 0}
+  intakeParticles: {fileID: 5852130305227400545}
+  intakeRingPadding: 0.5
+  intakeMinRadius: 0.3
+  intakeMaxRadius: 20
+  intakeRatePerIntakeSpeed: 40
+  intakeRateBase: 0
+  intakeMaxRate: 400
 --- !u!1 &8282862107213025498
 GameObject:
   m_ObjectHideFlags: 0
