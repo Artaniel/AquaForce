@@ -28,6 +28,7 @@ public class WaterWave : MonoBehaviour
         _game.waveFactory.ReleaseWave();        
         waveRigidbidy.simulated = true;
         waveRigidbidy.linearVelocity = velocity;
+        waveParticles.SetIntakeSpeed(0);
     }
 
     private void Update() {
@@ -51,7 +52,8 @@ public class WaterWave : MonoBehaviour
         lastPosition = transform.position;
         view.localScale = config.maxScale * waveRigidbidy.mass / config.maxMass * Vector3.one;
         trail.widthMultiplier = config.maxScale * waveRigidbidy.mass / config.maxMass;   
-        waveParticles.RefreshParticleCloudRadius(view.localScale.x / 2f);
+        waveParticles.RefreshParticleCloudRadius(view.localScale.x / 2f);        
+        waveParticles.RefreshIntakeRingRadius(view.localScale.x / 2f);
     }
 
     private void ReleasedMassUpdate() { 
@@ -65,11 +67,21 @@ public class WaterWave : MonoBehaviour
     private void ControledMassUpdate() {
         waveRigidbidy.linearVelocity = velocity;
         waveParticles.transform.rotation = Quaternion.LookRotation(Vector3.forward, -velocity);
-        if (velocity.magnitude != 0) 
-            waveRigidbidy.mass += (_game.abilityFactory.isBoostedMassGain ? config.boostedGainSpeed : config.massGainSpeed) * Time.deltaTime;
         
-        if (waveRigidbidy.mass > config.maxMass)
+        if (velocity.magnitude == 0) {
+            waveParticles.SetIntakeSpeed(0);
+            return;
+        }
+
+        float currentIntakeSpeed = _game.abilityFactory.isBoostedMassGain ? config.boostedGainSpeed : config.massGainSpeed;        
+        waveRigidbidy.mass += currentIntakeSpeed * Time.deltaTime;
+        
+        if (waveRigidbidy.mass > config.maxMass){
             waveRigidbidy.mass = config.maxMass;
+            currentIntakeSpeed = 0;
+        }
+
+        waveParticles.SetIntakeSpeed(currentIntakeSpeed);
     }
 
     private void ForceFieldUpdate() {
