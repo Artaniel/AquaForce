@@ -335,7 +335,6 @@ GameObject:
   - component: {fileID: 402077545370829177}
   - component: {fileID: 5852130305227400545}
   - component: {fileID: 1218720228919918202}
-  - component: {fileID: 3712927250190833429}
   m_Layer: 0
   m_Name: GatherParticles
   m_TagString: Untagged
@@ -442,7 +441,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.5
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1195,7 +1194,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1633,7 +1632,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.2535498, b: 1, a: 0}
+        key0: {r: 0, g: 0.73670626, b: 1, a: 0}
         key1: {r: 0, g: 0.2736156, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -2297,7 +2296,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -1
+      scalar: -1.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5128,7 +5127,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5161,28 +5160,6 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
---- !u!114 &3712927250190833429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6049926491222620089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09c610e69b7ab4468e8fa9e490505f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaveParticles
-  foamParticles: {fileID: 5852130305227400545}
-  emissionRateMultiplier: 30
-  minimalRadius: 0.1
-  intakeParticles: {fileID: 0}
-  intakeRingPadding: 0.5
-  intakeMinRadius: 0.3
-  intakeMaxRadius: 20
-  intakeRatePerIntakeSpeed: 40
-  intakeRateBase: 0
-  intakeMaxRate: 400
 --- !u!1 &6462623972252465495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,7 +5178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &726179069993673391
 Transform:
   m_ObjectHideFlags: 0
@@ -5935,7 +5912,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5
+      value: 1
       mode: 0
       spread: 0
       speed:

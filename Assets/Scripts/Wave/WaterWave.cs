@@ -13,6 +13,7 @@ public class WaterWave : MonoBehaviour
     public WaveParticles waveParticles;
 
     public WaveView waveView;
+    private float lastMass = 0;
 
     public void Init(Game game) {
         _game = game;
@@ -20,6 +21,7 @@ public class WaterWave : MonoBehaviour
         trail.Clear();
         waveParticles.Init(this);
         waveView.Init(this);
+        lastMass = 0;
     }
 
     public void Release() {
@@ -41,7 +43,8 @@ public class WaterWave : MonoBehaviour
     }
 
     private void MassUpdate() {  
-        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;      
+        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;    
+        lastMass = waveRigidbidy.mass; 
         waveRigidbidy.mass -= config.massDecayPerDistance * (transform.position - lastPosition).magnitude;
 
         if (isReleased) 
@@ -81,7 +84,7 @@ public class WaterWave : MonoBehaviour
             currentIntakeSpeed = 0;
         }
 
-        waveParticles.SetIntakeSpeed(currentIntakeSpeed);
+        waveParticles.SetIntakeSpeed((waveRigidbidy.mass - lastMass)/Time.deltaTime);
     }
 
     private void ForceFieldUpdate() {
