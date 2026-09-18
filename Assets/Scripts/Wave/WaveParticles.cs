@@ -42,14 +42,25 @@ public class WaveParticles : MonoBehaviour
     public void SetIntakeSpeed(float intakeSpeed) {
         _intakeSpeed = Mathf.Max(0f, intakeSpeed);
         _intakeEmission.rateOverTime = Mathf.Min(_intakeSpeed * intakeRatePerIntakeSpeed, intakeMaxRate);
+        RecomputeIntakeRate();
     }
 
     public void RefreshIntakeRingRadius(float waveRadius) {
+        float previousRadius = _currentRadius;
         _currentRadius = Mathf.Clamp(
             waveRadius + intakeRingPadding,
             intakeMinRadius,
             intakeMaxRadius
         );
         _intakeShape.radius = _currentRadius;
+        RecomputeIntakeRate();
+
+        if (_currentRadius < previousRadius)
+            intakeParticles.Clear();    
+    }
+
+    private void RecomputeIntakeRate() {
+        float rate = intakeRateBase + _intakeSpeed * intakeRatePerIntakeSpeed * _currentRadius;
+        _intakeEmission.rateOverTime = Mathf.Min(rate, intakeMaxRate);
     }
 }
