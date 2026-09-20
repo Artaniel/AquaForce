@@ -73,9 +73,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
---- !u!212 &5290977092558388258 stripped
+--- !u!212 &126833815706140465 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5857065018818396038, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1866654731930795157, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
   m_PrefabInstance: {fileID: 1739843252223378340}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7684919345732244107 stripped
@@ -158,11 +158,11 @@ PrefabInstance:
     - target: {fileID: 2407078056011987820, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: 'healthIndecators.Array.data[3]'
       value: 
-      objectReference: {fileID: 4084436229785762645}
+      objectReference: {fileID: 8070762865190877254}
     - target: {fileID: 2407078056011987820, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: 'healthIndecators.Array.data[4]'
       value: 
-      objectReference: {fileID: 5290977092558388258}
+      objectReference: {fileID: 126833815706140465}
     - target: {fileID: 2453485092386245349, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.022000015
@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719187551255402731, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: moveForce
-      value: 5
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4249367411598172274, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -181,11 +181,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347511602766587445, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: damagePerSpeed
-      value: 0.001
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4404677239889544723, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776215822620831341, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
+      propertyPath: m_Mass
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6053079820331113032, guid: 83e65ebaf0ad7ce4f887ac6ffb894d64, type: 3}
       propertyPath: m_Sprite
@@ -384,8 +388,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8251574551373631791, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
   m_PrefabInstance: {fileID: 7630976310572270803}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &4084436229785762645 stripped
+--- !u!212 &8070762865190877254 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5857065018818396038, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1866654731930795157, guid: 3093d45c6ba535c4a8adcdc7b8e59ef2, type: 3}
   m_PrefabInstance: {fileID: 7630976310572270803}
   m_PrefabAsset: {fileID: 0}
