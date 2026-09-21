@@ -175,6 +175,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Goblin64-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbba35ab7b951a54ab732c6a9fab9d80
+      internalID: 543516691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -194,6 +216,7 @@ TextureImporter:
       Goblin64-Sheet_0: -71711863
       Goblin64-Sheet_1: 997771837
       Goblin64-Sheet_2: -878384346
+      Goblin64-Sheet_3: 543516691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
