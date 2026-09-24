@@ -22,6 +22,7 @@ public class FlyImagesUI : MonoBehaviour
     public bool ignoreTimeScale = true;
 
     private Coroutine playRoutine;
+    private readonly List<RectTransform> activeInstances = new List<RectTransform>();
     private int notLaunchedCount;
     private int completedFlyCount = 0;
 
@@ -60,6 +61,7 @@ public class FlyImagesUI : MonoBehaviour
 
     private void SpawnAndAnimateOne() {
         RectTransform instance = Instantiate(imagePrefabs[UnityEngine.Random.Range(0, 4)], spawnParent);
+        activeInstances.Add(instance);
         instance.gameObject.SetActive(true);
 
         Vector2 startLocal2D = WorldToSpawnParentPoint(pathPoints[0].position);
@@ -74,6 +76,7 @@ public class FlyImagesUI : MonoBehaviour
             .SetUpdate(ignoreTimeScale)
             .OnComplete(() =>
             {
+                activeInstances.Remove(instance);
                 OnFlyEnd();
                 if (instance != null)
                     Destroy(instance.gameObject);
@@ -124,5 +127,16 @@ public class FlyImagesUI : MonoBehaviour
             StopCoroutine(playRoutine);
             playRoutine = null;
         }
+
+        foreach (RectTransform instance in activeInstances)
+        {
+            if (instance != null)
+            {
+                instance.DOKill();
+                Destroy(instance.gameObject);
+            }
+        }
+
+        activeInstances.Clear();
     }
 }

@@ -81,7 +81,6 @@ public class WaterWave : MonoBehaviour
         
         if (waveRigidbidy.mass > config.maxMass){
             waveRigidbidy.mass = config.maxMass;
-            currentIntakeSpeed = 0;
         }
 
         waveParticles.SetIntakeSpeed((waveRigidbidy.mass - lastMass)/Time.deltaTime);

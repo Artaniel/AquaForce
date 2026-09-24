@@ -61,6 +61,8 @@ public class EnemyView : MonoBehaviour
 
     private void OnDestroy() {
         animator.transform.DOKill();
+        hitTween?.Kill();
+        mainSprite?.DOKill();
         currentState = null;
     }
 
