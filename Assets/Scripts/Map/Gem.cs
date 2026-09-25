@@ -10,4 +10,8 @@ public class Gem : MonoBehaviour
     private void OnValidate() {
         if (!gemRigidbody) gemRigidbody = GetComponent<Rigidbody2D>();
     }
+
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
 }

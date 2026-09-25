@@ -60,6 +60,7 @@ public class Session : MonoBehaviour
         savedGems.Remove(gem);
         stolenGems.Add(gem);
         _game.ui.RefreshCounts();
+        gem.Hide();
     }
     
     public void LoseCheck() {
