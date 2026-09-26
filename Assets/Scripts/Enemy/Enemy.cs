@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour , IHealthy
     }
 
     public void Death() {
+        ai.DropGem();
         sound.Death();
         emotions.ShowSkull();
         _game.session.EnemyKilled();

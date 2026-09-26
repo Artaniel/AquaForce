@@ -65,14 +65,18 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void DropGem() {
+        if (currentState == states[typeof(MoveToGem)]) {
+            SetState<Idle>();
+            return;
+        }
+
         if (!targetGem) return;
+        if (currentState != states[typeof(MoveToSpawn)] || !targetGem.isCarried) return;
+
         targetGem.isReserved = false;
-        if (currentState != states[typeof(MoveToSpawn)]) return;
-        if (!targetGem.isCarried) return;
-        
         targetGem.isCarried = false;
         targetGem.transform.parent = _game.map.transform;
-        targetGem.gemRigidbody.simulated = true;   
+        targetGem.gemRigidbody.simulated = true;
         SetState<Idle>();
     }
 
