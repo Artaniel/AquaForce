@@ -52,7 +52,8 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void StealGem(Gem gem) {
-        _game.session.StealGem(gem);
+        _game.session.StealGem(gem);        
+        _game.sound.OnGemDelivered();
     }
 
     public void TakeGem() {
@@ -62,6 +63,7 @@ public class EnemyAI : MonoBehaviour
         targetGem.transform.position = _enemy.gemHolder.position;
         targetGem.transform.rotation = Quaternion.identity;
         targetGem.gemRigidbody.simulated = false;
+        _game.sound.OnGemTaken();
     }
 
     public void DropGem() {

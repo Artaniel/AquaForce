@@ -19,6 +19,8 @@ public class Sound : MonoBehaviour
     public AudioSource win;
     public AudioSource lose;
     public AudioSource bgm;
+    public AudioSource gemTaken;
+    public AudioSource gemDelivered;
 
     public void Init(Game game) {
         _game = game;
@@ -74,5 +76,15 @@ public class Sound : MonoBehaviour
     public void OnLose(){
         if (isMuted) return;
         lose.Play();
-    }    
+    }  
+
+    public void OnGemTaken(){
+        if (isMuted) return;
+        gemTaken.Play();
+    }
+
+    public void OnGemDelivered(){
+        if (isMuted) return;
+        gemDelivered.Play();
+    }
 }
