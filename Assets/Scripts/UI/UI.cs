@@ -14,7 +14,7 @@ public class UI : MonoBehaviour
 
     public AbilityUI abilityUi;
     public LevelSelectionUI levelSelectionUI;
-    public FinalScreenUI funalScreenUI;
+    public FinalScreenUI finalScreenUI;
     public Button mapSelectButton;
 
 
@@ -24,7 +24,7 @@ public class UI : MonoBehaviour
         winScreen.Init(_game);
         loseScreen.Init(_game);
         levelSelectionUI.Init(_game, this);
-        funalScreenUI.Init(_game, this);
+        finalScreenUI.Init(_game, this);
         mapSelectButton.onClick.AddListener(LevelSelectionOpen);
     }
 
@@ -52,5 +52,9 @@ public class UI : MonoBehaviour
     private void LevelSelectionOpen() {
         levelSelectionUI.gameObject.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void ShowFinalScreen() {
+        
     }
 }

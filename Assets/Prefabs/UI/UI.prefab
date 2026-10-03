@@ -2041,7 +2041,7 @@ MonoBehaviour:
   loseScreen: {fileID: 6383895258609868215}
   abilityUi: {fileID: 1228655829619264910}
   levelSelectionUI: {fileID: 8827250915438408115}
-  funalScreenUI: {fileID: 0}
+  finalScreenUI: {fileID: 1566678064389544005}
   mapSelectButton: {fileID: 8801420978925904185}
 --- !u!1 &1854809899311718890
 GameObject:
