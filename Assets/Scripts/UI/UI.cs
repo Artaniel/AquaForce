@@ -55,6 +55,6 @@ public class UI : MonoBehaviour
     }
 
     public void ShowFinalScreen() {
-        
+        finalScreenUI.Open();
     }
 }
