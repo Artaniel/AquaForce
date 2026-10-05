@@ -50,7 +50,7 @@ public class Session : MonoBehaviour
 
     public void SessionEnd() { 
         _game.enemyFactory.DestroyAll();
-        Destroy(_game.map.gameObject);
+        if(_game.map) Destroy(_game.map.gameObject);
         _game.waveFactory.DestroyAll();
         Time.timeScale = 0;
         _game.sdkAdapter.GameplayStop();

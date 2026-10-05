@@ -25,6 +25,7 @@ public class EndGameScreenUI : MonoBehaviour
         freezeNumber.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
         waterBoostNumber.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
         flyImages?.Play(_game.session.GetSavelGemsCount());
+        scoreText.text = "";
     }
     
     private void BuyFreeze() {

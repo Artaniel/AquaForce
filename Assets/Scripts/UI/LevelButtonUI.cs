@@ -24,7 +24,8 @@ public class LevelButtonUI : MonoBehaviour
     }
     
     public void OnClick() {
-        _levelSelectionUI.gameObject.SetActive(false);
+        _levelSelectionUI?.gameObject.SetActive(false);
+        _finalScreenUI?.gameObject.SetActive(false);
         _game.session.SwitchToLevel(_levelIndex);
     }
 }
