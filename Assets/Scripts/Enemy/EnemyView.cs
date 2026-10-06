@@ -15,6 +15,7 @@ public class EnemyView : MonoBehaviour
     public float poiseStruggleThreshold = 0.5f;
     public bool isLookingLeft = false;
     private Tween hitTween;
+    public bool rotateOnFall = true;
 
     public void Init(Game game, Enemy enemy) {
         _game = game;
