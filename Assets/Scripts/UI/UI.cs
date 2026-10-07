@@ -57,4 +57,11 @@ public class UI : MonoBehaviour
     public void ShowFinalScreen() {
         finalScreenUI.Open();
     }
+
+    public bool UiAllowsWave() {
+        if (winScreen.gameObject.activeSelf) return false;
+        if (loseScreen.gameObject.activeSelf) return false;
+        if (finalScreenUI.gameObject.activeSelf) return false;
+        return true;
+    }
 }

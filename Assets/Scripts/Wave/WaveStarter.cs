@@ -22,6 +22,7 @@ public class WaveStarter : MonoBehaviour
 
     private void OnCursorPress() {
         if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (!_game.ui.UiAllowsWave()) return;
         _game.waveFactory.StartWave(_game.input.cursorWorldPosition);
         _game.sound.OnPress();
     }
