@@ -8,9 +8,11 @@ public class Session : MonoBehaviour
     private List<Gem> stolenGems;
     private float sessionStartTime;
     private int currentMapIndex = 0;
+    private int[] levelsScore;
     
     public void Init(Game game) {
         _game = game;
+        levelsScore = new int[_game.library.maps.Length];
     }
 
     public void SessionStart() {
@@ -87,8 +89,9 @@ public class Session : MonoBehaviour
     }
     
     public void Win() {
-        currentMapIndex++;
         int score = savedGems.Count * 100;
+        levelsScore[currentMapIndex] = score;        
+        currentMapIndex++;
         if (currentMapIndex < _game.library.maps.Length)
             _game.ui.ShowWinScreen(score);
         else
@@ -99,6 +102,7 @@ public class Session : MonoBehaviour
 
     public int GetSavelGemsCount() => savedGems.Count;
     public int GetStolenGemsCount() => stolenGems.Count;
+    public int[] GetLevelsScore() => levelsScore;
 
     public void EndGameConfirm(bool withAds) {
         if (!withAds) {

@@ -6,8 +6,15 @@ using UnityEngine;
 
 public class FlyImagesUI : MonoBehaviour
 {
+    public enum PlayMode
+    {
+        SingleSource,
+        MultipleSources
+    }
+
     private Game _game;
     private EndGameScreenUI _endGameScreenUI;
+    private FinalScreenUI _finalScreenUI;
     public Canvas targetCanvas;
     public RectTransform spawnParent;
     public RectTransform[] imagePrefabs;
@@ -18,7 +25,7 @@ public class FlyImagesUI : MonoBehaviour
     public float spawnInterval = 0.1f;
     public float flyDuration = 0.5f;
     public Ease flyEase = Ease.InOutSine;
-    public PathType pathType = PathType.CatmullRom;
+    public PathType pathType = PathType.Linear;
     public bool ignoreTimeScale = true;
 
     private Coroutine playRoutine;
@@ -26,12 +33,22 @@ public class FlyImagesUI : MonoBehaviour
     private int notLaunchedCount;
     private int completedFlyCount = 0;
 
+    private PlayMode currentMode = PlayMode.SingleSource;
+    private Transform[] sourcePoints;
+    private int[] gemsPerSource;
+
     public void Init(EndGameScreenUI endGameScreenUI, Game game) {
         _endGameScreenUI = endGameScreenUI;
         _game = game;
     }
 
+    public void Init(FinalScreenUI finalScreenUI, Game game) {
+        _finalScreenUI = finalScreenUI;
+        _game = game;
+    }
+
     public void Play(int count) {
+        currentMode = PlayMode.SingleSource;
         itemCount = count;
 
         if (playRoutine != null)
@@ -40,12 +57,33 @@ public class FlyImagesUI : MonoBehaviour
         playRoutine = StartCoroutine(PlayRoutine());
     }
 
+    public void Play(Transform[] buttonTransforms, int[] gemsPerButton) {
+        currentMode = PlayMode.MultipleSources;
+        sourcePoints = buttonTransforms;
+        gemsPerSource = gemsPerButton;
+
+        if (playRoutine != null)
+            StopCoroutine(playRoutine);
+
+        playRoutine = StartCoroutine(PlayRoutine());
+    }
+
     private IEnumerator PlayRoutine() {
+        if (currentMode == PlayMode.SingleSource) {
+            yield return StartCoroutine(SingleSourceRoutine());
+        } else {
+            yield return StartCoroutine(MultipleSourcesRoutine());
+        }
+
+        playRoutine = null;
+    }
+
+    private IEnumerator SingleSourceRoutine() {
         notLaunchedCount = _game.session.GetSavelGemsCount();
         completedFlyCount = 0;
         for (int i = 0; i < itemCount; i++)
         {
-            SpawnAndAnimateOne();
+            SpawnAndAnimateOne(0);
 
             if (spawnInterval <= 0f)
                 continue;
@@ -55,32 +93,71 @@ public class FlyImagesUI : MonoBehaviour
             else
                 yield return new WaitForSeconds(spawnInterval);
         }
-
-        playRoutine = null;
     }
 
-    private void SpawnAndAnimateOne() {
+    private IEnumerator MultipleSourcesRoutine() {
+        int totalGems = 0;
+        foreach (int count in gemsPerSource)
+            totalGems += count;
+
+        notLaunchedCount = totalGems;
+        completedFlyCount = 0;
+
+        for (int sourceIndex = 0; sourceIndex < sourcePoints.Length; sourceIndex++) {
+            int gemsFromThisSource = gemsPerSource[sourceIndex];
+
+            for (int i = 0; i < gemsFromThisSource; i++) {
+                SpawnAndAnimateOne(sourceIndex);
+
+                if (spawnInterval <= 0f)
+                    continue;
+
+                yield return new WaitForSecondsRealtime(spawnInterval);
+            }
+        }
+    }
+
+    private void SpawnAndAnimateOne(int sourceIndex) {
         RectTransform instance = Instantiate(imagePrefabs[UnityEngine.Random.Range(0, 4)], spawnParent);
         activeInstances.Add(instance);
         instance.gameObject.SetActive(true);
 
-        Vector2 startLocal2D = WorldToSpawnParentPoint(pathPoints[0].position);
+        Transform startPoint = currentMode == PlayMode.SingleSource
+            ? pathPoints[0]
+            : sourcePoints[sourceIndex];
+
+        Vector2 startLocal2D = WorldToSpawnParentPoint(startPoint.position);
         instance.anchoredPosition = startLocal2D;
 
-        Vector3[] localPath = BuildLocalPathFromTransforms(pathPoints, 1);
-
         OnFlyStart();
-        instance
-            .DOLocalPath(localPath, flyDuration, pathType)
-            .SetEase(flyEase)
-            .SetUpdate(ignoreTimeScale)
-            .OnComplete(() =>
-            {
-                activeInstances.Remove(instance);
-                OnFlyEnd();
-                if (instance != null)
-                    Destroy(instance.gameObject);
-            });
+
+        if (pathPoints.Length > 1) {
+            Vector3[] localPath = BuildLocalPathFromTransforms(pathPoints, 1);
+            instance
+                .DOLocalPath(localPath, flyDuration, pathType)
+                .SetEase(flyEase)
+                .SetUpdate(ignoreTimeScale)
+                .OnComplete(() =>
+                {
+                    activeInstances.Remove(instance);
+                    OnFlyEnd();
+                    if (instance != null)
+                        Destroy(instance.gameObject);
+                });
+        } else {
+            Vector2 endLocal2D = WorldToSpawnParentPoint(pathPoints[0].position);
+            instance
+                .DOAnchorPos(endLocal2D, flyDuration)
+                .SetEase(flyEase)
+                .SetUpdate(ignoreTimeScale)
+                .OnComplete(() =>
+                {
+                    activeInstances.Remove(instance);
+                    OnFlyEnd();
+                    if (instance != null)
+                        Destroy(instance.gameObject);
+                });
+        }
     }
 
     private Vector3[] BuildLocalPathFromTransforms(Transform[] points, int startIndex) {
@@ -113,12 +190,16 @@ public class FlyImagesUI : MonoBehaviour
 
     private void OnFlyStart() {
         notLaunchedCount--;
-        _game.ui.savedGemsText.text = notLaunchedCount.ToString();
+        if (currentMode == PlayMode.SingleSource && _game.ui.savedGemsText != null) {
+            _game.ui.savedGemsText.text = notLaunchedCount.ToString();
+        }
     }
 
     private void OnFlyEnd() {
         completedFlyCount++;
-        _endGameScreenUI.scoreText.text = (completedFlyCount * 10).ToString();
+        if (currentMode == PlayMode.SingleSource && _endGameScreenUI != null) {
+            _endGameScreenUI.scoreText.text = (completedFlyCount * 10).ToString();
+        }
     }
 
     private void OnDisable() {
