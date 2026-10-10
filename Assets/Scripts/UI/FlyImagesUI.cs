@@ -32,6 +32,7 @@ public class FlyImagesUI : MonoBehaviour
     private readonly List<RectTransform> activeInstances = new List<RectTransform>();
     private int notLaunchedCount;
     private int completedFlyCount = 0;
+    private int totalGems;
 
     private PlayMode currentMode = PlayMode.SingleSource;
     private Transform[] sourcePoints;
@@ -80,6 +81,7 @@ public class FlyImagesUI : MonoBehaviour
 
     private IEnumerator SingleSourceRoutine() {
         notLaunchedCount = _game.session.GetSavelGemsCount();
+        totalGems = notLaunchedCount;
         completedFlyCount = 0;
         for (int i = 0; i < itemCount; i++)
         {
@@ -96,7 +98,7 @@ public class FlyImagesUI : MonoBehaviour
     }
 
     private IEnumerator MultipleSourcesRoutine() {
-        int totalGems = 0;
+        totalGems = 0;
         foreach (int count in gemsPerSource)
             totalGems += count;
 
@@ -197,8 +199,16 @@ public class FlyImagesUI : MonoBehaviour
 
     private void OnFlyEnd() {
         completedFlyCount++;
-        if (currentMode == PlayMode.SingleSource && _endGameScreenUI != null) {
+        if (currentMode == PlayMode.SingleSource ) {
             _endGameScreenUI.scoreText.text = (completedFlyCount * 10).ToString();
+        }
+
+        if (currentMode == PlayMode.MultipleSources && completedFlyCount == totalGems ) {
+            _finalScreenUI.OnFlyImagesOver();
+        }
+
+        if (currentMode == PlayMode.MultipleSources){
+            _finalScreenUI.OnOneFlyImage();
         }
     }
 

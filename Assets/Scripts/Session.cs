@@ -90,7 +90,7 @@ public class Session : MonoBehaviour
     
     public void Win() {
         int score = savedGems.Count * 100;
-        levelsScore[currentMapIndex] = score;        
+        levelsScore[currentMapIndex] = savedGems.Count;        
         currentMapIndex++;
         if (currentMapIndex < _game.library.maps.Length)
             _game.ui.ShowWinScreen(score);

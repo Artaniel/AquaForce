@@ -11,6 +11,8 @@ public class FinalScreenUI : MonoBehaviour
 
     public List<LevelButtonUI> levelButtons;
     public FlyImagesUI flyImages;
+    public TextMeshProUGUI scoreText;
+    private int score;
 
     public void Init(Game game, UI ui) {
         _game = game;
@@ -23,14 +25,25 @@ public class FinalScreenUI : MonoBehaviour
     }
 
     public void Open() {
+        score = 0;
         gameObject.SetActive(true);
 
+        freezeText.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
+        waveText.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
+
+        PlayGemFlyAnimation();
+    }
+    
+    public void OnOneFlyImage() {
+        score++;
+        scoreText.text = (score * 100).ToString();
+    }
+
+    public void OnFlyImagesOver() {
         _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility] += 5;
         freezeText.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
         _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility] += 5;
         waveText.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
-
-        PlayGemFlyAnimation();
     }
 
     private void PlayGemFlyAnimation() {
@@ -43,7 +56,7 @@ public class FinalScreenUI : MonoBehaviour
 
         for (int i = 0; i < levelButtons.Count; i++) {
             buttonTransforms[i] = levelButtons[i].transform;
-            gemsPerButton[i] = levelsScore[i] / 100;
+            gemsPerButton[i] = levelsScore[i];
         }
 
         flyImages.Play(buttonTransforms, gemsPerButton);
