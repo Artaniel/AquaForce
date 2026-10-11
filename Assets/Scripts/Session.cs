@@ -9,6 +9,7 @@ public class Session : MonoBehaviour
     private float sessionStartTime;
     private int currentMapIndex = 0;
     private int[] levelsScore;
+    public bool alreadyFinished = false;
     
     public void Init(Game game) {
         _game = game;

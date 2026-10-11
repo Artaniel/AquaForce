@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour , IHealthy
         _game.session.EnemyKilled();
         _factory.Destroy(this);
         view.gameObject.SetActive(false);
+        enemyCollider.enabled = false;
     }
 
     private void OnValidate() {

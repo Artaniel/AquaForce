@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ public class EnemyFactory : MonoBehaviour
         enemies.Remove(enemy);
         enemy.view.gameObject.SetActive(false);
         //Destroy(enemy.gameObject);
-    }
+    }    
 
     public int GetAliveEnemyCount() {
         return enemies.FindAll(enemy => enemy.health.isDead == false).Count;

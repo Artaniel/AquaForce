@@ -40,10 +40,14 @@ public class FinalScreenUI : MonoBehaviour
     }
 
     public void OnFlyImagesOver() {
+        Debug.Log(_game.session.alreadyFinished);
+        if (_game.session.alreadyFinished) return;
         _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility] += 5;
         freezeText.text = _game.abilityFactory.inventory[_game.abilityFactory.freezeAbility].ToString();
         _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility] += 5;
         waveText.text = _game.abilityFactory.inventory[_game.abilityFactory.waterBoostAbility].ToString();
+        _ui.abilityUi.RefreshNumbers();
+        _game.session.alreadyFinished = true;
     }
 
     private void PlayGemFlyAnimation() {
