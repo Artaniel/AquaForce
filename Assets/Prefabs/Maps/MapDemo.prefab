@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: 4432969653837305711}
   - {fileID: 7110079826348558168}
   spawners: []
-  gemDropZone: {fileID: 0}
+  gemDropZone: {fileID: 292176990749210093}
 --- !u!1001 &270532556758902221
 PrefabInstance:
   m_ObjectHideFlags: 0
