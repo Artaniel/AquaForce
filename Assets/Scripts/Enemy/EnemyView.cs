@@ -73,7 +73,7 @@ public class EnemyView : MonoBehaviour
 
     public void HitVfx() {                
         hitTween?.Kill();
-        mainSprite.color = Color.white;;
+        if (mainSprite) mainSprite.color = Color.white;
 
         hitTween = mainSprite
             .DOColor(Color.red, 0.3f)
